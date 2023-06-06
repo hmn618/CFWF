@@ -1,0 +1,66 @@
+{
+    "result": true,
+    "reason": null,
+    "datum": [
+        {
+            "contractInfoMap": {
+                "tel": "277567959"
+            },
+            "doctorName": null,
+            "consultantName": "张三",
+            "tag": "高血糖",
+            "isProblem": false,
+            "memberId": 1,
+            "memberType": "普通会员",
+            "memberName": "Jack",
+            "gender": null,
+            "age": null,
+            "profileDir": null,
+            "doctorId": null,
+            "consultantId": 2,
+            "periodPhase": null,
+            "status": null,
+            "registerTime": null,
+            "updateTime": null,
+            "birthTime": null,
+            "occupation": null,
+            "height": null,
+            "weight": null,
+            "userId": 1,
+            "fromWhere": null,
+            "periodPhaseDate": null,
+            "isPostpone": null,
+            "postponeDays": null
+        },
+        {
+            "contractInfoMap": {
+                "tel": "123456789"
+            },
+            "doctorName": null,
+            "consultantName": "张三",
+            "tag": "高血糖",
+            "isProblem": false,
+            "memberId": 2,
+            "memberType": "普通会员",
+            "memberName": "Tom",
+            "gender": null,
+            "age": null,
+            "profileDir": null,
+            "doctorId": null,
+            "consultantId": 2,
+            "periodPhase": null,
+            "status": null,
+            "registerTime": null,
+            "updateTime": null,
+            "birthTime": null,
+            "occupation": null,
+            "height": null,
+            "weight": null,
+            "userId": 2,
+            "fromWhere": null,
+            "periodPhaseDate": null,
+            "isPostpone": null,
+            "postponeDays": null
+        }
+    ]
+}

@@ -1,0 +1,243 @@
+
+a{
+	color: #000000;
+}
+a:hover{
+	text-decoration: none;
+}
+.nav2{
+	display:none;
+}
+.navbar{
+	border: none;
+	padding-top: 15px;
+}
+.logo img{
+	width: 150px;
+    height: 37px;
+}
+.navbar-header p{
+	    line-height: 50px;
+    float: left;
+    letter-spacing: 2px;
+    font-size: 15px;
+    font-family: fantasy;
+    color: #183162;
+
+}
+.navbar-brand{
+	padding: 0 15px;
+}
+.media-object{
+	width: 250px;
+height: 125px;
+}
+.col{
+	background-color: #4F4F4F;
+	/*height: 270px;
+	margin: 30px 0;*/
+}
+.col1{
+	padding: 0;
+}
+.carousel-inner{
+	border: 10px #FFFFFF solid;
+	border-radius: 10px;
+}
+.item img{
+	margin: 0 auto;
+}
+#article,#video {
+    padding-top: 25px;
+}
+.vi{
+	padding-top: 20px;
+}
+.tittle{
+	padding-bottom: 10px;
+	font-size: 18px;
+	font-weight: 600;
+	color:#666666 ;
+	border-bottom: 1px solid #2DB6A6;
+	margin-top: 30px;
+}
+.t2{
+	margin-bottom: 40px;
+}
+.media{
+	margin-top: 25px;
+}
+.videoImg{
+	width: 250px;
+	height: 125px;
+	/*border: 5px solid #FFFFFF;
+	border-radius: 5px;*/
+	margin-right: 5px;
+}
+.video-js{
+	width: 250px;
+	height: 125px;
+}
+.media p{
+	font-size: 13px;
+}
+.media-heading{
+	font-weight:bolder;
+}
+.t1{
+	margin-top: 25px;
+
+}
+.t1 img{
+	width: 25px;
+	height: 25px;
+	margin-right: 10px;
+}
+/*.b1{
+	display: block;
+	width: 100px;
+	background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#DADADA));
+	border-radius: 5px;
+	box-shadow: 2px 2px 2px #C0C0C0;
+    border: none;
+    margin: 30px auto;    
+    text-align: center;
+    color: black;
+}*/
+.b1{
+	float: right;
+color: #269ABC;
+font-weight: initial;
+font-size: 15px;
+line-height: 30px;
+margin-right: 5%;
+}
+
+a.b1:hover{
+	 text-decoration: none;
+}
+.col6{
+	font-size: 15px;
+	text-indent: 2ex;
+}
+.tab3{
+	margin-top: 30px;
+}
+.tab3-img{
+	margin-bottom: 20px;
+}
+#footer{
+	padding-top: 30px;
+	padding-bottom: 40px;
+	background: #181818;
+	color: #E9E9CD;
+	font-size: 17px;
+}
+.f1{
+	padding-top: 10px;
+}
+.fimg1{
+	width: 35px;
+	height: 35px;
+	float:left;
+	margin-right: 10px;
+}
+.fimg2{
+	margin-right: 15px;
+}
+.fimg3{
+	clear: left;
+	margin-right: 15px;
+}
+.fimg4{
+	width:50px;
+	height:50px;
+}
+.footer-text{
+	float: left;
+	margin-left: 15px;
+}
+.fcol{
+	margin-bottom: 20px;
+}
+#footer a{
+	color: #FFFFFF;
+}
+#about{
+	line-height: 35px;
+	
+}
+.bei{
+	text-align: center;
+	color: #CCCCC0;
+}
+/* 小屏幕（平板，大于等于768px） */
+@media (min-width: 768px) {
+	
+}
+
+/* 中等屏幕（桌面显示器，大于等于992px） */
+@media (min-width: 992px){
+	.vi{
+		padding-top: 0px;
+	}
+	.nav1{
+		display: none;
+	}
+	.nav2{
+		display: block;
+	}
+	.logo{
+	margin: auto;
+}
+.navbar{
+	border: none;
+}
+.navbtn{
+	margin-right: 12%;
+	margin-top: 50px;
+}
+.navbar-btn{
+	background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#DADADA));
+	border-radius: 5px;
+	box-shadow: 2px 2px 2px #C0C0C0;
+}
+
+	.logo{
+		margin-left: 8%;
+        float: left;
+        font-size: 20px;
+        padding-top: 8px;
+	}
+	/*.b1{
+		margin: 30px 0 0 0;
+	}*/
+	.b1{
+		
+	}
+	.t2{
+	   margin-left: 8%;
+       width: 42%;
+	}
+	.tab3-img{
+		float: right;
+	}
+	.navbar{
+	   border: none;
+	   margin-bottom: 10px;
+	   padding-top: 30px;
+    }
+    .logo p{
+       float: left;
+       line-height: 100px;
+       letter-spacing: 3px;
+    }
+    .logo img{
+    	float: left;
+    }
+}
+
+/* 大屏幕（大桌面显示器，大于等于1200px） */
+@media (min-width: 1200px){
+	
+}

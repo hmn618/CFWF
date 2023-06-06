@@ -1,0 +1,181 @@
+.btn-add{
+	background-color: #2EB7A7 !important;
+	color: #FFFFFF;
+	float: right;
+	margin-bottom: 10px;
+	}
+	
+.member-name{
+	font-size: 20px;
+	margin: 10px;
+
+}
+
+.name-add-record{
+	margin: 10px;
+}
+
+/*medical record part*/
+.modal-body-new{
+	margin: 20px 30px!important;
+	border: 1px solid #F1F1F1; 
+	padding: 10px !important;
+	
+}
+
+#modal-header-new{
+	
+    background-color: #2EB7A7 !important;
+    color: #FFFFFF !important;
+}
+
+hr{
+	margin: 0px !important;
+}
+
+
+.form-control1{
+	width:15% !important;
+}
+
+.record-container{
+ 	padding: 4px;
+}
+
+#bir-y{
+	width: 58px !important;
+}
+#bir-m{
+	width: 48px !important;
+}
+
+#bir-d{
+	width: 48px !important;
+}
+
+
+#identification{
+	width: 183px !important;
+}
+
+#address{
+	width: 322px !important;
+}
+
+#company{
+	width: 322px !important;
+}
+#mobile-tel{
+	width: 193px !important;
+}
+
+#home-tel{
+	width: 193px !important;
+}
+
+#office-tel{
+	width: 193px !important;
+}
+#wechat{
+	width: 158px !important;
+}
+
+#qq{
+	width: 158px !important;
+}
+
+#email{
+	width: 158px !important;
+}
+
+.container-title{
+	font-weight: bold !important;
+}
+.text-radio{
+	margin-left: 80px;
+	margin-right: 5px;
+}
+.text-text{
+	margin-left: 40px;
+	margin-right: 10px;
+}
+#xueya{
+	width:370px !important;}
+/*#fuyao{
+	width:392px !important;}*/
+.text-text-gxy2{
+	margin-left: 105px;
+	margin-right: 10px;
+}
+.text-text-tnb{
+	margin-left: 20px;
+	margin-right: 10px;
+}
+#zfg{
+	margin-left: 30px !important;
+}
+.text-text-zfg{
+	margin-left: 3px;
+}
+
+.form-control fuyao{
+	width:392px ;
+}
+
+.yesorno-checkbox{
+	margin-right: 20px;
+	margin-left: 3px;
+}
+.text-text-qtnfmjb{
+	margin-right: 10px;
+}
+#miaoshubingshi{
+	width:600px !important;
+}
+.forminput-time{
+	width: 100px ;
+	margin: 5px 5px;
+	border: none
+}
+.forminput-style{
+	width: 110px ;
+	margin: 5px 5px;
+	border: none 
+}
+.forminput-food{
+	width: 280px ;
+	margin: 5px 5px;
+	border: none
+}
+.forminput-kcal{
+	width: 150px ;
+	margin: 5px 5px;
+	border: none 
+}
+.forminput{
+	width: 150px ;
+	margin: 5px 5px;
+	border: none 
+}
+#jzmb{
+	width: 55px !important;
+	margin-left: 4px;
+	margin-right: 4px; 
+}
+
+/*
+
+
+
+
+
+
+
+.yesorno-radio{
+	margin-right: 10px;
+}
+
+
+
+
+}*/

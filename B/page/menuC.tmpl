@@ -1,0 +1,20 @@
+        <ul class="catalog">
+            <li class="catalog-li {{if type == 'task'}}active{{/if}}" data-toggle="collapse"  data-target="#collapseOne">
+            <span><i class="glyphicon glyphicon-tasks"></i><a href="task.html?type=task">任务管理</a><i class="glyphicon glyphicon-chevron-right"></i></span>
+            </li>
+
+            <li class="catalog-li {{if type == 'question'}}active{{/if}}" data-toggle="collapse"  data-target="#collapseTwo">
+            <span><i class="glyphicon glyphicon-remove"></i><a href="question.html?type=question">问题会员</a><i class="glyphicon glyphicon-chevron-right"></i></span>
+            </li>
+            <li class="catalog-li {{if type == 'member'}}active{{/if}}" data-toggle="collapse"  data-target="#collapseThree">
+            <span><i class="glyphicon glyphicon-user"></i><a href="member.html?type=member">会员管理</a><i class="glyphicon glyphicon-chevron-right"></i></span>
+            </li>
+            <li class="catalog-li {{if type == 'doctor' || type == 're-examination'||type == 'summary'}}active{{/if}}" data-toggle="collapse"  data-target="#collapseFour">
+            <span><i class="glyphicon glyphicon-plus"></i><a href="#">医生管理</a><i class="glyphicon glyphicon-chevron-right"></i></span>
+            </li>
+            <ul class="panel-collapse collapse {{if type == 'doctor' || type == 're-examination'||type == 'summary'}}in{{/if}} collapse-ul" id="collapseFour">
+                <li class="collapse-li {{if type == 'doctor'}}active2{{/if}}"><a href="doctor.html?type=doctor">医生管理</a></li>
+                <li class="collapse-li {{if type == 're-examination'}}active2{{/if}}"><a href="re-examination.html?type=re-examination">复诊交互</a></li>
+                <li class="collapse-li {{if type == 'summary'}}active2{{/if}}"><a href="summary.html?type=summary">阶段总结</a></li>                
+            </ul>
+        </ul>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+		<title>B-顾问任务查看</title>
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+		<link href="../../common/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="../../common/css/common.css" />
+		<link rel="stylesheet" href="../../common/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="../css/advice.css" />
+		<link rel="stylesheet" href="../../common/css/pages.css" />
+		<style>
+			.ui-autocomplete {
+				display: block;
+				z-index: 99999;
+				height: 200px;
+				overflow-y: scroll;
+			}
+		</style>
+		<!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	</head>
+
+	<body>
+		<header class="clearfix">
+			<div class="logo"></div>
+			<h1>春风微辅—运营管理系统</h1>
+		</header>
+		<!--<div class="menu">-->
+		<div class="menu-wrapper">
+
+		</div>
+		<!--</div>-->
+		<!--<div class="footer">
+        春风微辅—运营管理系统
+    </div>-->
+		<div class="main-container">
+			<div class="container-detail clearfix">
+				<div class="panel">
+					<div class="panel-heading">顾问任务查看</div>
+					<div class="panel-body">
+						<form class="row select-header">
+							<div class="form-group col-xs-3">
+								<label>主管顾问姓名</label>
+								<input type="text" class="form-control" id="doctorName" />
+							</div>
+							<div class="form-group col-xs-3">
+								<label>普通顾问姓名</label>
+								<input type="text" class="form-control" id="lowDoctorName" />
+							</div>
+							<div class="form-group col-xs-3">
+								<label>手机</label>
+								<input type="tel" class="form-control" id="doctorPhone" />
+							</div>
+							<div class="form-group col-xs-1">
+								<label>区域</label>
+								<div id="doctorArea"></div>
+							</div>
+							<div class="col-xs-1 col-xs-offset-1">
+								<input type="button" value="查询" class="btn btn-primary" id="select-btn" />
+							</div>
+						</form>
+					</div>
+					<div class="table-container">
+						<table class="table table-hover main-table">
+							<!--insert some records here-->
+						</table>
+					</div>
+					<div class="pages"></div>
+				</div>
+
+				
+
+			</div>
+			<!--container-detail-->
+		</div>
+		<!--main-container-->
+		<script src="//code.jquery.com/jquery-1.9.1.js"></script>
+		<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+		<script type="text/javascript" src="../../common/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../../common/js/template.js"></script>
+		<script type="text/javascript" src="../../common/js/pages.js"></script>
+		<script type="text/javascript" src="../js/menuB.js"></script>
+		<script type="text/javascript" src="../../common/js/url.js" ></script>
+		<script type="text/javascript" src="../../common/js/area.js" ></script>
+		<script type="text/javascript" src="../js/consultantListOfB.js"></script>
+		<script id="advice-1-4-tmpl" type="text/html">
+			<tr class="table-sub-title">
+				<td>主管顾问</td>
+				<td>相关顾问</td>
+				<td>电话</td>
+				<td>操作</td>
+				
+			</tr>
+			{{each datum as value}}
+			<tr data-id={{value.consultantId}} class="sub-consult">
+				<td>{{value.consultantName}}</td>
+				<td><input type="button" value="查看" class="btn btn-look" /></td>
+				<td>{{value.contractInfoMap.tel}}</td>
+				<td>
+					<a href="showTaskListOfB.html?consultantID={{value.consultantId}}">查看任务</a>
+					<!--<span class="del-mode">删除</span>-->
+				</td>
+				
+			</tr>
+			{{/each}}
+		</script>
+		<script id="advice-1-4-1-tmpl" type="text/html">
+			{{each datum as value}}
+			<tr data-id={{value.consultantId}}>
+				<td></td>
+				<td>{{value.consultantName}}</td>
+				<td>{{value.contractInfoMap.tel}}</td>
+				<td>
+					<a href="showTaskListOfB.html?consultantID={{value.consultantId}}">查看任务</a>
+				</td>
+				
+			</tr>
+			{{/each}}
+		</script>
+		
+		
+		
+		<script id="advice-1-4-5-tmpl" type="text/html">
+			<select style="height: 35px;display: block" class="area-select">
+				{{each datum as value}}
+					<option data-id={{value.areaID}}>{{value.areaName}}</option>
+				{{/each}}
+			</select>
+		</script>
+	</body>
+
+</html>

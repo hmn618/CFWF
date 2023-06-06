@@ -1,0 +1,243 @@
+a:hover{
+	text-decoration: none;
+}
+/*part1*/
+#name{
+	margin-right: 60px;
+	}
+
+#tel{
+	margin-right: 60px;
+}
+#patient-name{
+	margin-right: 80px;
+}
+.search{
+	float: right;
+	width: 8%;
+margin-right: 20px;
+margin-top: 20px;
+}
+.con1{
+	background: #FFFFFF;
+	float: left;
+	border-bottom: 2px solid #2EB7A7;
+	width: 100%;
+}
+.con1 span{
+	font-weight: bold;
+	margin: 15px 2%;
+	float: left;
+}
+/*part2*/
+.doctor-del{
+	display:block;
+	float:right;
+	width:8%;
+	border:none;
+	height:25px;
+	line-height: 20px;
+	background:#2EB7A7;
+	border-radius:6px;
+	color:#fff;
+	font-size:14px;
+	cursor:pointer;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	margin-top: 2px;
+}
+
+.doctor-add{
+	display:block;
+	float:right;
+	width:8%;
+	border:none;
+	height:25px;
+	line-height: 20px;
+	background:#2EB7A7;
+	border-radius:6px;
+	color:#fff;
+	font-size:14px;
+	cursor:pointer;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+.clear{
+	clear:both;
+}
+
+.checks{
+	padding-right:0 !important;
+}
+
+.doc{
+	padding-left:0 !important;
+}
+
+/*part3-模态框*/
+.table-popup-title{
+	font-weight:bold !important;
+	font-size: 16px;
+}
+/*
+.modal-header{
+	padding: 10px !important;
+	background-color: #2EB7A7 !important;
+	color: #FFFFFF;
+}
+.modal-body{
+	padding: 20px 60px;
+	}*/
+	
+.related-maneger{
+	padding: 10px 40px;
+	font-size: 16px;
+}
+
+.btn{
+	background-color: #2EB7A7 !important;
+	color: #FFFFFF;
+}
+.reman{
+	width:50%;
+	margin-right: 40px;	
+}
+
+#send-model
+{
+	width: 400px;
+	text-align: center;
+}
+#send-model-head
+{
+	border-bottom: none;
+	background-color: #FFFFFF !important;
+}
+#send-model-footer
+{
+	border-top: none;
+}
+#submit-delete,#addPatient{
+	background-color: #BFC2C5 !important;
+}
+
+#QR-model
+{
+	width: 360px;
+	text-align: center;
+}
+
+/*#addDocModal{
+	width: 700px;
+	text-align: center;	
+}*/
+.doc-photo{
+	float: left;
+	width: 30%;
+}
+.doc-detail{
+	float: left;
+	margin:5px 40px;
+	text-align: right;
+}
+.clear{
+	clear:both;
+}
+.btn-picture{
+	display:block;
+	float:right;
+	width:70%;
+	border:none;
+	height:25px;
+	line-height: 20px;
+	background:#2EB7A7;
+	border-radius:6px;
+	color:#fff;
+	font-size:14px;
+	cursor:pointer;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	margin-top: 12px;
+}
+
+.input-doc-detail{
+	margin: 4px;
+	width:153px;
+	height:24px;
+}
+.sex-choose{
+	margin-right: 47px !important;
+	margin-left: 5px !important;
+}
+
+.modal-content{
+	padding: 0 20px;
+}
+.img-responsive
+{
+	margin-bottom: 10px;
+}
+#upload-btn,#change-btn
+{
+	width: 100%;
+	margin: 0 auto;
+}
+#submit,#submit1{
+	margin: 20px 45%;
+}
+.a{
+	display: inline-block;
+	clear: left;
+	width: 70%;
+	margin-top: 5px;
+}
+#addTags{
+	cursor: pointer;
+}
+.tags{
+	border: 1px solid #2EB7A7;
+	padding: 0 5px;
+	margin: 2px 5px;
+	cursor: pointer;
+    display: inline-block;
+}
+.c{
+	float:none;
+}
+.delete,.relate{
+	cursor: pointer;
+	margin-left: 8px;
+}
+.edit{
+	cursor: pointer;
+	
+}
+#send1,#send2{
+	border-bottom: none;
+}
+.dePatient,.doc,.deCon{
+	cursor: pointer;
+	display: block;
+	color:#2EB7A7 ;
+}
+
+.edit1{
+	height: 600px;
+	overflow-y: scroll;
+}
+
+/*------自动补全-------*/
+.img-little {
+				height: 70px;
+				width: 70px;
+				display: inline-block;
+			}
+			
+			.ui-autocomplete {
+				display: block;
+				z-index: 99999;
+			}
+			.username {
+				display: inline-block;
+			}

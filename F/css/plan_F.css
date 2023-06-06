@@ -1,0 +1,101 @@
+/*干预计划内容区*/
+.plan-content{
+	height: 200px;
+	overflow-y: auto;
+	background-color:#FFF;
+	margin:10px auto;
+	padding: 10px;
+}
+/*编辑启动期干预计划*/
+.editPlan input{
+	display: inline-block;
+	text-align: center;
+	border: 0px;
+	border-bottom:#666 1px solid;
+	margin: 0 5px;
+	height: 20px;
+	width: 40px;
+}
+.editPlan .last{
+	width: 200px;
+}
+.editPlan .modal-body div{
+	line-height: 30px;
+	text-align: left;
+}
+.editPlan .modal-footer{
+	text-align: center;
+}
+.editPlan .modal-footer button,
+.editPlan .modal-footer button:hover,
+.editPlan .modal-footer button.hover,
+.editPlan .modal-footer button:focus,
+.editPlan .modal-footer button.focus,
+.editPlan .modal-footer button:active,
+.editPlan .modal-footer button.active{
+	 background-color: #2EB7A7;
+	 color: #FFFFFF;
+}
+.editPlan .modal-footer .btn+.btn{
+     margin-left: 100px !important;
+}
+.editPlan-header,#plan-history-header{
+     border-bottom: none;
+}
+.editPlan-footer{
+     border-top: none;
+     padding-top: 0px;
+}
+.modal-body{
+	padding-bottom: 0px ;
+}
+.modal-body textarea{
+	width: 100%;
+	max-width: 96%;
+	margin: 0 auto;
+	padding: 10px;
+}
+
+/*干预计划历史*/
+.table-inner{
+     margin: 0;
+}
+#plan-history .modal-dialog{
+     width: 80%;
+}
+#plan-history .modal-title{
+     font-size: 16px;
+}
+#plan-history .modal-header{
+     padding-bottom: 0px;
+}
+.table-title{
+	background-color: #EEF8F9;
+	text-align: center;
+}
+.table-tr td {
+	border-top: 1px dashed #B5B5B5 !important;
+	text-align: center;
+}
+.edit-plan-btn,.plan-history-btn{
+	cursor: pointer;
+}
+.plan-history-footer{
+	border-top: none;
+     padding-top: 0px;
+}
+.type1
+{
+	color: white;
+	cursor: pointer;
+	display: inline-block;
+	height: 24px;
+	width: 96px;
+	border: 1px solid #2EB7A7;
+	background-color: #2EB7A7;
+	line-height: 22px;
+	margin-bottom: 2px;
+	border-radius: 3px;
+	text-align: center;
+	margin-right: 5px;
+}

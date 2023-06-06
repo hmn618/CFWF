@@ -1,0 +1,95 @@
+﻿.log_left{
+	float:left;
+	width:15%;
+	font-weight:bold;
+}
+.log_right,.log_right2{
+	float:left;
+	width:83%;
+}
+.log_right input,.log_right select{
+	width:15%;
+	margin: 0 2% 10px 2%;
+	}
+.log_right1 input{
+	width:22%;
+	margin: 0 2% 10px 0;
+}
+.log_right2 input{
+	width:87%;
+	margin: 0 2% 10px 2%;
+	}
+.enter{
+	margin-right: 5%;
+}
+.enter1{
+	margin-right: 2%;
+}
+.enter2{
+	margin-right: 9%;
+}
+#tmedication,#tpatientExperience,#tgetUpTime{
+	margin-bottom: 10px;
+}
+.log_right3{
+	width:32%;
+	float:left;
+}
+.clear{
+	clear:both;
+}
+
+
+.table1
+{
+	width:100%;
+	text-align: center;
+	border-bottom: 1px solid #DBDBDB;
+	border-left: 1px solid #EEF8F9;
+	border-right: 1px solid #EEF8F9;
+	box-shadow: #999 0px 0px 2px;
+	font-family: "微软雅黑";
+}
+.table-title
+{
+	background-color: #EAF6F8;
+}
+
+.plan-button a:link,.plan-button a:visited{
+	text-decoration: none;
+	color: #000000;
+}
+.plan-button a:hover,.plan-button a:active{
+	text-decoration: none;
+	color: #000000;
+}
+.edit_log{
+	font-weight:bold;
+	font-size:16px;
+	color:#FFFFFF;
+}
+#editLog-header{
+	background-color:#2EB7A7;
+}
+.btn{
+	background-color:#2EB7A7 ;
+	color:#FFFFFF;
+}
+.three,.tag{
+	text-align: left;
+}
+.logId,.memberId{
+	display: none;
+}
+#eLog,#sHistory{
+	cursor: pointer;
+}
+.proofId{
+	display: none;
+}
+#msg{
+	color:red;
+}
+.replyId{
+        display: none;
+}

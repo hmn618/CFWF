@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <title>医生管理</title>
+
+    <link href="../../common/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../common/css/common.css" />
+    <link rel="stylesheet" href="../css/selectTable.css" />
+    <link rel="stylesheet" href="../../common/css/pagination.css" />
+    <link rel="stylesheet" href="../css/f-1-1.css" />
+    <link rel="stylesheet" href="../../common/css/pages.css" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+  	
+  	<header class="clearfix">
+        <div class="logo"></div>
+        <h1>春风微辅—运营管理系统</h1>
+    </header>
+    <!--<div class="menu">-->
+    <div class="menu-wrapper">
+    	    
+    </div>
+
+    <div class="main-container">
+    	    <div class="container-detail clearfix">
+              <div class="table-content">
+              	   <div class="title">医生管理</div>
+                   <div class="con1">
+    	    				<span>医生姓名&nbsp;&nbsp;<input id="name5" type="text" name="member" /></span>
+    	    				<span>医院&nbsp;&nbsp;<input id="sehospital" type="text" name="name" /></span>
+    	    				<span>科室&nbsp;&nbsp;<input id="sedepartment" type="text" name="name" /></span>
+    	    				<span>关联患者&nbsp;&nbsp;<input id="patient" type="text" name="name" /></span>
+    	    				<!--<span class="form-group">
+                     <label>区域:</label>
+                     <select id="doctorArea"></select>
+							    </span>-->
+    	    				<span><button class="btn" id="select">查询</button></span>
+    	    			</div>
+                  
+                   
+                <!--   	<button type="button" class="doctor-del">批量删除</button>-->
+                   	<button type="button" class="doctor-add" data-toggle="modal" data-target="#addDocModal">添加</button>
+										<div class="clear"></div>
+                   <div class="table-inner"> 
+                   		<div class="table-responsive"> 
+                       <table class="table"> 
+                               <tr class="table-title"> 
+                               <td></td>
+                               <td>医生姓名</td> 
+                               <td>联系电话</td>
+                               <td>绑定顾问</td>
+                               <td>关联患者</td>
+                               <td>查看二维码</td> 
+                               <td>操作</td>
+                               </tr> 
+                               
+                               <!--<tr class="table-tr"> 
+                               <td class="checks"><input type="checkbox"></td>
+                               <td class="doc"><a class="doctor-name" href="doctorDetail.html">磊磊</a></td>
+                               <td>1326179358</td>
+                               <td><a class="maneger-name" data-toggle="modal" data-target="#ReManeger">已绑定</a></td>
+                               <td><a data-toggle="modal" data-target="#RePatientModel">查看</a></td>
+    							             <td><a data-toggle="modal" data-target="#QRcodeModal">查看</a></td>                              
+                               <td><a data-toggle="modal" data-target="#addDocModal">编辑</a>
+                                   <a data-toggle="modal" data-target="#DeDoctorModal">删除</a></td>                                                                       
+                               </tr> 
+ -->
+                               
+
+                       </table> 
+                   </div>  
+                   
+      <!-- 展示关联患者 -->
+			
+				<div class="modal fade" id="RePatientModel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			  <div class="modal-dialog">
+			    <div class="modal-content" id="re-patient-model">
+			      <div class="modal-header" id="re-patient-model-head" >
+			        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+			      	<h4 class="modal-title">关联患者</h4>
+			      </div>
+			      <div class="modal-body row">
+			        			        <table class="table"> 
+                               <tr class="table-popup-title"> 
+                               <td>姓名</td>
+                               <td>用户类型</td> 
+                               <td>操作</td>
+                               </tr>                                  
+               </table>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+			
+			<!-------添加关联新患者---------- -->			
+				<div class="modal fade" id="addPatientModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			  <div class="modal-dialog">
+			    <div class="modal-content" id="re-patient-model">
+			      <div class="modal-header" id="re-patient-model-head" >
+			        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+			      	<h4 class="modal-title">关联新患者</h4>
+			      </div>
+			      <div class="modal-body">			        	
+			        		<label>请输入要添加的患者姓名：</label>
+			        		<input class="form-control" type="text" id="patientName" />
+						      <div id="select-ul"></div>			        		        
+			      </div>
+			      <div class="modal-footer">
+			      	<button type="button" class="btn" data-dismiss="modal" id="addPatient">确认</button>
+			        <button type="button" class="btn" data-dismiss="modal" >取消</button>
+			      </div>
+			       
+			    </div>
+			  </div>
+			</div>	
+			
+			 <!-- 展示关联顾问 -->
+			
+				<div class="modal fade" id="ReConModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			  <div class="modal-dialog">
+			    <div class="modal-content">
+			      <div class="modal-header" >
+			        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+			      	<h4 class="modal-title">关联顾问</h4>
+			      </div>
+			      <div class="modal-body row">
+			        			        <table class="table"> 
+                               <tr class="table-popup-title"> 
+                               <td>姓名</td>
+                               <td>联系方式</td> 
+                               <td>操作</td>
+                               </tr>                                  
+               </table>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+			
+			<!-------添加绑定顾问---------- -->			
+				<div class="modal fade" id="addConModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			  <div class="modal-dialog">
+			    <div class="modal-content" id="re-patient-model">
+			      <div class="modal-header" id="re-patient-model-head" >
+			        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+			      	<h4 class="modal-title">关联新顾问</h4>
+			      </div>
+			      <div class="modal-body">			        	
+			        		<label>请输入要添加的顾问姓名：</label>
+			        		<input class="form-control" type="text" id="consultantName" />
+						      <div id="select-ul"></div>			        		        
+			      </div>
+			      <div class="modal-footer">
+			      	<button type="button" class="btn conSubmit" data-dismiss="modal" >确认</button>
+			        <button type="button" class="btn" data-dismiss="modal" >取消</button>
+			      </div>
+			       
+			    </div>
+			  </div>
+			</div>
+			
+			<!-- 修改区域-->
+				<!--<div class="modal fade" id="changeArea" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			  <div class="modal-dialog">
+			    <div class="modal-content" id="re-region-model">
+			      <div class="modal-header" id="re-region-model-head" >
+			        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+			      	<h4 class="modal-title">修改区域</h4>
+			      </div>
+			      <div class="modal-body row">
+			      	<span style="font-size:16px;padding: 10px 40px;">所在区域：</span>
+			      	<span style="font-size:16px;padding: 10px 40px;" id="cRegion">北京</span>
+			      	<div class="related-maneger">
+			      		<span>修改区域：</span>
+			      	  <span class="form-group">
+                     <select id="doctorArea1"></select>
+							    </span>	 
+			      	</div>
+			      </div>
+			      <div class="modal-footer">
+                <button type="button" class="btn" id="regionSubmit" data-dismiss="modal" >确认</button>
+                <button type="button" class="btn" data-dismiss="modal" >取消</button>
+            </div>
+			    </div>
+			  </div>
+			</div>-->
+			
+			 <!-- 关联顾问-->
+				<!--<div class="modal fade" id="ReManager" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			  <div class="modal-dialog">
+			    <div class="modal-content" id="re-maneger-model">
+			      <div class="modal-header" id="re-maneger-model-head" >
+			        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+			      	<h4 class="modal-title">绑定顾问</h4>
+			      </div>
+			      <div class="modal-body row">			      
+			      	<div class="related-maneger">
+			      		<span>绑定顾问：</span>
+			      	  <input class="form-control" type="text" id="consultantName" />
+						      <div id="select-ul"></div>	
+			      	</div>
+			      </div>
+			      <div class="modal-footer">
+                <button type="button" class="btn" id="conSubmit">提交</button>
+            </div>
+			    </div>
+			  </div>
+			</div>-->
+			
+			<!--<delete doctor modal>-->
+        <div class="modal fade" id="DeDoctorModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			  <div class="modal-dialog">
+			    <div class="modal-content" id="send-model">
+			      <div class="modal-header" id="send-model-head">
+			        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+			      </div>
+			      <div class="modal-body">
+			          <span style="font-size:16px;padding: 10px 40px;">可以删除该医生，确认删除？</span>
+			      </div>
+			      <div class="modal-footer" id="send-model-footer">
+			        <button type="button" class="btn" data-dismiss="modal" id="submit-delete">确认</button>
+			        <button type="button" class="btn" data-dismiss="modal" id="cancel-delete">取消</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+			
+						<!--<delete patient modal>-->
+        <div class="modal fade" id="DePatientModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			  <div class="modal-dialog">
+			    <div class="modal-content" id="send-model">
+			      <div class="modal-header" id="send-model-head">
+			        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+			      </div>
+			      <div class="modal-body">
+			          <span style="font-size:16px;padding: 10px 40px;">确认删除该患者？</span>
+			      </div>
+			      <div class="modal-footer" id="send-model-footer">
+			        <button type="button" class="btn" data-dismiss="modal" id="submit-dePatient">确认</button>
+			        <button type="button" class="btn" data-dismiss="modal" id="cancel-delete">取消</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+			
+					<!--<delete Consultant modal>-->
+        <div class="modal fade" id="DeConModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			  <div class="modal-dialog">
+			    <div class="modal-content" id="send-model">
+			      <div class="modal-header" id="send-model-head">
+			        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+			      </div>
+			      <div class="modal-body">
+			          <span style="font-size:16px;padding: 10px 40px;">确认删除顾问？</span>
+			      </div>
+			      <div class="modal-footer" id="send-model-footer">
+			        <button type="button" class="btn" data-dismiss="modal" id="submit-deCon">确认</button>
+			        <button type="button" class="btn" data-dismiss="modal" id="cancel-delete">取消</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+			
+			<!--二维码-->
+			<div class="modal fade" id="QRcodeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			  <div class="modal-dialog">
+			    <div class="modal-content" id="QR-model">
+			      <div class="modal-header" id="QR-model-head">
+			        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+			        <h4 class="modal-title">二维码</h4>
+			      </div>
+			      <div class="modal-body">
+			          <img id="qrCode" border="0" src="" width="228" height="228">
+			      </div>
+			    </div>
+			  </div>
+			</div>
+			
+			<!--所在区域-->
+			<!--<div class="modal fade" id="AreaModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			  <div class="modal-dialog">
+			    <div class="modal-content" id="area-model">
+			      <div class="modal-header" id="area-model-head">
+			        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+			        <h4 class="modal-title">医生所在区域</h4>
+			      </div>
+			      <div class="modal-body">
+			          <span>所在区域：</span>
+			          <span id="city"></span>
+			      </div>
+			    </div>
+			  </div>
+			</div>-->
+			
+                   
+                   </div>
+                   <div class="pages">
+                   	
+                   </div>
+                   </div> 
+                   <div id="Pagination" class="pagination"><!-- 这里显示分页 --></div>
+                   <!--<div id="Searchresult" ><!-- 这里显示分页 </div>-->
+              </div>
+              
+               <!-- 添加医生                   -->
+          <div class="modal fade" id="addDocModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+         	<div class="modal-dialog">
+         		<div class="modal-content edit1">
+         			<div class="modal-header" id="send1">
+         				<button type="button" data-dismiss="modal" class="close"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+     			  </div>
+     			  <div class="modal-body">
+     			  	<form id="addForm">
+     			  		<div class="row">
+     			  			<div class="col-md-4">
+     			  				<img src="../img/moren.jpg" class="img-responsive" id="upload-img" />
+											<button type="button" class="btn btn-primary" id="upload-btn">上传图片</button>
+											<input type="file" id="btn-file" style="display: none;" name="userfile"/>	
+     			  			</div>
+     			  			<div class="col-md-8">
+     			  				<div class="form-group">
+     			  					<label>医生姓名：</label>
+     			  					<input id="name3" type="text" class="form-control" value="" required="required"/>
+     			  				</div>
+     			  				<div class="form-group">
+     			  					<label>用户名：</label>
+     			  					<input id="user" type="text" class="form-control" required="required"/>
+     			  				</div>
+     			  				<div class="form-group">
+     			  					<label>密码</label>
+     			  					<input id="password" type="password" class="form-control" required="required"/>
+     			  				</div>
+     			  				<div class="form-group">
+     			  					<label>性别：</label>
+     			  					<input type="radio" name="sex" value="男" required="required" checked="checked"/>男
+     			  					<input type="radio" name="sex" value="女" required="required"/>女
+     			  				</div>
+     			  				<div class="form-group">
+     			  					<label>年龄：</label>
+     			  					<input type="number" class="form-control" id="age" required="required"/>
+     			  				</div>     			  				    			  				
+     			  				<div class="form-group">
+     			  					<label>医院：</label>
+     			  					<input type="text" class="form-control" id="hospital" required="required" />
+     			  				</div>
+     			  				<div class="form-group">
+     			  					<label>科室：</label>
+     			  					<input type="text" class="form-control" id="department" required="required"/>
+     			  				</div>
+     			  				<!--<div class="form-group">
+     			  					<label>所在区域：</label>
+     			  					<select id="doctorArea2"></select>
+     			  				</div>-->
+     			  				<div class="form-group">
+     			  					<label>职务：</label>
+     			  					<input type="text" class="form-control" id="job" required="required"/>
+     			  				</div>
+     			  				<div class="form-group">
+     			  					<label>职称：</label>
+     			  					<input type="text" class="form-control" id="title" required="required"/>
+     			  				</div>
+     			  				<div class="form-group">
+     			  					<label>手机：</label>
+     			  					<input type="tel" class="form-control" id="phone" required="required"/>
+     			  				</div>
+     			  				<div class="form-group">
+     			  					<label>邮箱：</label>
+     			  					<input type="email" class="form-control" id="email"/>
+     			  				</div>
+     			  				<button type="button" class="btn btn-default" id="submit">保存</button>
+     			  			</div>
+     			  	</div>     			  		
+     			  	</form>
+     			  </div>
+         		</div>
+         	</div>
+         </div> 
+         
+         <!--编辑医生       -->
+         <div class="modal fade" id="editDocModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+         	<div class="modal-dialog">
+         		<div class="modal-content edit1">
+         			<div class="modal-header" id="send1">
+         				<button type="button" data-dismiss="modal" class="close"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+     			  </div>
+     			  <div class="modal-body">
+     			  	<form id="addForm">
+     			  		<div class="row">
+     			  			<div class="col-md-4">
+     			  				<img src="../img/moren.jpg" class="img-responsive" id="change-img" />
+											<button type="button" class="btn btn-primary" id="change-btn">上传图片</button>
+											<input type="file" id="change-btn-file" style="display: none;" name="userfile"/>  
+     			  			</div>
+     			  			<div class="col-md-8">
+     			  				<div class="form-group">
+     			  					<label>医生姓名：</label>
+     			  					<input id="name1" type="text" class="form-control" required="required"/>
+     			  				</div>
+     			  				<div class="form-group">
+     			  					<label>性别：</label>
+     			  					<input type="radio" name="sex1" value="男" />男
+     			  					<input type="radio" name="sex1" value="女" />女
+     			  				</div>
+     			  				<div class="form-group">
+     			  					<label>年龄：</label>
+     			  					<input type="number" class="form-control" id="age1" required="required"/>
+     			  				</div>     			  				    			  				
+     			  				<div class="form-group">
+     			  					<label>医院：</label>
+     			  					<input type="text" class="form-control" id="hospital1" required="required" />
+     			  				</div>
+     			  				<div class="form-group">
+     			  					<label>科室：</label>
+     			  					<input type="text" class="form-control" id="department1" required="required"/>
+     			  				</div>
+     			  				<div class="form-group">
+     			  					<label>所在区域：</label>
+     			  					<select id="doctorArea3"></select>
+     			  				</div>
+                    <div class="form-group">
+     			  					<label>职务：</label>
+     			  					<input type="text" class="form-control" id="job1" required="required"/>
+     			  				</div>
+     			  				<div class="form-group">
+     			  					<label>职称：</label>
+     			  					<input type="text" class="form-control" id="title1" required="required"/>
+     			  				</div>
+     			  				<div class="form-group">
+     			  					<label>手机：</label>
+     			  					<input type="text" class="form-control" id="phone1" required="required"/>
+     			  				</div>
+     			  				<div class="form-group">
+     			  					<label>邮箱：</label>
+     			  					<input type="email" class="form-control" id="email1"/>
+     			  				</div>
+     			  				<button type="button" class="btn btn-default" id="submit1" >保存</button>
+     			  			</div>
+     			  	</div>     			  		
+     			  	</form>
+     			  </div>
+         		</div>
+         	</div>
+         </div> 
+          
+          <!--查看医生名片         -->
+         <div class="modal fade" id="DocModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+         	<div class="modal-dialog">
+         		<div class="modal-content edit1">
+         			<div class="modal-header" id="send1">
+         				<button type="button" data-dismiss="modal" class="close"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+     			  </div>
+     			  <div class="modal-body">
+     			  	<form id="addForm">
+     			  		<div class="row">
+     			  			<div class="col-md-4">
+     			  				<img src="../img/moren.jpg" class="img-responsive" id="upload-img2" />
+     			  			</div>
+     			  			<div class="col-md-8">
+     			  				<div class="form-group">
+     			  					<label>医生姓名：</label>
+     			  					<input id="name2" type="text" class="form-control" disabled="disabled"/>
+     			  				</div>
+     			  				<div class="form-group">
+     			  					<label>性别：</label>
+     			  					<input type="radio" name="sex2" value="男" checked="checked"/>男
+     			  					<input type="radio" name="sex2" value="女" />女
+     			  				</div>
+     			  				<div class="form-group">
+     			  					<label>年龄：</label>
+     			  					<input type="text" class="form-control" id="age2" disabled="disabled"/>
+     			  				</div>     			  				    			  				
+     			  				<div class="form-group">
+     			  					<label>医院：</label>
+     			  					<input type="text" class="form-control" id="hospital2" disabled="disabled"/>
+     			  				</div>
+     			  				<div class="form-group">
+     			  					<label>科室：</label>
+     			  					<input type="text" class="form-control" id="department2" disabled="disabled"/>
+     			  				</div>
+     			  				<div class="form-group">
+     			  					<label>所在区域：</label>
+     			  					<input type="text" class="form-control" id="area2" disabled="disabled"/>
+     			  				</div>
+                    <div class="form-group">
+     			  					<label>职务：</label>
+     			  					<input type="text" class="form-control" id="job2" disabled="disabled"/>
+     			  				</div>
+     			  				<div class="form-group">
+     			  					<label>职称：</label>
+     			  					<input type="text" class="form-control" id="title2" disabled="disabled"/>
+     			  				</div>
+     			  				<div class="form-group">
+     			  					<label>手机：</label>
+     			  					<input type="text" class="form-control" id="phone2" disabled="disabled"/>
+     			  				</div>
+     			  				<div class="form-group">
+     			  					<label>邮箱：</label>
+     			  					<input type="email" class="form-control" id="email2" disabled="disabled"/>
+     			  				</div>
+     			  				<button type="submit" class="btn btn-default"  data-dismiss="modal">关闭</button>
+     			  			</div>
+     			  	</div>     			  		
+     			  	</form>
+     			  </div>
+         		</div>
+         	</div>
+         </div> 
+         
+        </div><!--container-detail-->
+    </div><!--main-container-->
+    
+    
+    
+    
+    <script src="../../common/js/jquery.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="../../common/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../common/js/template.js" ></script>
+    <script type="text/javascript" src="../../common/js/pages.js"></script>
+    <script type="text/javascript" src="../js/menuF.js"></script>
+    <script type="text/javascript" src="../../common/js/url.js" ></script>
+    <script type="text/javascript" src="../../common/js/area.js" ></script>
+     <script src="../js/jquery.form.js"></script>
+    
+		<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script type="text/javascript" src="../js/f-1-1.js"></script>
+    <script type="text/html" id="b-1-1-tmpl">    
+      {{each datum as value}}
+    	 <tr class="table-tr" data-id={{value.doctorId}}>
+    	 	<td class="checks"><input type="checkbox"></td>
+    	 	<td class="doc">{{value.doctorName}}</td>
+    	 	<td class="pho">{{value.contractInfoMap.tel}}</td>
+    	 	<td><a class="manager-name" data-toggle="modal" data-target="ReConModal">查看</a></td>
+    	 	<td><a class="patient" data-toggle="modal" data-target="#RePatientModel">查看</a></td>
+    	 	<td><a class="qrCode" data-toggle="modal" data-target="#QRcodeModal">查看</a></td>
+    	 	<td><a class="edit" data-toggle="modal" data-target="#editDocModal">编辑</a>
+    	 		<!--<a class="delete" data-toggle="modal" >删除</a>-->
+    	 	  <a class="relate" data-toggle="modal" data-target="#addPatientModal">关联新患者</a>
+    	 	  <a class="relateCon" data-toggle="modal" data-target="#addConModal">绑定顾问</a>
+    	 	  <!--<a class="changeArea" data-toggle="modal" data-target="#changeArea">修改区域</a>-->
+    	 	</td>
+    	 </tr>
+    	 
+    	{{/each}}
+    </script>
+    
+    <script id="advice-1-4-5-tmpl" type="text/html">			
+			  
+			 <!-- <option value="">--请选择--</option>-->
+				{{each datum as value}}
+					<option data-id={{value.areaID}}>{{value.areaName}}</option>
+				{{/each}}
+			
+		</script>
+		
+  <style>
+			.img-little {
+				height: 70px;
+				width: 70px;
+				display: inline-block;
+			}
+			
+			.ui-autocomplete {
+				display: block;
+				z-index: 99999;
+				height: 300px;
+				overflow-y: scroll;
+			}
+			.username {
+				display: inline-block;
+			}
+		</style>
+  </body>
+</html>
+

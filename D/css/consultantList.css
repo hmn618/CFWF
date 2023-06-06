@@ -1,0 +1,105 @@
+.modal-header{
+	/*border: none;*/
+	background-color:  #2EB7A7;
+	border-radius: 5px;
+
+	
+}
+.modal-footer{
+	border: none;
+	text-align: center;	
+}
+.modal-title{
+	text-align: center;
+	color: white;
+}
+.modal-body{
+	padding-bottom: 0;
+	font-size: 16px;
+	/*padding-top: 0;*/
+}
+.modal{
+	margin: 0 auto;
+	/*top: 50%;*/
+}
+.btn-success,.btn-success:hover{
+	background-color: #2EB7A7;
+}
+.yes{
+	margin-right: 30px;
+}
+
+textarea.reason{
+	resize: none;
+	height: 130px;
+}
+.pic{
+	border:none;
+	/*border: 1px solid #ADADAD;*/
+    /*border-radius:5px;*/ 
+    width:90px;  
+    height:100px;  
+    text-align: center;
+    float:left;
+    margin-top: 15px;
+}
+.des{
+    float:left;
+    margin-top: 7px;
+	margin-left: 15px;
+}
+.container-content{
+	margin: 30px 20px;
+	background-color: #FFFFFF;
+	border-bottom: 1px solid #B6B6B6;
+	border-right: 1px solid #B6B6B6;
+}
+.table-container
+{
+	padding: 30px;
+	
+}
+.table-container p{
+	font-size: 16px;
+}
+table
+{
+	text-align: center;
+	border-bottom: 1px solid #DBDBDB;
+	border-left: 1px solid #EEF8F9;
+	border-right: 1px solid #EEF8F9;
+	box-shadow: #999 0px 0px 2px;
+}
+.table-title
+{
+	background-color: #EAF6F8;
+}
+.table a:link,.table a:visited{
+	color:#2EB7A7;
+	
+}
+.table a:hover,.table a:active{
+	color:#2EB7A7;
+	text-decoration: none;
+}
+.finish{
+	color: red;
+}
+.title-container{
+	background-color:#2EB7A7;
+}
+.title-container p{
+	color: #FFFFFF;
+	font-family: "微软雅黑";
+	font-size: 18px;
+	padding:10px 20px;
+	font-weight: bold;
+	margin-bottom: -5px;
+}
+.tt{
+	font-size: 12px;
+	
+}
+div#myModal1,div#myModal2{
+	margin-top: 10%;
+}

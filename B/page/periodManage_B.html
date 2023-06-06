@@ -1,0 +1,919 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <title>春风微拂-周期管理</title>
+    <link href="../../common/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../common/css/common.css" />
+    <link rel="stylesheet" href="../../F/css/periodManager_F.css" />
+    <link rel="stylesheet" href="../../F/css/periodManageLog_F.css" />
+    <link rel="stylesheet" href="../../C/DVL/css/dvldraw.css">	
+    <style>
+    	.table_content td {
+				border-bottom: 1px dashed #B5B5B5 !important;
+				height: 25px !important;
+			}
+		.table-title td{
+				
+				height: 35px !important;
+			}
+	#apply_reason{
+		margin:5px 3px;
+	}
+	#apply_day{
+		margin: 3px 3px;
+	}
+
+    </style>
+    <link rel="stylesheet" href="../css/plan_F.css" />
+    <!--<link rel="stylesheet" href="../css/plan.css" />-->
+    <link rel="stylesheet" href="../../common/css/pages.css" />
+</head>
+
+<body>
+    <header class="clearfix">
+        <div class="logo"></div>
+        <h1>春风微辅—运营管理系统</h1>
+    </header>
+    <div class="menu-wrapper">
+    </div>
+    <div class="main-container">
+        <div class="container-detail clearfix">
+            <div class="schedule">
+                <div class="schedule-content" style="height: auto;">
+                    <div class="schedule-header">
+                        <span style="color: #FFF;">减重管理日程</span>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <tr>
+                                <td>会员：</td>
+                                <td><span id="mem_name"></span></td>
+                            </tr>
+                            <tr>
+                                <td>病程：</td>
+                                <td><span id="mem_day"></span></td>
+                            </tr>
+                            <tr>
+                                <td>主治医生：</td>
+                                <td><span id="mem_doctor"></span></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <caption><span class="index-span">最新指标：</span><span id="newdate"></span></caption>
+                            <tr>
+                                <td><span data-toggle="modal" data-target="#tableshow_weight" style="text-decoration: underline; cursor:pointer ;" >体重：</span></td>
+                                <td><span id="new_weight"></span></td>
+                            </tr>
+                            <tr>
+                                <td><span data-toggle="modal" data-target="#tableshow_lowpressure" style="text-decoration: underline;cursor:pointer ;">收缩压：</span></td>
+                                <td><span id="new_lowpressure"></span></td>
+                            </tr>
+                             <tr>
+                                <td><span data-toggle="modal" data-target="#tableshow_highpressure" style="text-decoration: underline;cursor:pointer ;">舒张压：</span></td>
+                                <td><span id="new_highpressure"></span></td>
+                            </tr>
+                            <tr>
+                                <td><span data-toggle="modal" data-target="#tableshow_blood" style="text-decoration: underline;cursor:pointer ;">空腹血糖：</span></td>
+                                <td><span id="new_blood"></span></td>
+                            </tr>
+                            <tr>
+                                <td><span data-toggle="modal" data-target="#tableshow_afterblood" style="text-decoration: underline;cursor:pointer ;">餐后两小时血糖:</span></td>
+                                <td><span id="new_afterblood"></span></td>
+                            </tr>
+                            <tr>
+                                <td><span data-toggle="modal" data-target="#tableshow_waist" style="text-decoration: underline;cursor:pointer ;">腰围:</span></td>
+                                <td><span id="new_waist"></span></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <caption><span class="index-span">上次指标：</span><span id="predate"></span></caption>
+                            <tr>
+                                <td>体重</td>
+                                <td><span id="weight"></span></td>
+                            </tr>
+                            <tr>
+                                <td>收缩压：</td>
+                                <td><span id="lowpressure"></span></td>
+                            </tr>
+                            <tr>
+                                <td>舒张压：</td>
+                                <td><span id="highpressure"></span></td>
+                            </tr>
+                            <tr>
+                                <td>空腹血糖：</td>
+                                <td><span id="blood"></span></td>
+                            </tr>
+                            <tr>
+                                <td>餐后两小时血糖:</td>
+                                <td><span id="afterblood"></span></td>
+                            </tr>
+                            <tr>
+                                <td>腰围：</td>
+                                <td><span id="waist"></span></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <caption><span class="index-span">原始指标：</span><span id="oridate"></span></caption>
+                            <tr>
+                                <td>体重：</td>
+                                <td><span id="ori_weight"></span></td>
+                            </tr>
+                            <tr>
+                                <td>收缩压：</td>
+                                <td><span id="ori_lowpressure"></span></td>
+                            </tr>
+                            <tr>
+                                <td>舒张压：</td>
+                                <td><span id="ori_highpressure"></span></td>
+                            </tr>
+                            <tr>
+                                <td>空腹血糖：</td>
+                                <td><span id="ori_blood"></span></td>
+                            </tr>
+                            <tr>
+                                <td>餐后两小时血糖:</td>
+                                <td><span id="ori_afterblood"></span></td>
+                            </tr>
+                            <tr>
+                                <td>腰围：</td>
+                                <td><span id="ori_waist"></span></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!--减重日程模态框-->
+            <div class="modal" id="tableshow_weight" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            		<div class="modal-dialog">
+            			<div class="modal-content">
+            				<div class="modal-header">
+            					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+							<h4 class="modal-title" id="myModalLabel" align="center">体重曲线图</h4>
+            				</div>
+            				<div class="modal-body">
+            					<div id="main_weight" align="center" style="width: 500px; height: 300px;"></div>
+            				</div>
+            				<div class="modal-footer">
+            					<button type="button" class="btn btn-primary" data-dismiss="modal">关闭</button>
+            					<!--<button type="button" class="btn btn-primary">提交更改</button>-->
+            				</div>
+            			</div><!-- /.modal-content -->
+            		</div><!-- /.modal-dialog -->
+            	</div><!-- /.modal -->
+            	<div class="modal" id="tableshow_lowpressure" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            		<div class="modal-dialog">
+            			<div class="modal-content">
+            				<div class="modal-header">
+            					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+							<h4 class="modal-title" id="myModalLabel" align="center">收缩压曲线图</h4>
+            				</div>
+            				<div class="modal-body">
+            					<div id="main_lowpressure" align="center" style="width: 500px; height: 300px;"></div>
+            				</div>
+            				<div class="modal-footer">
+            					<button type="button" class="btn btn-primary" data-dismiss="modal">关闭</button>
+            					<!--<button type="button" class="btn btn-primary">提交更改</button>-->
+            				</div>
+            			</div><!-- /.modal-content -->
+            		</div><!-- /.modal-dialog -->
+            	</div><!-- /.modal -->
+            		<div class="modal" id="tableshow_highpressure" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            		<div class="modal-dialog">
+            			<div class="modal-content">
+            				<div class="modal-header">
+            					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+							<h4 class="modal-title" id="myModalLabel" align="center">舒张压曲线图</h4>
+            				</div>
+            				<div class="modal-body">
+            					<div id="main_highpressure" align="center" style="width: 500px; height: 300px;"></div>
+            				</div>
+            				<div class="modal-footer">
+            					<button type="button" class="btn btn-primary" data-dismiss="modal">关闭</button>
+            					<!--<button type="button" class="btn btn-primary">提交更改</button>-->
+            				</div>
+            			</div><!-- /.modal-content -->
+            		</div><!-- /.modal-dialog -->
+            	</div><!-- /.modal -->
+            	<div class="modal" id="tableshow_blood" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            		<div class="modal-dialog">
+            			<div class="modal-content">
+            				<div class="modal-header">
+            					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+							<h4 class="modal-title" id="myModalLabel" align="center">空腹血糖曲线图</h4>
+            				</div>
+            				<div class="modal-body">
+            					<div id="main_blood" align="center" style="width: 500px; height: 300px;"></div>
+            				</div>
+            				<div class="modal-footer">
+            					<button type="button" class="btn btn-primary" data-dismiss="modal">关闭</button>
+            					<!--<button type="button" class="btn btn-primary">提交更改</button>-->
+            				</div>
+            			</div><!-- /.modal-content -->
+            		</div><!-- /.modal-dialog -->
+            	</div><!-- /.modal -->
+            	<div class="modal" id="tableshow_afterblood" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            		<div class="modal-dialog">
+            			<div class="modal-content">
+            				<div class="modal-header">
+            					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+							<h4 class="modal-title" id="myModalLabel" align="center">饭后两小时血糖曲线图</h4>
+            				</div>
+            				<div class="modal-body">
+            					<div id="main_afterblood" align="center" style="width: 500px; height: 300px;"></div>
+            				</div>
+            				<div class="modal-footer">
+            					<button type="button" class="btn btn-primary" data-dismiss="modal">关闭</button>
+            					<!--<button type="button" class="btn btn-primary">提交更改</button>-->
+            				</div>
+            			</div><!-- /.modal-content -->
+            		</div><!-- /.modal-dialog -->
+            	</div><!-- /.modal -->
+            	<div class="modal" id="tableshow_waist" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            		<div class="modal-dialog">
+            			<div class="modal-content">
+            				<div class="modal-header">
+            					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+							<h4 class="modal-title" id="myModalLabel" align="center">腰围曲线图</h4>
+            				</div>
+            				<div class="modal-body">
+            					<div id="main_waist" align="center" style="width: 500px; height: 300px;"></div>
+            				</div>
+            				<div class="modal-footer">
+            					<button type="button" class="btn btn-primary" data-dismiss="modal">关闭</button>
+            					<!--<button type="button" class="btn btn-primary">提交更改</button>-->
+            				</div>
+            			</div><!-- /.modal-content -->
+            		</div><!-- /.modal-dialog -->
+            	</div><!-- /.modal -->
+
+			<div class="modal" id="to_start1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            		<div class="modal-dialog">
+            			<div class="modal-content">
+            				<div class="modal-header mystart">
+            					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+							<!--<h4 class="modal-title" id="myModalLabel" align="center"></h4>-->
+            				</div>
+            				<div class="modal-body">
+
+            					<div class="content_wrap">
+            						<span class="apply_text">请确认当天是否为进入启动期日期，若为当天，则确认，否则取消</span>
+            						<!--<input id="apply_day" type="text" placeholder="单位为天" required="required" onkeyup='this.value=this.value.replace(/\D/gi,"")'>-->
+            						<!--<textarea id="apply_reason" placeholder="请输入理由:"></textarea>-->
+            					</div>
+            				</div>
+            				<div class="modal-footer">
+            					<button type="button" class="btn btn-primary" id="to_start_comfirm" data-dismiss="modal" >确认</button>
+            					
+            					<button type="button" class="btn btn-primary" data-dismiss="modal">取消</button>
+
+            					<!--<button type="button" class="btn btn-primary">提交更改</button>-->
+            				</div>
+            			</div><!-- /.modal-content -->
+            		</div><!-- /.modal-dialog -->
+            	</div><!-- /.modal -->
+
+			<div class="modal" id="apply_prolong" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            		<div class="modal-dialog">
+            			<div class="modal-content">
+            				<div class="modal-header">
+            					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+							<h4 class="modal-title" id="myModalLabel" align="center">申请理由</h4>
+            				</div>
+            				<div class="modal-body">
+            					<div class="content_wrap">
+            						<span class="apply_text">申请延长时间:</span>
+            						<input id="apply_day" type="text" placeholder="单位为天" required="required" onkeyup='this.value=this.value.replace(/\D/gi,"")'>
+            						<textarea id="apply_reason" placeholder="请输入理由:"></textarea>
+            					</div>
+            				</div>
+            				<div class="modal-footer">
+            					<button type="button" class="btn btn-primary" data-dismiss="modal">取消</button>
+            					<button type="button" class="btn btn-primary" id="apply_send" data-dismiss="modal" >提交</button>
+            					<!--<button type="button" class="btn btn-primary">提交更改</button>-->
+            				</div>
+            			</div><!-- /.modal-content -->
+            		</div><!-- /.modal-dialog -->
+            	</div><!-- /.modal -->
+
+            <div class="modal" id="apply_prolong1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            		<div class="modal-dialog">
+            			<div class="modal-content">
+            				<div class="modal-header">
+            					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+							<h4 class="modal-title" id="myModalLabel" align="center">申请理由</h4>
+            				</div>
+            				<div class="modal-body">
+            					<div class="content_wrap">
+            						<!--<span class="apply_text">申请延长时间:</span>-->
+            						<!--<input id="apply_day" type="text" placeholder="单位为天" required="required" onkeyup='this.value=this.value.replace(/\D/gi,"")'>-->
+            						<textarea id="apply_reason1" placeholder="请输入理由:"></textarea>
+            					</div>
+            				</div>
+            				<div class="modal-footer">
+            					<button type="button" class="btn btn-primary" data-dismiss="modal">取消</button>
+            					<button type="button" class="btn btn-primary" id="apply_send1" data-dismiss="modal" >提交</button>
+            					<!--<button type="button" class="btn btn-primary">提交更改</button>-->
+            				</div>
+            			</div><!-- /.modal-content -->
+            		</div><!-- /.modal-dialog -->
+            	</div><!-- /.modal -->
+            
+            
+            <div class="modal" id="apply_prolong2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            		<div class="modal-dialog">
+            			<div class="modal-content">
+            				<div class="modal-header">
+            					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+							<h4 class="modal-title" id="myModalLabel" align="center">申请理由</h4>
+            				</div>
+            				<div class="modal-body">
+            					<div class="content_wrap">
+            						<!--<span class="apply_text">申请延长时间:</span>-->
+            						<!--<input id="apply_day" type="text" placeholder="单位为天" required="required" onkeyup='this.value=this.value.replace(/\D/gi,"")'>-->
+            						<textarea id="apply_reason" placeholder="请输入理由:"></textarea>
+            					</div>
+            				</div>
+            				<div class="modal-footer">
+            					<button type="button" class="btn btn-primary" data-dismiss="modal">取消</button>
+            					<button type="button" class="btn btn-primary" id="apply_send2"data-dismiss="modal" >提交</button>
+            					<!--<button type="button" class="btn btn-primary">提交更改</button>-->
+            				</div>
+            			</div><!-- /.modal-content -->
+            		</div><!-- /.modal-dialog -->
+            	</div><!-- /.modal -->
+            
+            
+            
+            <div class="inner-container">
+                <div class="inner-container-content" style="height: auto; ">
+                    <div class="schedule-arrow">
+                        <span id="ready_time">准备期</span><img id="ready_img" src="../img/arrow.png" />
+                        <span id="start_time">启动期</span><img id="start_img" src="../img/arrow.png" />
+                        <span id="transit_time">过渡期</span><img id="transit_img" src="../img/arrow.png" />
+                        <span id="maintain_time">维持期</span><img id="maintain_img" src="../img/arrow.png" />
+                        <span id="back_time">回访期</span>
+                    </div>
+                    <div>
+                        <span class="index-span">最新干预计划：</span>
+                        <span class="plan-button">
+                        <span id="plan-date"></span>
+                        <!--<span data-toggle="modal" data-target="#edit-plan" class="edit-plan-btn type1">编辑计划</span>-->
+                        <span data-toggle="modal" data-target="#plan-history" class="plan-history-btn type1">查看历史</span>
+                        </span>
+                        	    <div class="plan-content">
+                        	    	
+                        	    </div>                        	   
+                    </div>
+                    <div>
+                        <span class="index-span">日志：</span>
+                        <span class="plan-button">
+                            <span id="msg"></span>
+                            <span id="date"></span>
+                      
+                        <!--<a data-toggle="modal" data-target="#editLog" href="#" id="eLog" class="type1" style="color:#ffffff;">编辑日志</a>-->
+                        <a data-toggle="modal" data-target="#History" href="#" id="sHistory" class="type1" style="color:#ffffff;">查看历史</a>
+                        </span>
+                        <div class="table-responsive">
+                           <table class="table1" id="table11"> 
+								
+						    </table> 
+						    <div class="pages4"></div> 
+                        </div>
+                    </div>
+                      <div>
+                        <span class="index-span">指标校对：</span>
+                        <span class="plan-button">
+                             <span id="index-Date"></span>
+                      
+                        <!--<a data-toggle="modal" data-target="#editIndex" href="#" id="" class="type1" style="color:#ffffff;">编辑指标</a>-->
+                        <a data-toggle="modal" data-target="#indexHistory" href="#" id="indexhistory" class="type1" style="color:#ffffff;">查看历史</a>
+                        </span>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <tr>
+                                    <td>指标:</td>
+                                    <td>
+                                            <table class="table">
+                                            <tr>
+                                                <td>体重</td>
+                                                <td><span id='weightIndex'></span>kg</td>
+                                                <td>尿酮</td>
+                                                <td> <span id='urineKetoneIndex'></span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>是否便秘</td>
+                                                <td><span id='isConstipationIndex'></span></td>
+                                                <td>腰围</td>
+                                                <td><span id='waistLineIndex'></span>cm</td>
+                                            </tr>
+                                            <tr>
+                                                <td>空腹血糖</td>
+                                                <td><span id='bloodSugarEmptyStomachIndex'></span>mmol/l</td>
+                                                <td>餐后两小时血糖</td>
+                                                <td><span id='bloodSugarAfter2hIndex'></span>mmol/l</td>
+                                            </tr>
+                                            <tr>
+                                                
+                                                <td>收缩压</td>
+                                                <td><span id='systolicPressureIndex'></span>mmhg</td>
+                                                <td>舒张压</td>
+                                                <td><span  id='diastolicPressureIndex'></span>mmhg</td>
+                                            </tr>
+                                   
+                                        </table>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="index-span">顾问回复：</span>
+                        <span class="plan-button">
+                           <span id="reply-Date"></span>
+                      
+                        <!--<a data-toggle="modal" data-target="#editReply" href="#" id="" class="type1" style="color:#ffffff;">编辑回复</a>-->
+                        <a data-toggle="modal" data-target="#replyHistory" href="#" id="replyhistory" class="type1" style="color:#ffffff;">查看历史</a>
+                        </span>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <tr>
+                                    <td id="replyContent"></td>
+                                </tr>
+                                <tr>
+                                    <td id="replyReason" style="float:right;color:red;border: 1px solid red;">
+                                      
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="index-span">顾问干预记录：</span>
+                        <span class="plan-button">
+                            <span id="record-Date"></span>
+                      
+                        <!--<a data-toggle="modal" data-target="#editRecord" href="#" id="eLog" class="type1" style="color:#ffffff;">编辑记录</a>-->
+                        <a data-toggle="modal" data-target="#recordHistory" href="#" id="recordhistory" class="type1" style="color:#ffffff;">查看历史</a>
+                        </span>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <tr>
+                                    <td id="recordContent"></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <!--<div class="button-group">-->
+                        <!--<button class="btn"><span>保存</span></button>-->
+                        <!--<button class="btn"><span>进入启动期</span></button>-->
+                        <!--<button class="btn"><span>申请延长时间</span></button>-->
+                        <!--<button class="btn"><span>申请进入回访期</span></button>-->
+                    <!--</div>-->
+                    <br>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 编辑启动期干预计划模态框 -->
+        <div class="modal editPlan" id="edit-plan" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+           <div class="modal-dialog">
+             <div class="modal-content">
+               <div class="modal-header editPlan-header" id="">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+               </div>
+             <div class="modal-body">
+             	<form id="plan-start-content">
+             	<div>一日能量参考范围:<input type="text" class="" id="energyReferencerange" placeholder="" value="0" onkeyup='this.value=this.value.replace(/\D/gi,"")'>Kcal，三餐分配
+             		<input type="text" class="" id="allocationBreakfast" placeholder="" value="0" onkeyup='this.value=this.value.replace(/\D/gi,"")'>:
+             		<input type="text" class="" id="allocationLunch" placeholder="" value="0" onkeyup='this.value=this.value.replace(/\D/gi,"")'>:
+             		<input type="text" class="" id="allocationDinner" placeholder="" value="0" onkeyup='this.value=this.value.replace(/\D/gi,"")'>（早，中餐可以吃的丰盛一些，晚餐后没有运动，可以少吃一点，清淡一些）</div>
+             	<div>早餐：谷物粉<input type="text" class="" id="breakfastCerealflour" placeholder="" value="0" onkeyup="clearNoNum(this)">包，
+             	           食物棒<input type="text" class="" id="breakfastFoodbar" placeholder="" value="0" onkeyup="clearNoNum(this)">根，
+             	           鸡蛋<input type="text" class="" id="breakfastEgg" placeholder="" value="0" onkeyup='clearNoNum(this)'>个（无糖，无淀粉），
+             	           <input type="text" class="last" id="breakfastSupplement" placeholder=" ">
+             	</div>
+             	<div>中餐：食物棒<input type="text" class="" id="lunchFoodbar" placeholder="" value="0" onkeyup="clearNoNum(this)">根，
+             	           蔬菜<input type="text" class="" id="lunchVegetable" placeholder="" value="0" onkeyup='this.value=this.value.replace(/[^(\d+.\d*)(\-)(\d*)$]/gi,"")'>两，
+             	           荤菜：瘦肉<input type="text" class="" id="lunchMeat" placeholder="" value="0" onkeyup='this.value=this.value.replace(/[^(\d+.\d*)(\-)(\d*)$]/gi,"")'>两+
+             	           鱼虾<input type="text" class="" id="lunchFish" placeholder="" value="0" onkeyup='this.value=this.value.replace(/[^(\d+.\d*)(\-)(\d*)$]/gi,"")'> 两，
+             	           	<input type="text" class="last" id="lunchSupplement" placeholder="">
+             	</div>
+             	<div>晚餐：谷物粉<input type="text" class="" id="dinnerCerealflour" placeholder="" value="0" onkeyup="clearNoNum(this)">包，
+             	          食物棒<input type="text" class="" id="dinnerFoodbar" placeholder="" value="0" onkeyup="clearNoNum(this)">根，
+             	          蔬菜<input type="text" class="" id="dinnerVegetable" placeholder="" value="0" onkeyup='this.value=this.value.replace(/[^(\d+.\d*)(\-)(\d*)$]/gi,"")'>两，
+             	          荤菜：瘦肉<input type="text" class="" id="dinnerMeat" placeholder="" value="0" onkeyup='this.value=this.value.replace(/[^(\d+.\d*)(\-)(\d*)$]/gi,"")'>两+
+             	          鱼虾<input type="text" class="" id="dinnerFish" placeholder="" value="0" onkeyup='this.value=this.value.replace(/[^(\d+.\d*)(\-)(\d*)$]/gi,"")'>两，
+             	          <input type="text" class="last" id="dinnerSupplement" placeholder="">
+             	</div>
+             	<div>运动：<input type="text" class="last" id="movement" placeholder=""> </div>
+             	<div>饮水：<input type="text" class="" id="drinking" placeholder="" value="0" onkeyup='this.value=this.value.replace(/\D/gi,"")'>ml/日（白水，柠檬水，菊花茶）</div>
+             	</form>
+             </div><!--modal-body -->
+             <div class="modal-footer editPlan-footer" id="">
+                <button type="button" class="btn btn-default save" data-dismiss="modal">确定</button>
+                <button type="button" class="btn btn-default clear">清空</button>
+              </div>
+           </div><!-- /.modal-content -->
+         </div><!-- /.modal -->
+    </div>
+     <!-- 编辑其他期干预计划模态框 -->
+    <div class="modal editPlan" id="edit-plan-other" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+           <div class="modal-dialog">
+             <div class="modal-content">
+               <div class="modal-header editPlan-header" id="">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+               </div>
+             <div class="modal-body">
+             	<textarea rows="10" class="plan-content-other"></textarea>
+             </div><!--modal-body -->
+             <div class="modal-footer editPlan-footer" id="">
+                <button type="button" class="btn btn-default save" data-dismiss="modal">确定</button>
+                <button type="button" class="btn btn-default clear">清空</button>
+              </div>
+           </div><!-- /.modal-content -->
+         </div><!-- /.modal -->
+    </div>
+    
+	    <!-- 编辑干预计划历史模态框 -->
+	    <div class="modal" id="plan-history" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+               <div class="modal-content">
+                  <div class="modal-header" id="plan-history-header">
+                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                     <p class="modal-title" id="myModalLabel">顾问干预计划</p>
+                  </div>
+               <div class="modal-body">
+               	  <div class="table-inner">
+               	  	 <div class="table-responsive"> 
+                       <table class="table table-history"> 
+                               <tr class="table-title"> 
+                               <td style="min-width: 95px;">日期</td> 
+                               <td>顾问干预计划</td>
+                               </tr> 
+                               <tr class="table-tr"> 
+                               </tr>                               
+                       </table> 
+                   </div>   
+               	  </div>
+               </div>
+               <div class="modal-footer plan-history-footer" id="">
+               <div class="pages"></div> 
+              </div>
+             </div><!-- /.modal-content -->
+         </div><!-- /.modal -->
+        </div>
+        
+         <!-- 编辑启动期日志模态框 -->
+        <div class="modal" id="editLog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+           <div class="modal-dialog" >
+             <div class="modal-content">
+               <div class="modal-header" id="editLog-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <p class="modal-title edit_log" id="myModalLabel">编辑日志</p>
+               </div>
+             <div class="modal-body">
+             	<form>
+             	<div>
+             		<div class="log_left">
+             			<span>指标:</span>
+             		</div>
+             		<div class="logId">
+             			日志编号<input type="text" id="tlogId" >
+             		</div>
+             		<div class="memberId">
+             			会员编号<input type="text" id="tmemberId">
+             		</div>
+             		<div class="log_right">
+	             		体重<input type="text"  id="tweight"  onkeyup="value=value.replace(/[^\d.]/g,'')">kg<span class="enter"></span>
+	             	         尿酮<select id="turineKetone">
+	             	           	<option value='0'>无</option>
+	             	           	<option value='1'>1</option>
+	             	           	<option value='2'>2</option>
+	             	           	<option value='3'>3</option>
+	             	           	<option value='4'>4</option>
+	             	           </select>+<br/>
+	             	           是否便秘 <select id="tisConstipation"><option value='无'>无</option><option value='有'>有</option></select><span class="enter1"></span>
+	             	           腰围<input type="text" class="" id="twaistLine" onkeyup="value=value.replace(/[^\d.]/g,'')">cm<br/>
+	             	           空腹血糖<input type="text" class="" id="tbloodSugarEmptyStomach" onkeyup="value=value.replace(/[^\d.]/g,'')">mmol/l<span class="enter"></span>
+	             	           餐后2h血糖<input type="text" class="" id="tbloodSugarAfter2h" onkeyup="value=value.replace(/[^\d.]/g,'')">mmol/l<br/>
+	             	           收缩压<input type="text" class="" id="tsystolicPressure" onkeyup="value=value.replace(/[^\d.]/g,'')">mmhg<span class="enter2"></span>
+	             	           舒张压<input type="text" class="" id="tdiastolicPressure" onkeyup="value=value.replace(/[^\d.]/g,'')">mmhg
+	             	</div>
+             	    
+             	</div>
+             	<div>
+             		<div class="log_left">
+             			<span>起床时间:</span>
+             		</div>
+             		<div class="log_right1">
+	             		<!--<input type="text" class="" id="tgetUpTime" placeholder="">-->
+	             		<select id="tgetUpTime">
+	             			<option value="1:00">1:00</option>
+	             			<option value="2:00">2:00</option>
+	             			<option value="3:00">3:00</option>
+	             			<option value="4:00">4:00</option>
+	             			<option value="5:00">5:00</option>
+	             			<option value="6:00">6:00</option>
+	             			<option value="7:00">7:00</option>
+	             			<option value="8:00">8:00</option>
+	             			<option value="9:00">9:00</option>
+	             			<option value="10:00">10:00</option>
+	             			<option value="11:00">11:00</option>
+	             			<option value="12:00">12:00</option>
+	             			<option value="13:00">13:00</option>
+	             			<option value="14:00">14:00</option>
+	             			<option value="15:00">15:00</option>
+	             			<option value="16:00">16:00</option>
+	             			<option value="17:00">17:00</option>
+	             			<option value="18:00">18:00</option>
+	             			<option value="19:00">19:00</option>
+	             			<option value="21:00">21:00</option>
+	             			<option value="22:00">22:00</option>
+	             			<option value="23:00">23:00</option>
+	             			<option value="24:00">24:00</option>
+	             		</select>
+	             	</div>
+             	    
+             	</div>
+             	<div>
+             		<div class="log_left">
+             			<span>饮食:</span>
+             		</div>
+             		<div class="log_right2">
+	             		早餐<input type="text" class="" id="tbreakfast">
+	             		运动<input type="text" class="" id="tmoveMent1">
+	             		午餐<input type="text" class="" id="tlunch">
+	             		运动<input type="text" class="" id="tmoveMent2">
+	             		晚餐<input type="text" class="" id="tdinner">
+	             		运动<input type="text" class="" id="tmoveMent3">
+	             		其他<input type="text" class="" id="tsuppleInformation" >
+	             	</div>
+             	    
+             	</div>
+             	<div>
+             		<div class="log_left">
+             			<span>全天饮水量:</span>
+             		</div>
+             		<div class="log_right1">
+	             		<input type="text" class="" id="tallDayDrinking" onkeyup="value=value.replace(/[^\d.]/g,'')">ml
+	             	</div>
+             	    
+             	</div>
+             	<div>
+             		<div class="log_left">
+             			<span>睡眠时间:</span>
+             		</div>
+             		<div class="log_right1">
+	             		<input type="text" class="" id="tsleepTime" onkeyup="value=value.replace(/[^\d.]/g,'')">小时
+	             	</div>
+             	    
+             	</div>
+             	<div>
+             		<div class="log_left">
+             			<span>用药情况:</span>
+             		</div>
+             		<div class="log_right1">
+	             		<textarea id="tmedication" style="width: 79%; height: 108px;"></textarea>
+	             	</div>
+             	    
+             	</div>
+             	<div>
+             		<div class="log_left">
+             			<span>患者感受:</span>
+             		</div>
+             		<div class="log_right1">
+	             		<textarea id="tpatientExperience" style="width: 79%; height: 108px;"></textarea>
+	             	</div>
+             	    
+             	</div>
+             	<div>
+             		<div class="log_left">
+             			<span>填写人:</span>
+             		</div>
+             		<div class="log_right3">
+	             		<input type="text" class="" id="operatorName" disabled="disabled">
+	             	</div>
+             	    <div class="log_left">
+	             			<span>日志时间:</span>
+	             		</div>
+	             		<div class="log_right3">
+		             		<input type="date" id="logDate">
+		             	</div>
+		             <div class="clear"></div>
+             	</div>
+             	</form>
+             </div><!--modal-body -->
+             <div class="modal-footer" id="editPlan-footer">
+                <button type="button" class="btn" id="save">保存</button>
+                <button type="button" class="btn" data-dismiss="modal">取消</button>
+              </div>
+           </div><!-- /.modal-content -->
+         </div><!-- /.modal -->
+    </div>
+    
+    <!-- 编辑日志历史模态框 -->
+	    <div class="modal" id="History" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog" style="width:90%">
+               <div class="modal-content">
+                  <div class="modal-header" id="editLog-header">
+	                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	                  <p class="modal-title edit_log" id="myModalLabel">日志历史</p>
+	               </div>
+               	<div class="modal-body">
+               	  <div class="table-inner">
+               	  	<div class="table-responsive"> 
+						    <table class="table1" id="table1"> 
+
+						    </table> 
+						</div>
+               	  </div>
+               </div>
+               <div class="modal-footer plan-history-footer" id="">
+               		<div class="pages2"></div> 
+               </div>
+             </div><!-- /.modal-content -->
+         </div><!-- /.modal -->
+       </div>
+    <!-- wang -->
+                    <!-- 编辑干预记录模态框 -->
+
+    <div class="modal editPlan" id="editRecord" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+           <div class="modal-dialog">
+             <div class="modal-content">
+               <div class="modal-header editPlan-header" id="">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+               </div>
+             <div class="modal-body">
+                <textarea rows="10" class="plan-content-other" id="edit-record"></textarea>
+             </div><!--modal-body -->
+             <div class="modal-footer editPlan-footer" id="">
+                <button type="button" class="btn btn-default save" id="saveRecord">确定</button>
+                <button type="button" class="btn btn-default clear" id="clearRecord" >清空</button>
+              </div>
+           </div><!-- /.modal-content -->
+         </div><!-- /.modal -->
+    </div>
+    <!-- 干预记录历史模态框 -->
+    <div class="modal" id="recordHistory" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+               <div class="modal-content">
+                  <div class="modal-header" id="plan-history-header">
+                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                     <p class="modal-title" id="myModalLabel">顾问干预记录</p>
+                  </div>
+               <div class="modal-body">
+                  <div class="table-inner">
+                     <div class="table-responsive"> 
+                       <table class="table table-history" id="recordTable"> 
+                                                           
+                       </table> 
+                   </div>   
+                  </div>
+               </div>
+               <div class="modal-footer plan-history-footer" id="">
+               <div class="pages4" id="recordPages" ></div> 
+              </div>
+             </div><!-- /.modal-content -->
+         </div><!-- /.modal -->
+        </div>
+        <!-- /wang -->
+        <!-- wang -->
+                    <!-- 编辑顾问回复模态框 -->
+
+    <div class="modal editPlan" id="editReply" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+           <div class="modal-dialog">
+             <div class="modal-content">
+               <div class="modal-header editPlan-header" id="">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+               </div>
+             <div class="modal-body">
+                <div class="replyId">
+             			回复编号<input type="text" id="treplyId" >
+                </div>
+                <textarea rows="10" class="plan-content-other" id="edit-reply"></textarea>
+             </div><!--modal-body -->
+             <div class="modal-footer editPlan-footer" id="">
+                <button type="button" class="btn btn-default save" id="saveReply">确定</button>
+                <button type="button" class="btn btn-default clear" id="clearReply">清空</button>
+              </div>
+           </div><!-- /.modal-content -->
+         </div><!-- /.modal -->
+    </div>
+    <!-- 顾问回复历史模态框 -->
+        <div class="modal" id="replyHistory" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+               <div class="modal-content">
+                  <div class="modal-header" id="plan-history-header">
+                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                     <p class="modal-title" id="myModalLabel">顾问回复</p>
+                  </div>
+               <div class="modal-body">
+                  <div class="table-inner">
+                     <div class="table-responsive"> 
+                       <table class="table table-history" id="replyTable"> 
+                       </table> 
+                   </div>   
+                  </div>
+               </div>
+               <div class="modal-footer plan-history-footer" id="">
+               <div class="pages5" id="replyPages"></div> 
+              </div>
+             </div><!-- /.modal-content -->
+         </div><!-- /.modal -->
+        </div>
+        <!-- /wang -->
+        <!-- wang -->
+                    <!-- 编辑指标模态框 -->
+
+    <div class="modal editPlan" id="editIndex" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+           <div class="modal-dialog">
+             <div class="modal-content">
+               <div class="modal-header editPlan-header" id="">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+               </div>
+             <div class="modal-body">
+                <form>
+                <div>
+                    <div class="log_left">
+                        <span>指标:</span>
+                    </div>
+                    <div class="log_right">
+                       <div class="proofId">
+             				指标编号<input type="text" id="tproofIdIndex" >
+             		   </div>
+                        体重<input type="text" class="" id="tweightIndex" placeholder="">kg<span class="enter"></span>
+                               尿酮<input type="text" class="" id="turineKetoneIndex" placeholder="">+<br/>
+                               是否便秘 <select id="tisConstipationIndex"><option value='有'>有</option><option value='无'>无</option></select><span class="enter1"></span>
+                               腰围<input type="text" class="" id="twaistLineIndex" placeholder="">cm<br/>
+                               空腹血糖<input type="text" class="" id="tbloodSugarEmptyStomachIndex" placeholder="">mmol/l<span class="enter"></span>
+                               餐后2h血糖<input type="text" class="" id="tbloodSugarAfter2hIndex" placeholder="">mmol/l<br/>
+                               收缩压<input type="text" class="" id="tsystolicPressureIndex" placeholder="">mmhg<span class="enter2"></span>
+                               舒张压<input type="text" class="" id="tdiastolicPressureIndex" placeholder="">mmhg
+                    </div>
+                  </form>  
+                </div>
+             </div><!--modal-body -->
+             <div class="modal-footer editPlan-footer" >
+                <button type="button" class="btn btn-default save" id="saveIndex">确定</button>
+                <button type="button" class="btn btn-default clear" id="clearIndex">清空</button>
+              </div>
+           </div><!-- /.modal-content -->
+         </div><!-- /.modal -->
+    </div>
+    <!-- 顾问指标历史模态框 -->
+        <div class="modal" id="indexHistory" tabindex="-1" role="dialog" aria-labelledby="myModalLabelindex" aria-hidden="true">
+            <div class="modal-dialog">
+               <div class="modal-content">
+                  <div class="modal-header" id="plan-history-header">
+                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                     <p class="modal-title" id="myModalLabel">指标历史</p>
+                  </div>
+               <div class="modal-body">
+                  <div class="table-inner">
+                     <div class="table-responsive"> 
+                       <table class="table table-history " id="indexTable"> 
+                                                          
+                       </table> 
+                   </div>   
+                  </div>
+               </div>
+               <div class="modal-footer plan-history-footer" id="">
+               <div class="pages3" id="indexPages"></div> 
+              </div>
+             </div><!-- /.modal-content -->
+         </div><!-- /.modal -->
+        </div>
+        <!-- /wang -->
+  
+        <script src="../../common/js/jquery.min.js"></script>
+        <script src="../../common/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../../common/js/template.js"></script>
+        <script type="text/javascript" src="../js/menuB.js"></script>
+        <script type="text/javascript" src="../../common/js/url.js"></script>
+        <script type="text/javascript" src="../../common/js/pages.js"></script>
+        <script type="text/javascript" src="../../common/js/jquery.pagination.js"></script>
+        <script type="text/javascript" src="../../C/js/periodManager.js"></script>
+        <script type="text/javascript" src="../../F/js/periodManageLog_F.js"></script>
+        <script type="text/javascript" src="../../C/js/periodManageReply.js"></script>
+        <script type="text/javascript" src="../../C/js/periodManageRecord.js"></script>
+        <script type="text/javascript" src="../../C/js/periodManageIndex.js"></script>
+        <script type="text/javascript" src="../../C/js/plan.js"></script>
+        <script type="text/javascript" src="../../F/js/periodleft_F.js"></script>
+        <script type="text/javascript" src="../../C/DVL/scripts/d3.layout.cloud.js"></script>
+        <script type="text/javascript" src="../../C/DVL/scripts/d3.min.js"></script>
+        <script type="text/javascript" src="../../C/DVL/scripts/DVL.js"></script>
+        <script type="text/javascript" src="../../C/DVL/scripts/echarts.js"></script>
+        <script type="text/javascript" src="../../C/DVL/scripts/echarts.min.js"></script>
+        <script type="text/javascript" src="../../C/DVL/scripts/show.js"></script>
+        
+</body>
+</html>

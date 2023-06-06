@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <title>春风微拂B-2-1-文章管理</title>
+
+    <link rel="stylesheet" href="../css/table.css" />
+    <link href="../../common/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/article-2-1.css" />
+    <link href="../css/video-js.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../common/css/common.css" />
+    <link rel="stylesheet" href="../../common/css/pages.css">s
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+  	<header class="clearfix">
+        <div class="logo"></div>
+        <h1>春风微辅—运营管理系统</h1>
+    </header>
+    <!--<div class="menu">-->
+    <div class="menu-wrapper">
+    	    
+    </div>
+    <!--</div>-->
+    <!--<div class="footer">
+        春风微辅—运营管理系统
+    </div>-->
+    <div class="main-container">
+    	<div class="container-detail clearfix">
+        	<div class="container_content">
+        		<div class="container-btn">
+        			<button id="submit1" type="button" class="btn1" onclick="javascrtpt:window.location.href='article-2-3.html'">点击发布图文消息</button>
+        			<button id="submit2" type="button" class="btn2" onclick="javascrtpt:window.location.href='article-2-4.html'">点击发布音视频消息</button>
+        			<div class="clear"></div>
+        		</div>
+        		<div class="container-content">
+    	  			<div class="title-container">
+	    	  			<p>文件夹</p>
+	    	  		</div>
+	    	  		<div class="content">
+	    	  			<div class="content_title">
+	    	  				<a href="#" onclick="change_div('pic')" class="pic">图文消息<span id="pic_all"></span></a>
+	    	  				<a href="#" onclick="change_div('music')" class="music">音视频消息<span id="music_all"></span></a>
+	    	               
+	    	  				<div class="clear"></div>
+	    	  			</div>
+	    	  			<div class="content_bor">
+	    	  				<div class="pic_bor" id="pic_bor"></div>
+	    	                <div class="music_bor" id="music_bor"></div>
+	    	            </div>
+	    	            <div class="content_content">
+	    	            	<a href="#" id="tpic" data-toggle='modal' data-target='#SendMuchTo' onclick="sendIds()">批量推送</a>
+	    	            	<div class="clear"></div>
+	    	            	
+							 <div class="row" id="pictext">
+							 	 <div id="pictext_content">
+							    
+							    </div>
+							    <div class="pp"></div>
+							    <div class="pages"></div> 
+							  </div>
+							  
+							  
+							  
+							  <div class="row" id="music">
+							  	<div id="music_content">
+							   
+							    </div>
+							     <div class="pp"></div>
+							     <div class="pages2"></div>
+							  </div>
+							
+	    	            </div>
+	    	            </div>
+	    	            
+	    	  		</div>
+	    	  	</div>
+        	</div>
+        </div><!--container-detail-->
+    </div><!--main-container-->
+    
+    
+    <!--  单个推送输入密码弹框 -->
+    		<div class="modal" id="SendTo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			  <div class="modal-dialog">
+			    <div class="modal-content" id="member-tags-add">
+			      <div class="modal-header" id="addTags-model-head">
+			        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+			      </div>
+			      <div class="modal-body">
+			      	<form class="form-horizontal" role="form">
+			      		<div class="form-group">
+							    <label for="inputPassword" class="col-sm-4 control-label">选择医生：</label>
+							    <div class="col-sm-6">
+							      <select class="form-control" id="selectDoctor">
+								      
+								    </select>
+							    </div>
+							  </div>
+			          <div class="form-group">
+							    <label for="inputPassword" class="col-sm-4 control-label">推送码：</label>
+							    <div class="col-sm-6">
+							     <input type="text" class="form-control" id="newTag" clientidmode="Static"/>
+							    </div>
+							  </div>
+			        
+			       </form>
+			        <p class="item2"></p>
+			      </div>
+			      <div class="modal-footer" id="addTags-model-tail">
+			        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+			        <button type="button" class="btn btn-primary" id="tPwd">提交</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+			<!--  批量推送输入密码弹框 -->
+    		<div class="modal" id="SendMuchTo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			  <div class="modal-dialog">
+			    <div class="modal-content" id="member-tags-add">
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+			      </div>
+			      <div class="modal-body">
+			      	<form class="form-horizontal" role="form">
+			      		<div class="form-group">
+							    <label for="inputPassword" class="col-sm-4 control-label">选择医生：</label>
+							    <div class="col-sm-6">
+							      <select class="form-control" id="selectDoctors">
+								      
+								    </select>
+							    </div>
+							  </div>
+			          <div class="form-group">
+							    <label for="inputPassword" class="col-sm-4 control-label">推送码：</label>
+							    <div class="col-sm-6">
+							     <input type="text" class="form-control" id="newTags" clientidmode="Static"/>
+							    </div>
+							  </div>
+			        
+			       </form>
+			        <p class="item2"></p>
+			      </div>
+			      <div class="modal-footer" id="addTags-model-tail">
+			        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+			        <button type="button" class="btn btn-primary" id="tPwds">提交</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+			
+			
+			
+    <script src="../../common/js/jquery.min.js"></script>
+    <script src="../../common/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../common/js/url.js"></script>
+    <script type="text/javascript" src="../../common/js/template.js" ></script>
+    <script type="text/javascript" src="../js/menuB.js"></script>
+    <script type="text/javascript" src="../js/article-2-1.js"></script>
+    <script type="text/javascript" src="../../common/js/jquery.pagination.js"></script>
+    <script type="text/javascript" src="../../common/js/pages.js"></script>
+  	<script src="../js/video.min.js"></script>
+  </body>
+</html>
+

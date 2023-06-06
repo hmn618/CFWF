@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>春风微拂D-5-1-会员病例审批页面</title>
+
+    <link href="../../common/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/replyDetail.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../common/css/common.css" />
+    <link rel="stylesheet" href="../css/table.css" />
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+  	<header class="clearfix">
+        <div class="logo"></div>
+        <h1>春风微辅—运营管理系统</h1>
+    </header>
+    <!--<div class="menu">-->
+    <div class="menu-wrapper">
+    	    
+    </div>
+    <!--</div>-->
+    <!--<div class="footer">
+        春风微辅—运营管理系统
+    </div>-->
+    <div class="main-container">
+    	    <div class="container-detail clearfix">
+             <div class="table-container">
+            		 <div class="table-content">
+    	  			  	<a href="caseList.html" class="glyphicon glyphicon-chevron-left"></a>
+					<form>
+						<div class="form-group">
+							<h3><label class="control-label">会员病例：</label></h3>
+								<textarea class="form-control dairy" readonly="readonly" placeholder="暂无内容"></textarea>
+						</div>
+					</form>
+					<form>
+						<div class="form-group">
+							<h3><label class="control-label">主管建议：</label></h3>
+								<textarea class="form-control reply" placeholder="暂无内容"></textarea>
+						</div>
+					</form>
+					<div class="btnDiv">
+						<button class="btn btn-success yes" data-toggle="modal" data-target="#myModal">审批通过</button>
+				  	    <button class="btn btn-danger no" data-toggle="modal" data-target="#myModal1">未通过，仍需修改</button>
+					</div>
+             	</div>
+             		<!-- 第一个模态框声明：通过 -->      
+				<!--fade设置淡入淡出效果-->
+				<div class="modal fade" id="myModal" tabindex="-1"><!--tabindex="-1"让焦点永远在上面，即取消掉焦点-->
+					<!-- 窗口声明 -->
+					<div class="modal-dialog modal-sm">
+						<!-- 内容声明 -->
+						<div class="modal-content">
+							<!-- 头部 -->
+							<div class="modal-header">
+								<button class="close" data-dismiss="modal"><span>&times;</span></button><!--这是一个关闭按钮，data-dismiss="modal"是js的一个控件，有了它就能关闭了-->
+								<h4 class="modal-title"><b>操作成功，已通过申请！</b></h4>
+							</div>
+							<!-- 主体 -->
+							<!--<div class="modal-body">
+								操作成功，已通过申请！-->
+								<!--在主体部分使用栅格系统中的流体-->
+								<!--<div class="container-fluid">
+									<div class="row">
+										<div class="col-md-4">1</div>
+										<div class="col-md-4">2</div>
+										<div class="col-md-4">3</div>
+									</div>
+								</div>-->
+							<!--</div>-->
+							<!-- 注脚 -->
+							<!--<div class="modal-footer">-->
+								<!--<button class="btn btn-default btn-sm">确定</button>-->
+								<!--<button class="btn btn-primary">登录</button>-->
+							<!--</div>-->
+						</div>
+					</div>
+				</div>
+					<!-- 第一个模态框声明：通过 -->      
+				<!--fade设置淡入淡出效果-->
+				<div class="modal fade" id="myModal1" tabindex="-1"><!--tabindex="-1"让焦点永远在上面，即取消掉焦点-->
+					<!-- 窗口声明 -->
+					<div class="modal-dialog modal-sm">
+						<!-- 内容声明 -->
+						<div class="modal-content">
+							<!-- 头部 -->
+							<div class="modal-header">
+								<button class="close" data-dismiss="modal"><span>&times;</span></button><!--这是一个关闭按钮，data-dismiss="modal"是js的一个控件，有了它就能关闭了-->
+								<h4 class="modal-title"><b>操作成功，未通过申请！</b></h4>
+							</div>
+							<!-- 主体 -->
+							<!--<div class="modal-body">
+								操作成功，已通过申请！-->
+								<!--在主体部分使用栅格系统中的流体-->
+								<!--<div class="container-fluid">
+									<div class="row">
+										<div class="col-md-4">1</div>
+										<div class="col-md-4">2</div>
+										<div class="col-md-4">3</div>
+									</div>
+								</div>-->
+							<!--</div>-->
+							<!-- 注脚 -->
+							<!--<div class="modal-footer">-->
+								<!--<button class="btn btn-default btn-sm">确定</button>-->
+								<!--<button class="btn btn-primary">登录</button>-->
+							<!--</div>-->
+						</div>
+					</div>
+				</div>
+				<!--<button class="btn btn-primary btn-lg" id="btn" data-toggle="modal" data-target="#myModal">点击弹窗</button>-->
+             </div>               
+        </div><!--container-detail-->
+    </div><!--main-container-->
+    <script type="text/javascript" src="../../common/js/url.js"></script>
+    <script src="../../common/js/jquery.min.js"></script>
+    <script src="../../common/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../common/js/template.js" ></script>
+    <script type="text/javascript" src="../js/menu.js"></script>
+    
+  </body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>春风微拂D-3-1-日志和回复内容页面</title>
+
+    <link href="../../common/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/log.css" rel="stylesheet">
+    <link href="../css/replyDetail.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../common/css/common.css" />
+    <link rel="stylesheet" href="../css/table.css" />
+    
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+  	<header class="clearfix">
+        <div class="logo"></div>
+        <h1>春风微辅—运营管理系统</h1>
+    </header>
+    <!--<div class="menu">-->
+    <div class="menu-wrapper">
+    	    
+    </div>
+    <!--</div>-->
+    <!--<div class="footer">
+        春风微辅—运营管理系统
+    </div>-->
+    <div class="main-container">
+    	    <div class="container-detail clearfix">
+             <div class="table-container">
+            		 <div class="table-content">
+            		 	<!--href="replyCheckList.html"-->
+             		<a href="#" class="glyphicon glyphicon-chevron-left returnPage">返回</a>
+					<form>
+						<div class="form-group">
+							<h3><label class="control-label">患者日志：</label></h3>
+								<!--<textarea class="form-control dairy" readonly="readonly" placeholder="暂无内容"></textarea>-->
+								<!--复制开始-->
+								
+					<div class="newest-plan">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <tr>
+                                    <td>指标:</td>
+                                    <td>
+                                        <table class="table">
+                                            <tr>
+                                                <td>体重</td>
+                                                <td><span id='weight'></span>kg</td>
+                                                <td>尿酮</td>
+                                                <td> <span id='urineKetone'></span>+</td>
+                                            </tr>
+                                            <tr>
+                                                <td>是否便秘</td>
+                                                <td><span id='isConstipation'></span></td>
+                                                <td>腰围</td>
+                                                <td><span id='waistLine'></span>cm</td>
+                                            </tr>
+                                            <tr>
+                                                <td>空腹血糖</td>
+                                                <td><span id='bloodSugarEmptyStomach'></span>mmol/l</td>
+                                                <td>餐后两小时血糖</td>
+                                                <td><span id='bloodSugarAfter2h'></span>mmol/l</td>
+                                            </tr>
+                                            <tr>
+                                                
+                                                <td>收缩压</td>
+                                                <td><span id='systolicPressure'></span>mmhg</td>
+                                                <td>舒张压</td>
+                                                <td><span  id='diastolicPressure'></span>mmhg</td>
+                                            </tr>
+                                   
+                                        </table>
+                                </tr>
+                                <tr>
+                                    <td>起床时间：</td>
+                                    <td><span id='getUpTime'></span></td>
+                                </tr>
+                                <tr>
+                                    <td>饮食：</td>
+                                    <td>
+                                        <table class="table">
+                                            <tr>
+                                                <td>早餐：</td>
+                                                <td><span id='breakfast'></span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>运动：</td>
+                                                <td><span id='moveMent1'></span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>午餐：</td>
+                                                <td><span id='lunch'></span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>运动：</td>
+                                                <td><span id='moveMent2'></span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>晚餐：</td>
+                                                <td><span  id='dinner'></span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>运动：</td>
+                                                <td><span id='moveMent3'></span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>其他</td>
+                                                <td><span id='suppleInformation'></span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>全天饮水量：</td>
+                                    <td><span id='allDayDrinking'></span>ml</td>
+                                </tr>
+                                <tr>
+                                    <td>睡眠时间：</td>
+                                    <td><span id='sleepTime'></span></td>
+                                </tr>
+                                <tr>
+                                    <td>用药情况：</td>
+                                    <td><span id='medication'></span></td>
+                                </tr>
+                                <tr>
+                                    <td>患者感受：</td>
+                                    <td><span  id='patientExperience'></span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+								
+								<!--复制结束-->
+								
+								
+								
+								
+								
+						</div>
+					</form>
+					<form>
+						<div class="form-group">
+							<h3><label class="control-label">顾问回复：</label></h3>
+								<textarea class="form-control reply" readonly="readonly" placeholder="暂无内容"></textarea>
+						</div>
+					</form>
+             	</div>
+				<!--<button class="btn btn-primary btn-lg" id="btn" data-toggle="modal" data-target="#myModal">点击弹窗</button>-->
+             </div>               
+        </div><!--container-detail-->
+    </div><!--main-container-->
+    <script type="text/javascript" src="../../common/js/url.js"></script>
+    <script src="../../common/js/jquery.min.js"></script>
+    <script src="../../common/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../common/js/template.js" ></script>
+    <script type="text/javascript" src="../js/menu.js"></script>
+    <script type="text/javascript" src="../js/replyDetail.js"></script>
+    
+  
+  </body>
+</html>

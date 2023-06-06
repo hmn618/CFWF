@@ -1,0 +1,182 @@
+.container-content{
+	margin: 30px 20px;
+	background-color: #FFFFFF;
+	border-bottom: 1px solid #B6B6B6;
+	border-right: 1px solid #B6B6B6;
+}
+.title-container{
+	background-color:#2EB7A7;
+}
+.title-container p{
+	color: #FFFFFF;
+	font-family: "微软雅黑";
+	font-size: 18px;
+	padding:10px 20px;
+	font-weight: bold;
+}
+.content-container{
+	width:70%;
+	margin:50px auto;
+}
+.content-left{
+	width:18%;
+	float:left;
+	
+}
+.content-right{
+	width:82%;
+	float:left;
+}
+.clear{
+	clear: both;
+}
+.content-right input{
+	width:100%;
+}
+#subtitle{
+	margin-bottom:25px;
+}
+#pic_button{
+	width:185px;
+}
+
+.btn{
+	width:130px;
+	height:35px;
+	color:#fff;
+	border-radius:5px;
+	background:#2EB7A7;
+	font-size:14px;
+	font-family:Microsoft YaHei;
+	float:left;
+	margin-top:20px;
+}
+.pic_btn{
+	float:left;
+	width:135px;
+}
+.preview{
+	float:left;
+	width:155px; 
+	height:105px;
+	margin-left: 30px;
+	
+}
+#photoUpload{
+	display: none;
+}
+.subcontent1{
+	margin: 20px 0 40px 0;
+}	
+.subcontent1 .content-left{
+	margin-top:28px;
+}
+.remark{
+	width:100%;
+	height:100px;
+	
+}
+.content-label{
+	border: 1px solid #ABADB3;
+}
+.subcontent2{
+	margin: 40px 0;
+}
+.label-left,.label-right{
+	float:left;
+}
+.label-left{
+	width:85%;
+	padding:10px 20px;
+	border-right: 1px solid #ABADB3;
+	min-height:62px;
+}
+.label-right{
+	width:15%;
+	
+	
+}
+.pic{
+	width:40px;
+	margin: 15px auto;
+}
+.ke-container.ke-container-default{
+  width:100%!important;
+}
+.subcontent3{
+	margin: 40px 0;
+}
+.savebutton{
+	margin: 0 auto;
+	width:130px;
+}
+.notice{
+	width: 15%;
+	height:130px;
+	display: none;
+	line-height: 20px;
+	z-index: 100; 
+	border: 1px solid #797979;
+	background-color: #FFFFFF;
+	left:90%;/*FF IE7*/ 
+	top: 60%;/*FF IE7*/ 
+	
+	margin-left:-150px!important;/*FF IE7 */ 
+	margin-top:-60px!important;/*FF IE7 */ 
+	
+	margin-top:0px; 
+	
+	position:fixed!important;/*FF IE7*/ 
+	position:absolute;/*IE6*/ 
+	
+	_top: expression(eval(document.compatMode && 
+	document.compatMode=='CSS1Compat') ? 
+	documentElement.scrollTop + (document.documentElement.clientHeight-this.offsetHeight)/2 :/*IE6*/ 
+	document.body.scrollTop + (document.body.clientHeight - this.clientHeight)/2);/*IE5 IE5.5*/ 
+}
+.notice img {
+	float:right;
+	height:30px;
+	width:25px;
+	margin-right: 15px;
+}
+.notice-content{
+	padding: 10px 10%;
+	font-size: 13px;
+}
+
+
+.notice-content input{
+	width:50%;
+	margin-left: 10%;
+}
+.addbutton{
+	margin: 0 auto;
+	width:100px;
+}
+.btn1{
+	width:100px;
+	height:30px;
+	color:#fff;
+	border-radius:5px;
+	background:#169BD5;
+	font-size:14px;
+	font-family:Microsoft YaHei;
+}
+
+.item2{
+	color:red;
+	font-size:12px;
+	line-height: 15px;
+	height:15px;
+}
+
+#p_pic{
+	float:left;
+}
+
+#imghead{
+	width:155px; 
+	height:105px;
+	border: none;
+}

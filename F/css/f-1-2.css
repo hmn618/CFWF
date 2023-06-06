@@ -1,0 +1,171 @@
+body{
+	background: #f1f1f1;
+}
+th,td{
+	text-align: center;
+}
+/*#aa{
+	clear: left;
+}*/
+.name{
+	max-width: 80px;
+}
+.edit1{
+	height: 600px;
+	overflow-y: scroll;
+}
+.container-detail {
+    padding-top: 30px;
+    float: left;    
+}
+.container{
+	width: 95%;
+}
+.table1{
+	background: #FFFFFF;
+	float: left;
+	box-shadow: 2px 2px 2px #CCCCCC;
+	padding-bottom: 10px;
+}
+.table2{
+	width: 95%;
+margin-left: 3%;
+background: #FFFFFF;
+float: left;
+box-shadow: 0 2px 2px #CCCCCC;
+padding-bottom: 10px;
+}
+.table2 > tbody > tr > td, .table2> tbody > tr > th, .table2> tfoot > tr > td, .table2 > tfoot > tr > th, .table2 > thead > tr > td, .table2 > thead > tr > th{
+	border: none;
+	
+}
+.table2 > tbody > tr > td{
+	border-top:1px dotted #C0C0C0!important;
+}
+.tittle{
+	width: 100%;
+	height: 40px;
+	padding-left: 10px;
+	line-height: 40px;
+	color: #FFFFFF;
+	font-weight: bold;
+	font-size: 18px;
+	background: #2EB7A7;
+	/*float: left;*/
+}
+.con1{
+	background: #FFFFFF;
+	float: left;
+	border-bottom: 2px solid #2EB7A7;
+	width: 100%;
+	padding: 20px;
+}
+.con1 span {
+    font-weight: bold;
+    margin: 15px 2%;
+    /*float: left;*/
+    display: inline-block;
+    }
+.search{
+	float: right;
+}
+.btn{
+	background: #2EB7A7;
+	color: #FFFFFF;	
+	height: 27px;
+	float: right;
+	line-height: 13px;
+	margin-right: 4%;
+}
+.add{
+	margin: 20px 5% 20px 0;
+	width: 90px;
+}
+.t2{
+	background: #EEF8F9;
+}
+.modal-content{
+	padding: 0 20px;
+}
+.img-responsive
+{
+	margin-bottom: 10px;
+}
+#upload-btn,#change-btn
+{
+	width: 100%;
+	margin: 0 auto;
+}
+#submit,#submit1{
+	margin: 20px 45%;
+}
+.a{
+	display: inline-block;
+	clear: left;
+	width: 70%;
+	margin-top: 5px;
+}
+#addTags{
+	cursor: pointer;
+}
+.tags{
+	border: 1px solid #2EB7A7;
+	padding: 0 5px;
+	margin: 2px 5px;
+	cursor: pointer;
+    display: inline-block;
+}
+.c{
+	float:none;
+}
+.delete,.addDoc,.addCon,.material,.period,.CType,.VIP{
+	cursor: pointer;
+	margin-left: 10px;
+	display: inline-block;
+}
+.edit{
+	cursor: pointer;
+	overflow-y: scroll;
+}
+#send1,#send2{
+	border-bottom: none;
+}
+#yes{
+	background-color: #BFC2C5 !important;
+}
+.edit,.delete,.name,.addDoc,.addCon,.material,.period,.CType,.VIP{
+	cursor: pointer;
+	color:#2EB7A7 ;
+}
+.pages{
+	margin-top: 30px;
+}
+#addDocName,#addConName{
+	width: 50%;
+	display: inline-block;
+}
+.dropdown-menu{
+	z-index: 2000;
+}
+.input-group{
+   position: initial;
+}
+.child {
+	font-size: 17px;
+	margin: 10px;
+}
+#week {
+	width: 30px;
+}
+#time{
+	font-size: 15px;
+	color: #545454;
+	margin-left: 10px;
+	visibility:hidden;
+}
+#limit{
+	font-size: 15px;
+	color: #545454;
+	margin-left: 10px;
+	visibility:hidden;
+}

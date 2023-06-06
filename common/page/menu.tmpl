@@ -1,0 +1,56 @@
+<ul class="catalog">
+	<li class="catalog-li {{if type == 'task'}}active{{/if}}" data-toggle="collapse" data-target="#collapseOne">
+		<span><i><img src="../../common/img/u1.png" width="20" height="20"/></i>
+			<a href="../../C/page/task.html?type=task">任务管理</a><i class="glyphicon glyphicon-chevron-right"></i></span>
+	</li>
+
+	<li class="catalog-li {{if type == 'question'}}active{{/if}}" data-toggle="collapse" data-target="#collapseTwo">
+		<span><i><img src="../../common/img/u3.png" width="20" height="20"/></i>
+			<a href="../../C/page/question.html?type=question">问题会员</a><i class="glyphicon glyphicon-chevron-right"></i></span>
+	</li>
+	<li class="catalog-li {{if type == 'member'}}active{{/if}}" data-toggle="collapse" data-target="#collapseThree">
+		<span><i><img src="../../common/img/u2.png" width="20" height="20"/></i>
+			<a href="../../C/page/member.html?type=member">会员管理</a><i class="glyphicon glyphicon-chevron-right"></i></span>
+	</li>
+	<li class="catalog-li {{if type == 'doctor' || type == 're-examination'||type == 'summary'}}active{{/if}}" data-toggle="collapse" data-target="#collapseFour">
+		<span><i><img src="../../common/img/u4.png" width="20" height="20"/></i>
+			<a href="#">医生管理</a><i class="glyphicon glyphicon-chevron-right"></i></span>
+	</li>
+	<ul class="panel-collapse collapse {{if type == 'doctor' || type == 're-examination'||type == 'summary'}}in{{/if}} collapse-ul" id="collapseFour">
+		<li class="collapse-li {{if type == 'doctor'}}active2{{/if}}">
+			<a href="../../C/page/doctor.html?type=doctor">医生管理</a>
+		</li>
+		<li class="collapse-li {{if type == 're-examination'}}active2{{/if}}">
+			<a href="../../C/page/re-examination.html?type=re-examination">复诊交互</a>
+		</li>
+		<li class="collapse-li {{if type == 'summary'}}active2{{/if}}">
+			<a href="../../C/page/summary.html?type=summary">阶段总结</a>
+		</li>
+	</ul>
+	<li class="catalog-li {{if type == 'stepCheckList' || type == 'delayCheckList'||type == 'replyCheckList'||type == 'caseList'||type == 'updateCaseList'||type == 'consultantList'}}active{{/if}}" id="charge" data-toggle="collapse" data-target="#collapseFive">
+		<span><i><img src="../../common/img/u5.png" width="20" height="20" /></i>
+			<a href="#" class="six-title">主管顾问审批</a><i class="glyphicon glyphicon-chevron-right"></i>
+		</span>
+	</li>
+	<ul class="panel-collapse collapse {{if type == 'stepCheckList' || type == 'delayCheckList'||type == 'replyCheckList'||type == 'caseList'||type == 'updateCaseList'||type == 'consultantList'}}in{{/if}} collapse-ul" id="collapseFive">
+		<li class="collapse-li {{if type == 'updateCaseList'}}active2{{/if}}">
+			<a href="../../D/page/updateCaseList.html?type=updateCaseList">增补档案审批</a>
+		</li>
+		<li class="collapse-li {{if type == 'caseList'}}active2{{/if}}">
+			<a href="../../D/page/caseList.html?type=caseList">会员档案审批</a>
+		</li>
+		<li class="collapse-li {{if type == 'replyCheckList'}}active2{{/if}}">
+			<a href="../../D/page/replyCheckList.html?type=replyCheckList">日志回复审批</a>
+		</li>
+		<li class="collapse-li {{if type == 'stepCheckList'}}active2{{/if}}">
+			<a href="../../D/page/stepCheckList.html?type=stepCheckList">减重阶段审批</a>
+		</li>
+		<li class="collapse-li {{if type == 'delayCheckList'}}active2{{/if}}">
+			<a href="../../D/page/delayCheckList.html?type=delayCheckList">阶段延迟审批</a>
+		</li>		
+		<li class="collapse-li {{if type == 'consultantList'}}active2{{/if}}">
+			<a href="../../D/page/consultantList.html?type=consultantList">顾问任务查看</a>
+		</li>
+	</ul>
+
+</ul>

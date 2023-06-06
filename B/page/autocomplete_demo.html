@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>test for autocomplete</title>
+		<link rel="stylesheet" href="../../common/css/bootstrap.min.css">
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+
+		<script src="//code.jquery.com/jquery-1.9.1.js"></script>
+		<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+		<script type="text/javascript" src="../../common/js/bootstrap.min.js"></script>
+		<style>
+			.img-little {
+				height: 70px;
+				width: 70px;
+				display: inline-block;
+			}
+			
+			.ui-autocomplete {
+				display: block;
+				z-index: 99999;
+				height: 200px;
+				overflow-y: scroll;
+			}
+			.username {
+				display: inline-block;
+			}
+		</style>
+		<script>
+					
+		  document.getElementById('lala').addEventListener('click',function(){
+		  	$('#deleteModal').modal('show');	alert("lala")
+			$(".form-control").removeAttr("id");
+    			$("#deleteModal :text").attr("id",".form-control"); 
+    			getSelectUser();
+    			alert($(".form-control").data("id"));
+    			var datatosend = {
+    				memberId : $(".form-control").data("id")
+    			};
+		console.log(datatosend);
+		  })
+		
+		
+		
+		function getSelectUser(){ 
+			$(function() {			alert("aa")	
+				var data_complete = '';
+				$.ajax({
+					type: "get",
+					url: "bird.json",
+					dataType: "json",
+					success: function(data) {
+						var tmp="";
+						for(var i=0;i<data.list.length;i++){
+							tmp=data.list[i].name;
+							delete(data.list[i].name);
+							data.list[i].label=tmp;							
+						}
+						
+						data_complete = data.list;
+						$(".form-control").autocomplete({
+								minLength: 0,
+								source: data_complete,
+								focus: function(event, ui) {
+									$(".form-control").val(ui.item.label);
+									return false;
+								},
+								select: function(event, ui) {
+									$(".form-control").val(ui.item.label);
+									$(".form-control").attr("data-id",ui.item.id);
+									return false;
+								},
+							})
+							.data("ui-autocomplete")._renderItem = function(ul, item) {
+								return $("<li>")
+									.append("<a>" + '<img src="' + item.headpic + '" class="img-little"/>' + item.label + item.tel + "</a>")
+									.appendTo(ul);
+							};
+						console.log(data_complete);
+					}
+				});
+			});
+		}
+			
+		</script>
+	</head>
+
+	<body>
+		<div id="lala" class="btn btn-primary" data-toggle="modal">click me</div>
+		<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+					</div>
+					<div class="modal-body">
+						请输入用户姓名：
+						<input class="form-control" type="text" />
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-danger" data-dismiss="modal" id="submit-delete">确认</button>
+						<button type="button" class="btn btn-primary" data-dismiss="modal" id="cancel-delete">取消</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

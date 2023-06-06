@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <title>区域管理员管理</title>
+
+    <link href="../../common/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../common/css/common.css" />
+    <link rel="stylesheet" href="../css/selectTable.css" />
+    <link rel="stylesheet" href="../../common/css/pagination.css" />
+    <link rel="stylesheet" href="../css/b-1-1.css" />
+    <link rel="stylesheet" href="../../common/css/pages.css" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+  	
+  	<header class="clearfix">
+        <div class="logo"></div>
+        <h1>春风微辅—运营管理系统</h1>
+    </header>
+    <!--<div class="menu">-->
+    <div class="menu-wrapper">
+    	    
+    </div>
+
+    <div class="main-container">
+    	    <div class="container-detail clearfix">
+              <div class="table-content">
+              	   <div class="title">区域管理员管理</div>
+                   <div class="con1">
+    	    				<span>区域管理员姓名&nbsp;&nbsp;<input id="areaName" type="text" name="member" /></span>
+    	    				<span id="areaTitle">区域&nbsp;&nbsp;</span><span id="area"></span>
+    	    				
+    	    				
+    	    				<span><button class="btn" id="select">查询</button></span>
+    	    			</div>
+                  
+                   
+                <!--   	<button type="button" class="doctor-del">批量删除</button>-->
+                   	<button type="button" class="doctor-add" data-toggle="modal" data-target="#addDocModal">添加</button>
+										<div class="clear"></div>
+                   <div class="table-inner"> 
+                   		<div class="table-responsive"> 
+                       <table class="table"> 
+                               <tr class="table-title"> 
+                               <td>区域管理者姓名</td> 
+                               <td>区域</td>
+                               <td>联系电话</td>
+                               <td>操作</td>
+                               </tr> 
+                               
+                               <!--<tr class="table-tr"> 
+                      
+                               <td><a data-toggle="modal" data-target="#DocModal">磊磊</a></td>
+                               <td>河北</td>
+                               <td>1326179358</td>
+                                                         
+                               <td><a data-toggle="modal" data-target="#editDocModal">编辑</a>
+                                  </td>                                                                       
+                               </tr> -->
+ 
+                               
+
+                       </table> 
+                   </div>  
+                   <div class="pages"></div>
+                   <div class="pages5 hide"></div>
+                 </div>
+              
+     <!-- 添加医生                   -->
+          <div class="modal fade" id="addDocModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+         	<div class="modal-dialog">
+         		<div class="modal-content edit2">
+         			<div class="modal-header" id="send1">
+         				<button type="button" data-dismiss="modal" class="close"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+     			  </div>
+     			  <div class="modal-body">
+     			  	<form id="addForm">
+     			  		<div class="row">
+     			  			<div class="col-md-4">
+     			  				<img src="../img/moren.jpg" class="img-responsive" id="upload-img" />
+											<button type="button" class="btn btn-primary" id="upload-btn">上传图片</button>
+											<input type="file" id="btn-file" style="display: none;" name="userfile"/>	
+     			  			</div>
+     			  			<div class="col-md-8">
+     			  				<div class="form-group">
+     			  					<label>区域管理者姓名：</label>
+     			  					<input id="name" type="text" class="form-control" value="" required="required"/>
+     			  				</div>
+     			  				<div class="form-group">
+     			  					<label>用户名：</label>
+     			  					<input id="user" type="text" class="form-control" required="required"/>
+     			  				</div>
+     			  				<div class="form-group">
+     			  					<label>密码</label>
+     			  					<input id="password" type="password" class="form-control" required="required"/>
+     			  				</div>
+     			  				<div class="form-group">
+     			  					<label>性别：</label>
+     			  					<input type="radio" name="sex" value="男" required="required" checked="checked"/>男
+     			  					<input type="radio" name="sex" value="女" required="required"/>女
+     			  				</div>
+     			  				<div class="form-group" >
+     			  					<label>区域：</label>
+     			  					<div id="region3"></div>
+     			  					<!--<input type="region" class="form-control" id="region" required="required"/>-->
+     			  				</div>
+     			  				<div class="form-group">
+     			  					<label>年龄：</label>
+     			  					<input type="number" class="form-control" id="age" />
+     			  				</div>     			  				    			  				
+     			  				<div class="form-group">
+     			  					<label>手机：</label>
+     			  					<input type="tel" class="form-control" id="phone" />
+     			  				</div>
+     			  				
+     			  				<button type="button" class="btn btn-default" id="submit">保存</button>
+     			  			</div>
+     			  	</div>     			  		
+     			  	</form>
+     			  </div>
+         		</div>
+         	</div>
+         </div> 
+         
+         <!--编辑         -->
+         <div class="modal fade" id="editDocModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+         	<div class="modal-dialog">
+         		<div class="modal-content edit2">
+         			<div class="modal-header" id="send1">
+         				<button type="button" data-dismiss="modal" class="close"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+     			  </div>
+     			  <div class="modal-body">
+     			  	<form id="changeForm">
+     			  		<div class="row">
+     			  			<div class="col-md-4">
+     			  				<img src="../img/moren.jpg" class="img-responsive" id="change-img" />
+											<button type="button" class="btn btn-primary" id="change-btn">上传图片</button>
+											<input type="file" id="change-btn-file" style="display: none;" name="userfile"/>  
+     			  			</div>
+     			  			<div class="col-md-8">
+     			  				<div class="form-group">
+     			  					<label>区域管理者姓名：</label>
+     			  					<input id="name1" type="text" class="form-control" value="" required="required"/>
+     			  				</div>
+     			  				<div class="form-group">
+     			  					<label>用户名：</label>
+     			  					<input id="username11" type="text" class="form-control" value="" disabled="disabled"/>
+     			  				</div>
+     			  				<div class="form-group">
+     			  					<label>密码：</label>
+     			  					<input id="password11" type="text" class="form-control" value="" required="required"/>
+     			  				</div>
+     			  				<div class="form-group">
+     			  					<label>性别：</label>
+     			  					<input type="radio" name="sex1" value="男" required="required" checked="checked"/>男
+     			  					<input type="radio" name="sex1" value="女" required="required"/>女
+     			  				</div>
+     			  				<div class="form-group">
+     			  					<label>区域：</label>
+     			  					<div id="region1"></div>
+     			  					<!--<input type="region1" class="form-control" id="region" required="required"/>-->
+     			  				</div>
+     			  				<div class="form-group">
+     			  					<label>年龄：</label>
+     			  					<input type="number" class="form-control" id="age1" />
+     			  				</div>     			  				    			  				
+     			  				<div class="form-group">
+     			  					<label>手机：</label>
+     			  					<input type="tel" class="form-control" id="phone1" />
+     			  				</div>
+     			  				
+     			  				<button type="button" class="btn btn-default" id="submit1">保存</button>
+     			  			</div>
+     			  	</div>     			  		
+     			  	</form>
+     			  </div>
+         		</div>
+         	</div>
+         </div> 
+          
+          <!--查看医生名片         -->
+         <div class="modal fade" id="DocModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+         	<div class="modal-dialog">
+         		<div class="modal-content edit2">
+         			<div class="modal-header" id="send1">
+         				<button type="button" data-dismiss="modal" class="close"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+     			  </div>
+     			  <div class="modal-body">
+     			  	<form id="scanForm">
+     			  		<div class="row">
+     			  			<div class="col-md-4">
+     			  				<img src="../img/moren.jpg" class="img-responsive" id="upload-img2" />
+     			  			</div>
+     			  			<div class="col-md-8">
+     			  				<div class="form-group">
+     			  					<label>区域管理者姓名：</label>
+     			  					<input id="name2" type="text" class="form-control" value="" disabled="disabled"/>
+     			  				</div>
+     			  				<div class="form-group">
+     			  					<label>用户名：</label>
+     			  					<input id="username2" type="text" class="form-control" value="" disabled="disabled"/>
+     			  				</div>
+     			  				<div class="form-group">
+     			  					<label>密码：</label>
+     			  					<input id="password2" type="text" class="form-control" value="" disabled="disabled"/>
+     			  				</div>
+     			  				<div class="form-group">
+     			  					<label>性别：</label>
+     			  					<input type="radio" name="sex2" value="男" disabled/>男
+     			  					<input type="radio" name="sex2" value="女" disabled/>女
+     			  				</div>
+     			  				<div class="form-group">
+     			  					<label>区域：</label>
+     			  					<div id="region2"></div>
+     			  					<!--<input type="region" class="form-control" id="region2" disabled="disabled"/>-->
+     			  				</div>
+     			  				<div class="form-group">
+     			  					<label>年龄：</label>
+     			  					<input type="number" class="form-control" id="age2" disabled="disabled"/>
+     			  				</div>     			  				    			  				
+     			  				<div class="form-group">
+     			  					<label>手机：</label>
+     			  					<input type="tel" class="form-control" id="phone2" disabled="disabled"/>
+     			  				</div>
+     			  				
+     			  				<button type="submit" class="btn btn-default"  data-dismiss="modal" id="submit2">关闭</button>
+     			  			</div>
+     			  	</div>     			  		
+     			  	</form>
+     			  </div>
+         		</div>
+         	</div>
+         </div> 
+         
+        </div><!--container-detail-->
+    </div><!--main-container-->
+    
+    
+    
+    
+    <script src="../../common/js/jquery.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="../../common/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../common/js/template.js" ></script>
+    <script type="text/javascript" src="../../common/js/pages.js"></script>
+    <script type="text/javascript" src="../js/menuB.js"></script>
+    <script type="text/javascript" src="../../common/js/url.js" ></script>
+    <script type="text/javascript" src="../../common/js/area.js" ></script>
+     <script src="../js/jquery.form.js"></script>
+    
+		<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script type="text/javascript" src="../js/b-1-4-areaManager.js"></script>
+    <script type="text/html" id="b-1-4-tmpl">    
+      {{each datum as value}}
+    	 <tr class="table-tr" data-id={{value.managerId}}>
+    	 	
+    	 	<td class="doc">{{value.managerName}}</td>
+    	 	<td class="region">{{value.region}}</td>
+    	 	<td class="pho">{{value.contractInfoMap.tel}}</td>
+    	 	<td><a class="edit" data-toggle="modal" data-target="#editDocModal">编辑</a></td>
+    	 </tr>
+    	 
+    	{{/each}}
+    </script>
+    
+      <!-- 区域的select框-->
+    <script id="b-1-4-select-tmpl" type="text/html">
+			<select style="height: 35px;display: block" class="area-select">
+				{{each datum as value}}
+					<option data-id={{value.areaID}}>{{value.areaName}}</option>
+				{{/each}}
+			</select>
+		</script>
+  <style>
+			.img-little {
+				height: 70px;
+				width: 70px;
+				display: inline-block;
+			}
+			
+			.ui-autocomplete {
+				display: block;
+				z-index: 99999;
+				height: 300px;
+				overflow-y: scroll;
+			}
+			.username {
+				display: inline-block;
+			}
+		</style>
+  </body>
+</html>
+

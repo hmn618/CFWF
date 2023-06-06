@@ -1,0 +1,29 @@
+<ul class="catalog">
+
+	<li class="catalog-li {{if type == 'docter-management' || type == 'member'||type == 'summary'}}active{{/if}}" data-toggle="collapse" data-target="#collapseOne">
+		<span><i><img src="../img/usermanage.png" width="20" height="20" /></i>
+			<a href="#">用户管理</a><i class="glyphicon glyphicon-chevron-right"></i></span>
+	</li>
+	<ul class="panel-collapse collapse {{if type == 'docter-management' || type == 'member'||type == 'summary'||type == 'areaManager'}}in{{/if}} collapse-ul" id="collapseOne">
+		<li class="collapse-li {{if type == 'docter-management'}}active2{{/if}}">
+			<a href="b-1-1.html?type=docter-management">医生管理</a>
+		</li>
+		<li class="collapse-li {{if type == 'member'}}active2{{/if}}">
+			<a href="b-1-2.html?type=member">会员管理</a>
+		</li>
+		<li class="collapse-li {{if type == 'summary'}}active2{{/if}}">
+			<a href="advice-1-4.html?type=summary">顾问管理</a>
+		</li>
+		<li class="collapse-li {{if type == 'areaManager'}}active2{{/if}}">
+			<a href="b-1-4-areaManager.html?type=areaManager">区域管理员管理</a>
+		</li>
+	</ul>
+	<li class="catalog-li {{if type == 'article'}}active{{/if}}" data-toggle="collapse" data-target="#collapseTwo">
+		<span><i><img src="../img/info.png" width="20" height="20" /></i>
+			<a href="article-2-1.html?type=article" class="six-title">教育信息管理</a><i class="glyphicon glyphicon-chevron-right"></i></span>
+	</li>
+	<li class="catalog-li {{if type == 'task'}}active{{/if}}" data-toggle="collapse" data-target="#collapseTwo">
+		<span><i><img src="../img/task.png" width="20" height="20" /></i>
+			<a href="consultantListOfB.html?type=task" class="six-title">顾问任务查看</a><i class="glyphicon glyphicon-chevron-right"></i></span>
+	</li>
+</ul>

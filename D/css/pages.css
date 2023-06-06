@@ -1,0 +1,19 @@
+.pages{
+	float: right;
+	margin-top: 25px;
+}
+.pages span {
+    display: inline-block;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0.1em 0.4em;
+    margin-right: 5px;
+	margin-bottom: 5px;
+	color: #2EB7A7;
+}
+.pages input{
+	width: 70px;
+}
+.go{
+	color: #ff0000 !important;
+}

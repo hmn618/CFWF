@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>春风微拂D-5-会员病例审批列表</title>
+
+    <link href="../../common/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/medical-record.css" />
+    <!--<link rel="stylesheet" href="../../C/css/material-4.css" />-->
+    <link href="../css/stepCheckList.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../common/css/common.css" />
+    <link rel="stylesheet" href="../css/table.css" />
+    <link rel="stylesheet" href="../css/pages.css" />
+    <link rel="stylesheet" href="../css/query.css" />
+
+    
+    
+    
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+  	<header class="clearfix">
+        <div class="logo"></div>
+        <h1>春风微辅—运营管理系统</h1>
+    </header>
+    <!--<div class="menu">-->
+    <div class="menu-wrapper">
+    	    
+    </div>
+    <!--</div>-->
+    <!--<div class="footer">
+        春风微辅—运营管理系统
+    </div>-->
+    <div class="main-container">
+    	    <div class="container-detail clearfix">
+    	    		<div class="container-content">
+		    	  	<div class="title-container">
+			    	  		<p>会员档案审批</p>
+			    	</div>
+    	    		<div class="table-container">
+            <div class="table-responsive"> 
+            	
+            			<div class="select">
+	                    <form class="form-inline" role="form"> 
+	                    	     <div class="form-group">
+		                    	     <label>顾问姓名</label>
+		                    	     <input type="text" class="form-control" id="cname" placeholder="请输入顾问姓名">
+	                    	     </div>
+	                    	     <div class="form-group ">
+		                    	     <label>患者姓名</label>
+		                    	     <input type="text" class="form-control" id="uname" placeholder="请输入患者姓名">
+	                    	     </div>
+	                    	     <div class="form-group">
+	                    	     	<button type="submit" class="btn btn-default query">查询</button>
+	                    	     </div>
+	                     </form>
+                   </div>
+                   <hr />
+            	
+						    <table class="table"> 
+						            <tr class="table-title"> 
+						                <td>编号</td> 
+						                <td>审批内容</td> 
+						                <td>病例内容</td>
+						                <td>申请时间</td>
+						                <td>申请顾问</td>
+						                <td>状态</td>
+						                <td>操作</td>
+						                <td>审批时间</td>
+						            </tr> 
+						           <!--<tr class="table_content"> 
+						                <td>1</td> 
+						                <td>会员李玉的病例</td> 
+						                <td><a href="showCaseResult.html">查看病例</a></td>
+						                <td>2016-03-15</td>
+						                <td>李梅</td>
+						                <td>未审批</td>
+						                <td><a href="#" id="tong" class="pass" data-toggle="modal" data-target="#myModal" data-iid="aaaaaaaa">通过</a> <a href="#" class="noPass" data-toggle="modal" data-target="#myModal1">未通过</a></td>
+						                <td>暂无</td>
+						            </tr>
+						           <tr class="table_content"> 
+						                <td>1</td> 
+						                <td>会员李玉的病例</td> 
+						                <td><a href="showCaseResult.html">查看病例</a></td>
+						                <td>2016-03-15</td>
+						                <td>李梅</td>
+						                <td>未审批</td>
+						                <td><a href="#" id="tong" class="pass" data-toggle="modal" data-target="#myModal" data-iid="aaaaaaaa">通过</a> <a href="#" class="noPass" data-toggle="modal" data-target="#myModal1">未通过</a></td>
+						                <td>暂无</td>
+						            </tr>
+						            <tr class="table_content"> 
+						                <td>1</td> 
+						                <td>会员李玉的病例</td> 
+						                <td><a href="showCaseResult.html">查看病例</a></td>
+						                <td>2016-03-15</td>
+						                <td>李梅</td>
+						                <td>已审批</td>
+						                <td><a href="#" data-toggle="modal" data-target="#myModal2">查看审批结果</a></td>
+						                <td>2016-03-15</td>
+						            </tr>
+						             <tr class="table_content"> 
+						                <td>1</td> 
+						                <td>会员李玉的病例</td> 
+						                <td><a href="showCaseResult.html">查看病例</a></td>
+						                <td>2016-03-15</td>
+						                <td>李梅</td>
+						                <td>已审批</td>
+						                <td><a href="#" data-toggle="modal" data-target="#myModal3">查看审批结果</a></td>
+						                <td>2016-03-15</td>
+						            </tr>
+						           <tr class="table_content"> 
+						                <td>1</td> 
+						                <td>会员李玉的病例</td> 
+						                <td><a href="showCaseResult.html">查看病例</a></td>
+						                <td>2016-03-15</td>
+						                <td>李梅</td>
+						                <td>未审批</td>
+						                <td><a href="#" id="tong" class="pass" data-toggle="modal" data-target="#myModal" data-iid="aaaaaaaa">通过</a> <a href="#" class="noPass" data-toggle="modal" data-target="#myModal1">未通过</a></td>
+						                <td>暂无</td>
+						            </tr>
+						           <tr class="table_content"> 
+						                <td>1</td> 
+						                <td>会员李玉的病例</td> 
+						                <td><a href="showCaseResult.html">查看病例</a></td>
+						                <td>2016-03-15</td>
+						                <td>李梅</td>
+						                <td>未审批</td>
+						                <td><a href="#" id="tong" class="pass" data-toggle="modal" data-target="#myModal" data-iid="aaaaaaaa">通过</a> <a href="#" class="noPass" data-toggle="modal" data-target="#myModal1">未通过</a></td>
+						                <td>暂无</td>
+						            </tr>-->
+						        </tbody> 
+						    </table> 
+						    
+						     <div class="pages">
+			                   	<span>共<span class="total-pages"></span>页</span>
+			                   	<span class="first-page">首页</span><span class="prev">上一页</span><span class="current"></span><span class="next">下一页</span><span class="next-page">末页</span>
+			                   	<span><span>跳转至<span><input type="text" value="" class="goPage" ><span class="go">GO</span></span>
+			                </div>
+						    
+						</div>
+					</div>
+				</div>
+             <div class="table-content">
+             		<!-- 第一个模态框声明：通过 -->      
+				<!--fade设置淡入淡出效果-->
+				<div class="modal fade" id="myModal" tabindex="-1"><!--tabindex="-1"让焦点永远在上面，即取消掉焦点-->
+					<!-- 窗口声明 -->
+					<div class="modal-dialog modal-sm">
+						<!-- 内容声明 -->
+						<div class="modal-content">
+							<!-- 头部 -->
+							<div class="modal-header">
+								<button class="close" data-dismiss="modal"><span>&times;</span></button><!--这是一个关闭按钮，data-dismiss="modal"是js的一个控件，有了它就能关闭了-->
+								<h4 class="modal-title"><b>该会员已缴费</b></h4>
+								<h4 class="modal-title"><b>操作成功，已通过申请！</b></h4>
+							</div>
+							<!-- 主体 -->
+							<!--<div class="modal-body">
+								操作成功，已通过申请！-->
+								<!--在主体部分使用栅格系统中的流体-->
+								<!--<div class="container-fluid">
+									<div class="row">
+										<div class="col-md-4">1</div>
+										<div class="col-md-4">2</div>
+										<div class="col-md-4">3</div>
+									</div>
+								</div>-->
+							<!--</div>-->
+							<!-- 注脚 -->
+							<!--<div class="modal-footer">-->
+								<!--<button class="btn btn-default btn-sm">确定</button>-->
+								<!--<button class="btn btn-primary">登录</button>-->
+							<!--</div>-->
+						</div>
+					</div>
+				</div>
+			    <!-- 第二个模态框声明：未通过 -->      
+				<!--fade设置淡入淡出效果-->
+				<div class="modal fade" id="myModal1" tabindex="-1"><!--tabindex="-1"让焦点永远在上面，即取消掉焦点-->
+					<!-- 窗口声明 -->
+					<div class="modal-dialog modal-sm">
+						<!-- 内容声明 -->
+						<div class="modal-content">
+							<!-- 头部 -->
+							<div class="modal-header">
+								<!--<button class="close" data-dismiss="modal"><span>&times;</span></button>-->
+									
+								<!--这是一个关闭按钮，data-dismiss="modal"是js的一个控件，有了它就能关闭了-->
+								<h4 class="modal-title"><b>操作成功，未通过申请！</b></h4>
+							</div>
+							 <!--主体--> 
+							<div class="modal-body">
+								<form>
+									<div class="form-group">
+										<h4><label class="control-label">原因：</label></h4>
+											<textarea class="form-control reason wei" placeholder="请您输入未通过申请的原因。"></textarea>
+									</div>
+								</form>
+							</div>
+							<!-- 注脚 -->
+							<div class="modal-footer">
+								<button class="btn btn-success yes" data-dismiss="modal">确定</button>
+								<!--<button class="btn btn-danger no"  data-dismiss="modal">取消</button>-->
+							</div>
+						</div>
+					</div>
+				</div>
+				 <!-- 第三个模态框声明：查看结果通过 -->      
+				<!--fade设置淡入淡出效果-->
+				<div class="modal fade" id="myModal2" tabindex="-1"><!--tabindex="-1"让焦点永远在上面，即取消掉焦点-->
+					<!-- 窗口声明 -->
+					<div class="modal-dialog modal-sm">
+						<!-- 内容声明 -->
+						<div class="modal-content">
+							<!-- 头部 -->
+							<div class="modal-header">
+								<button class="close" data-dismiss="modal"><span>&times;</span></button><!--这是一个关闭按钮，data-dismiss="modal"是js的一个控件，有了它就能关闭了-->
+								<h4 class="modal-title"><b>已通过申请！</b></h4>
+							</div>
+							<!-- 主体 -->
+							<!--<div class="modal-body">
+								操作成功，已通过申请！-->
+								<!--在主体部分使用栅格系统中的流体-->
+								<!--<div class="container-fluid">
+									<div class="row">
+										<div class="col-md-4">1</div>
+										<div class="col-md-4">2</div>
+										<div class="col-md-4">3</div>
+									</div>
+								</div>-->
+							<!--</div>-->
+							<!-- 注脚 -->
+							<!--<div class="modal-footer">-->
+								<!--<button class="btn btn-default btn-sm">确定</button>-->
+								<!--<button class="btn btn-primary">登录</button>-->
+							<!--</div>-->
+						</div>
+					</div>
+				</div>
+				 <!-- 第四个模态框声明：查看结果未通过 -->      
+				<!--fade设置淡入淡出效果-->
+				<div class="modal fade" id="myModal3" tabindex="-1"><!--tabindex="-1"让焦点永远在上面，即取消掉焦点-->
+					<!-- 窗口声明 -->
+					<div class="modal-dialog modal-sm">
+						<!-- 内容声明 -->
+						<div class="modal-content">
+							<!-- 头部 -->
+							<div class="modal-header">
+								<button class="close" data-dismiss="modal"><span>&times;</span></button><!--这是一个关闭按钮，data-dismiss="modal"是js的一个控件，有了它就能关闭了-->
+								<h4 class="modal-title"><b>未通过申请！</b></h4>
+							</div>
+							 <!--主体--> 
+							<div class="modal-body">
+								<form>
+									<div class="form-group">
+										<h4><label class="control-label">原因：</label></h4>
+											<textarea class="form-control reason shenpi" readonly="readonly" placeholder="请您输入未通过申请的原因。"></textarea>
+									</div>
+								</form>
+							</div>
+							<!-- 注脚 -->
+							<!--<div class="modal-footer">
+								<button class="btn btn-success yes">确定</button>
+								<button class="btn btn-danger no">取消</button>
+							</div>-->
+						</div>
+					</div>
+				</div>
+				
+				
+				<div class="modal fade" id="myModal5" tabindex="-1"><!--tabindex="-1"让焦点永远在上面，即取消掉焦点-->
+					<!-- 窗口声明 -->
+					<div class="modal-dialog modal-sm">
+						<!-- 内容声明 -->
+						<div class="modal-content">
+							<!-- 头部 -->
+							<div class="modal-header">
+								<button class="close" data-dismiss="modal"><span>&times;</span></button><!--这是一个关闭按钮，data-dismiss="modal"是js的一个控件，有了它就能关闭了-->
+								<h4 class="modal-title"><b>该会员还未缴费</b></h4>
+								<h4 class="modal-title"><b>请到会员管理处确认其缴费</b></h4>
+							</div>
+							<!-- 主体 -->
+							<!--<div class="modal-body">
+								操作成功，已通过申请！-->
+								<!--在主体部分使用栅格系统中的流体-->
+								<!--<div class="container-fluid">
+									<div class="row">
+										<div class="col-md-4">1</div>
+										<div class="col-md-4">2</div>
+										<div class="col-md-4">3</div>
+									</div>
+								</div>-->
+							<!--</div>-->
+							<!-- 注脚 -->
+							<!--<div class="modal-footer">-->
+								<!--<button class="btn btn-default btn-sm">确定</button>-->
+								<!--<button class="btn btn-primary">登录</button>-->
+							<!--</div>-->
+						</div>
+					</div>
+				</div>
+				
+				
+				<!--第五个模态框：病例模态框-->
+					
+					<!--medical-record-->
+<div class="modal fade" id="MedicalRecord" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" >
+        <div class="modal-content">
+            <div class="modal-header" id="modal-header-new">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">病历资料</h4>
+            </div>
+            <div class="modal-body modal-body-new"  >
+            	<form class="form-inline" id="medicalrecord-form" role="form" method="post">
+            	<div class="record-container">            		
+            		姓名：<input type="text" class="form-control" name="pa_name" id="" placeholder="" >
+            		性别：<input type="text" class="form-control" id="" name="pa_sex" placeholder="">
+            		出生日期：<input type="text" class="form-control" id="bir-y" name="pa_birth_y" placeholder="" style="width: 58px !important;">年
+            			<input type="text" class="form-control" name="pa_birth_m" id="bir-m" placeholder="">月
+            			<input type="text" class="form-control" name="pa_birth_d" id="bir-d" placeholder="">日
+            	  职业：<input type="text" class="form-control" id="" name="work" placeholder="">
+            	</div>
+            	<div class="record-container">            		
+            		民族：<input type="text" class="form-control" name="nation" id="" placeholder="">
+            		学历：<input type="text" class="form-control" id="" name="education" placeholder="">
+            		身份证号：<input type="text" class="form-control" name="identification" id="identification" placeholder="">
+            		信仰：<input type="text" class="form-control" name="faith" id="" placeholder="">
+            	</div>
+            	<hr>
+            	<div class="record-container">
+            		单位：<input type="text" class="form-control" name="company" id="company" placeholder="">
+            		联系地址：<input type="text" class="form-control"  name="address" id="address" placeholder="">
+            	</div>
+            	<hr />
+            	<div class="record-container">
+            		手机：<input type="text" class="form-control" name="mobile" id="mobile-tel" placeholder="">
+            		宅电：<input type="text" class="form-control" name="tel" id="home-tel" placeholder="">
+            		办公室电话：<input type="text" class="form-control" name="office_tel" id="office-tel" placeholder="">
+            	</div>
+            	<div class="record-container">
+            		微信：<input type="text" class="form-control" name="wechat" id="wechat" placeholder="">
+            		QQ：<input type="text" class="form-control" name="qq" id="qq" placeholder="">
+            		Email：<input type="text" class="form-control" name="email" id="email" placeholder="">
+            		是否有名片：<input type="radio" name="card_radio" id="cardradio1" value="1"><span class="yesorno1-radio">有</span> <input type="radio" name="card_radio" id="cardradio2" value="2"><span class="yesorno-radio">无</span>
+            	</div>
+            	<hr />
+            	<div class="record-container">
+            		<span class="container-title">现病史：</span><span class="text-radio">照片</span> <input type="radio" name="photo_radio" id="photoradio1" value="1"><span class="yesorno-radio">有</span> 
+            		<input type="radio" name="photo_radio" id="photoradio2" value="2"><span class="yesorno-radio">无</span>
+            	  <span class="text-radio">病历</span> <input type="radio" name="record_radio1" id="recordradio1" value="1" ><span class="yesorno-radio">有</span> <input type="radio" name="record_radio1" id="recordradio2" value="2"><span class="yesorno-radio">无</span>
+            	</div>
+            	
+            	<div class="record-container">
+            		 <span >高血压：</span> <input type="radio" name="record_radio3" id="recordradio3" value="1"><span class="yesorno-radio">无</span> <input type="radio" name="record_radio3" id="recordradio4" value="2"><span class="yesorno-radio">有</span> 
+        				 <span class="text-text">血压(mHg):收缩压/舒张压：</span><input type="text" class="form-control" name="xueya" id="xueya" placeholder="">mHg            	
+            	</div>
+            	
+            	<div class="record-container">
+            		<span >服药：</span> <input type="radio" name="record_radio5" id="recordradio5" value="1"><span class="yesorno-radio">无</span> <input type="radio" name="record_radio5" id="recordradio6" value="2"><span class="yesorno-radio">有</span> 
+            		 <span class="text-text">服药情况（时间，药名，用量）:</span> <input type="text" class="form-control" name="xueya_fuyao"  style="width:392px !important" placeholder="">
+            	</div>
+            	
+            	<div class="record-container">
+            		<span >高血脂：</span> <input type="radio" name="record_radio7" id="recordradio7" value="1"><span class="yesorno-radio">无</span> <input type="radio" name="record_radio7" id="recordradio8" value="2"><span class="yesorno-radio">有</span> 
+            		 <span class="text-text">甘油三酯（mol/L）：</span> <input type="text" class="form-control" name="ganyousz"  id="" placeholder="">
+            		 <span class="text-text">血胆固醇（mol/L）：</span> <input type="text" class="form-control" id=""  name="xuedangc" placeholder="">            		 
+            	</div>
+            	<div class="record-container"> 	
+            		 <span class="text-text-gxy2">高密度脂蛋白（mol/L）：</span> <input type="text" class="form-control"  name="gmdzdb" id="" placeholder="">
+            		 <span class="text-text">低密度脂蛋白（mol/L）：</span> <input type="text" class="form-control" id=""  name="dmdzdb" placeholder="">            		 
+            	</div>
+            	
+            	<div class="record-container">
+            		<span >服药：</span> <input type="radio" name="record_radio9" id="recordradio9" value="1"><span class="yesorno-radio">无</span> <input type="radio" name="record_radio9" id="recordradio10" value="2" ><span class="yesorno-radio">有</span> 
+            		 <span class="text-text">服药情况（时间，药名，用量）:</span> <input type="text" class="form-control" name="xuezhi_fuyao" style="width:392px !important"  placeholder="">
+            	</div>
+            	
+            	<div class="record-container">
+            		 <span >糖尿病：</span> <input type="radio" name="record_radio11" id="recordradio11" value="1"><span class="yesorno-radio">无</span> <input type="radio" name="record_radio11" id="recordradio12" value="2"><span class="yesorno-radio">有</span>
+            		 <span class="text-text-tnb">空腹血糖（mol/L）：</span> <input type="text" class="form-control"  name="kongfuxt" id="" placeholder="">
+            		 <span class="text-text-tnb">餐后两小时血糖（mol/L）：</span> <input type="text" class="form-control"  name="fanhouxt" id="" placeholder="">
+             </div>
+            	
+            	<div class="record-container">
+            		<span >服药：</span> <input type="radio" name="record_radio13" id="recordradio13" value="1"><span class="yesorno-radio">无</span> <input type="radio" name="record_radio13" id="recordradio14" value="2" ><span class="yesorno-radio">有</span> 
+            		 <span class="text-text">服药情况（时间，药名，用量）:</span> <input type="text" class="form-control"  name="xuetang_fuyao" style="width:392px !important" placeholder="">
+            	</div>
+            	
+            	<div class="record-container">
+            		 <span >痛风：</span> <input type="radio" name="record_radio15" id="recordradio15" value="1"><span class="yesorno-radio">无</span> <input type="radio" name="record_radio15" id="recordradio16" value="2" ><span class="yesorno-radio">有</span>
+            		 <span class="text-text">尿酸（mol/L）：</span> <input type="text" class="form-control" name="niaosuan"  id="" placeholder="">
+            		 <span class="text-text">发作情况：</span> <input type="text" class="form-control" name="tongfeng_fazuo"  id="" placeholder="">
+             </div>
+            	
+            	<div class="record-container">
+            		<span >服药：</span> <input type="radio" name="record_radio17" id="recordradio17" value="1"><span class="yesorno-radio">无</span> <input type="radio" name="record_radio17" id="recordradio18" value="2" ><span class="yesorno-radio">有</span> 
+            		 <span class="text-text">服药情况（时间，药名，用量）:</span> <input type="text" class="form-control"  name="tongfeng_fuyao" style="width:392px !important" placeholder="">
+            	</div>
+            	
+           
+            	<div class="record-container">
+            		 <span >脂肪肝：</span> <input type="radio" name="record_radio19" id="recordradio19" value="1"><span class="yesorno-radio">无</span> <input type="radio" name="record_radio19" id="recordradio20" value="2" ><span class="yesorno-radio">有</span>
+            		 <input type="text" class="form-control" name="zhifanggan"  id="zfg" placeholder=""><span class="text-text-zfg">度</span> 
+            		 
+            	</div>
+          	<div class="record-container">
+            		<span >服药：</span> <input type="radio" name="record_radio21" id="recordradio21" value="1"><span class="yesorno-radio">无</span> <input type="radio" name="record_radio21" id="recordradio22" value="2" ><span class="yesorno-radio">有</span> 
+            		 <span class="text-text">服药情况（时间，药名，用量）:</span> <input type="text" class="form-control" name="zfg_fuyao" style="width:392px !important"  placeholder="">
+            	</div>
+            	<p />
+            	<p />
+            	<div class="record-container">
+            		<span class="container-title">其他病史：</span>
+            	 
+            	</div>
+            	<div class="record-container">
+            		<input type="checkbox" name="record_checkbox1"><span class="yesorno-checkbox">肝肾功能不全</span>
+            		<input type="checkbox" name="record_checkbox2"><span class="yesorno-checkbox">胆囊切除</span>
+            		<input type="checkbox" name="record_checkbox3"><span class="yesorno-checkbox">甲减</span>
+            		<input type="checkbox" name="record_checkbox4"><span class="yesorno-checkbox">有过敏史</span>
+            		<input type="checkbox" name="record_checkbox5"><span class="yesorno-checkbox">胆结石</span>
+            		<input type="checkbox" name="record_checkbox6"><span class="yesorno-checkbox">胃炎</span>
+            		<input type="checkbox" name="record_checkbox7"><span class="yesorno-checkbox">打鼾</span>
+            		<input type="checkbox" name="record_checkbox8"><span class="yesorno-checkbox">多囊卵巢综合症（女性）</span>
+            		<span class="text-text-qtnfmjb">其他内分泌疾病</span><input type="radio" name="record_radio23" id="recordradio23" value="1"><span class="yesorno-radio">无</span> 
+            		<input type="radio" name="recordradio23" id="recordradio24" value="2" ><span class="yesorno-radio">有</span>         	 
+            	</div>
+            	<div class="record-container">
+            		 请对以上情况进行描述：<input type="text" class="form-control" id="miaoshubingshi" name="qitabingshi"  placeholder="">
+             </div>            	
+            	<div class="record-container">
+            		<span >服药：</span> <input type="radio" name="record_radio25" id="recordradio25" value="1"><span class="yesorno-radio">无</span> <input type="radio" name="record_radio25" id="recordradio26" value="2"><span class="yesorno-radio">有</span> 
+            		 <span class="text-text">服药情况（时间，药名，用量）:</span> <input type="text"  name="bingshi_fuyao" class="form-control" style="width:392px !important" placeholder="">
+            	</div>
+            	<p />
+            	<p />
+            	<div class="record-container">
+            		<span >女性生理期：</span> 
+            		<span class="text-text">准确：</span> <input type="radio" name="record_radio27" id="recordradio27" value="1"><span class="yesorno-radio">是</span> <input type="radio" name="record_radio27" id="recordradio28" value="2" ><span class="yesorno-radio">否</span>
+            		<span class="text-text">上一次开始时间</span> <input type="text" class="form-control" id="" name="yj_starttime"  placeholder="">
+            		<span class="text-text">持续时间</span> <input type="text" class="form-control" id=""  name="yj_last" placeholder="">
+            	</div>
+            	<div class="record-container">
+            		<span class="text-text" style="margin-left: 285px !important">周期</span><input type="text" class="form-control"  name="yj_zhouqi" style="width: 198px !important" id="" placeholder="">
+            		 <span class="text-text">经量</span> <input type="text" class="form-control"  name="yj_jingliang" id="" placeholder="">            		
+            	</div>
+            	<div class="record-container">
+            		<span style="margin-left: 130px;">痛经：</span> <input type="radio" name="record_radio29" id="recordradio29" value="1"><span class="yesorno-radio",style="margin-left: 10px !important;">无</span> 
+            		<input type="radio" name="record_radio29" id="recordradio30" value="2"><span class="yesorno-radio">有</span> 
+            		 <span class="text-text">具体描述:</span> <input type="text" class="form-control"  name="yj_tongjingms"  style="width: 407px !important;" placeholder="">
+            	</div>
+            	<p />
+            	<p />
+            	<div class="record-container">
+            		<span >排便情况：</span> 
+            		<span class="text-text">便秘：</span> <input type="radio" name="record_radio31" id="recordradio31" value="1"><span class="yesorno-radio">无</span> 
+            		<input type="radio" name="record_radio31" id="recordradio32" value="2" ><span class="yesorno-radio">有</span>
+            		<span class="text-text">频率</span> <input type="text" class="form-control" style="width: 283px !important;"  name="pb_pinlv"  id="" placeholder="">
+            		
+            	</div>
+            	<div class="record-container">
+            		<span style="margin-left: 110px;">辅助排便措施：</span>  <input type="text" class="form-control"  name="pb_fuzhu" style="width: 210px !important;"  id="" placeholder="">
+            		 <span class="text-text">具体描述：</span> <input type="text" class="form-control"  style="width: 210px !important;" name="pb_miaoshu"  placeholder="">
+            	</div>
+            	<p />
+            	<p />
+            	
+            	<div class="record-container">
+            		<span class="container-title">健康评估（根据BMI，腰围，血压，空腹血糖，尿酸值结合以下症状）</span>
+            	</div>
+            	<div class="record-container">
+            		<input type="checkbox" name="recordcheckbox0"><span class="yesorno-checkbox">0度（健康超重）：没有明显的危险系数（各项指标正常）</span>
+            		
+            	</div>
+            	<div class="record-container">
+            		<span>一级症状（疾病前期）：</span>
+            		<input type="checkbox" name="recordcheckbox1"><span class="yesorno-checkbox">乏力</span>
+            		<input type="checkbox" name="recordcheckbox2"><span class="yesorno-checkbox">易困嗜睡</span>
+            		<input type="checkbox" name="recordcheckboxdahan"><span class="yesorno-checkbox">打鼾</span>
+            		<input type="checkbox" name="recordcheckbox3"><span class="yesorno-checkbox">轻度脂肪肝</span>
+            		<input type="checkbox" name="recordcheckbox4"><span class="yesorno-checkbox">内分泌紊乱</span>
+            		<input type="checkbox" name="recordcheckbox5"><span class="yesorno-checkbox">黑色棘皮症</span>  
+            	</div>
+            	<div class="record-container">
+            		<span>二级症状（并发症）：</span>
+            		<input type="checkbox" name="recordcheckbox6"><span class="yesorno-checkbox">中重度脂肪肝</span>
+            		<input type="checkbox" name="recordcheckbox7"><span class="yesorno-checkbox">高血压</span>
+            		<input type="checkbox" name="recordcheckbox8"><span class="yesorno-checkbox">高血脂</span>
+            		<input type="checkbox" name="recordcheckbox9"><span class="yesorno-checkbox">2型糖尿病</span>
+            		<input type="checkbox" name="recordcheckbox10"><span class="yesorno-checkbox">多囊卵巢综合症</span>
+            		<input type="checkbox" name="recordcheckbox11"><span class="yesorno-checkbox">颈动脉硬化</span>  
+            	</div>
+            	<div class="record-container">
+            		<input type="checkbox" name="recordcheckbox12"><span class="yesorno-checkbox">睡眠呼吸暂停综合征</span>  
+            		<input type="checkbox" name="recordcheckbox13"><span class="yesorno-checkbox">退行性关节炎</span>  
+            		<input type="checkbox" name="recordcheckbox14"><span class="yesorno-checkbox">反流性胃炎、食管炎</span>  
+            		<input type="checkbox" name="recordcheckbox15"><span class="yesorno-checkbox">肥胖导致生长发育迟缓</span>  
+            		<input type="checkbox" name="recordcheckbox16"><span class="yesorno-checkbox">轻、重度心理疾病</span>  
+            	</div>
+            	<div class="record-container">
+            		<span>三级症状（晚期的器官损伤）：</span>
+            		<input type="checkbox" name="recordcheckbox17"><span class="yesorno-checkbox">冠心病</span>
+            		<input type="checkbox" name="recordcheckbox18"><span class="yesorno-checkbox">冠脉支架术后</span>
+            		<input type="checkbox" name="recordcheckbox19"><span class="yesorno-checkbox">心肌梗死</span>
+            		<input type="checkbox" name="recordcheckbox20"><span class="yesorno-checkbox">脑血栓</span>
+            		<input type="checkbox" name="recordcheckbox21"><span class="yesorno-checkbox">心脏衰竭</span>
+            		<input type="checkbox" name="recordcheckbox22"><span class="yesorno-checkbox">肝硬化</span>  
+            	</div>
+            	<div class="record-container">
+            		<input type="checkbox" name="recordcheckbox23" style="margin-left: 200px;"><span class="yesorno-checkbox">糖尿病并发症（眼底疾病或肾功能衰竭）</span>  
+            		<input type="checkbox" name="recordcheckbox24"><span class="yesorno-checkbox" >严重抑郁症或有自杀倾向</span>  
+            	</div>
+            	<div class="record-container">
+                <span>具体症状：</span><input type="text" class="form-control"  name="zhengzhuangjuti" style="width: 677px !important;"  id="" placeholder="">
+            	</div>
+            	<div class="record-container">
+            		<span>健康等级评估：</span><input type="text" class="form-control"  name="healthlevel" style="width: 377px !important;"  id="" placeholder="">
+            	</div>
+            	<hr />
+            	<div class="record-container">
+            		<span>身高：</span><input type="text" class="form-control" name="height" ><span>cm</span>&nbsp;&nbsp;
+            		<span>体重：</span><input type="text" class="form-control" name="weight" ><span>kg</span>&nbsp;&nbsp;
+            		<span>腰围：</span><input type="text" class="form-control" name="waist" ><span>cm</span>&nbsp;&nbsp;
+            		<span>臀围：</span><input type="text" class="form-control" name="hipline" ><span>cm</span>
+            	</div>
+            	<hr />
+            	<div class="record-container">
+            		<span>检测结果：BMI：</span><input type="text" class="form-control" name="bmiscore" style="width: 80px !important;"/>&nbsp;&nbsp;
+            		<span>体脂百分数：</span><input type="text" class="form-control" name="bodyfatper" style="width: 80px !important;"/>&nbsp;&nbsp;
+            		<span>内脏脂肪等级：</span><input type="text" class="form-control" name="insightfat" style="width: 80px !important;"/>&nbsp;&nbsp;
+            		<span>腰臀比：</span><input type="text" class="form-control" name="waisthip" style="width: 80px !important;"/>&nbsp;&nbsp;
+            	</div>
+            	<div class="record-container">
+            		<span style="margin-left: 65px;">骨骼肌：</span><input type="text" class="form-control" name="musculiskeleti" style="width: 80px !important;"/>&nbsp;&nbsp;
+            		<span>体脂肪</span><input type="text" class="form-control" name="bodyfat" style="width: 80px !important;" />&nbsp;&nbsp;
+            		<span>基础代谢：</span><input type="text" class="form-control" name="metabolism" style="width: 80px !important;"/>&nbsp;&nbsp;
+            		<span>健康评估分：</span><input type="text" class="form-control" name="healthscore" style="width: 107px !important;"/>&nbsp;&nbsp;
+            	</div>
+            	<hr />
+            	<div class="record-container">
+            		<span>家庭组成：</span><input type="text" class="form-control" name="homemakeup" style="width: 677px !important;">
+            	</div>
+            	<div class="record-container">
+            		<span>家庭史：</span>
+            		<input type="checkbox" name="recordcheckbox25"><span class="yesorno-checkbox">肥胖症</span>
+            		<input type="checkbox" name="recordcheckbox26"><span class="yesorno-checkbox">高血压</span>
+            		<input type="checkbox" name="recordcheckbox27"><span class="yesorno-checkbox">高血脂</span>
+            		<input type="checkbox" name="recordcheckbox28"><span class="yesorno-checkbox">高血糖</span>
+            		<span>具体:</span><input type="text" class="form-control" name="historyde" style="width: 340px !important;" />
+            	</div>
+            	<hr />
+            	<div class="record-container">
+            		<span>日常运动量：</span>
+            		<input type="checkbox" name="recordcheckbox29"><span class="yesorno-checkbox">久坐少运动</span>
+            		<input type="checkbox" name="recordcheckbox30"><span class="yesorno-checkbox">轻度运动</span>
+            		<input type="checkbox" name="recordcheckbox31"><span class="yesorno-checkbox">中度运动</span>
+            		<input type="checkbox" name="recordcheckbox32"><span class="yesorno-checkbox">大量运动</span>
+            	</div>
+            	<div class="record-container">
+            		<span>运动方式：</span><input type="text" class="form-control" name="sportstyle" style="width: 300px !important;"/>&nbsp;&nbsp;
+            		<span>个人爱好：</span><input type="text" class="form-control" name="perhobby" style="width: 300px !important;"/>
+            	</div>
+            	<div class="record-container">
+            		<span class="container-title">膳食习惯</span>
+            		<span>（肥胖前饮食偏好和摄入多的食物）：</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            		<span>米面摄入量：</span><input type="text" class="form-control" name="ricenoddles"/>&nbsp;&nbsp;<span>克/天</span>
+            	</div>
+            	<div class="record-container">
+            		<table class="caseTable table-bordered" style="padding: 4px !important;">
+            		 <thead>
+            		 	<th>食物种类</th>
+            		 	<th>每次摄入量（克）</th>
+            		 	<th>食物名称</th>
+            		 	<th>食用频率</th>
+            		 </thead>	
+            		 <tbody>            		
+								    <tr>
+								    	<td>面食</td>
+								      <td><input type="text" class="forminput-time" id="" name="noddlesin"  placeholder=""></td>
+								      <td><input type="text" class="forminput-food" id=""  name="noddlesname" placeholder=""></td>
+								      <td><input type="text" class="forminput-style" id=""  name="noddlesfre" placeholder=""></td>						      
+								    </tr>
+								    <tr>
+								    	<td>米饭</td>
+								      <td><input type="text" class="forminput-time" id=""  name="ricein" placeholder=""></td>
+								      <td><input type="text" class="forminput-food" id=""  name="ricename" placeholder=""></td>
+								      <td><input type="text" class="forminput-style" id=""  name="ricefre" placeholder=""></td>
+								     			
+								    </tr>
+								    <tr>
+								    	<td>红肉</td>
+								      <td><input type="text" class="forminput-time" id=""  name="redmeatin" placeholder=""></td>
+								      <td><input type="text" class="forminput-food" id=""  name="redmeatname" placeholder=""></td>
+								      <td><input type="text" class="forminput-style" id=""  name="redmeatfre" placeholder=""></td>
+								      			
+								    </tr>
+								    <tr>
+								    	<td>白肉</td>
+								      <td><input type="text" class="forminput-time" id=""  name="whmeatin" placeholder=""></td>
+								      <td><input type="text" class="forminput-food" id=""  name="whmeatname" placeholder=""></td>
+								      <td><input type="text" class="forminput-style" id=""  name="whmeatfre" placeholder=""></td>
+								      		
+								    </tr>
+								    <tr>
+								    	<td>鱼虾海鲜</td>
+								      <td><input type="text" class="forminput-time" id=""  name="seain" placeholder=""></td>
+								      <td><input type="text" class="forminput-food" id=""  name="seaname" placeholder=""></td>
+								      <td><input type="text" class="forminput-style" id=""  name="seafre" placeholder=""></td>
+								      		
+								    </tr>
+								    <tr>
+								    	<td>蔬菜</td>
+								      <td><input type="text" class="forminput-time" id=""  name="vegein" placeholder=""></td>
+								      <td><input type="text" class="forminput-food" id=""  name="vegename" placeholder=""></td>
+								      <td><input type="text" class="forminput-style" id=""  name="vegefre" placeholder=""></td>						      		
+								    </tr>
+								     <tr>
+								    	<td>水果</td>
+								      <td><input type="text" class="forminput-time" id=""  name="fruitin" placeholder=""></td>
+								      <td><input type="text" class="forminput-food" id=""  name="fruitname" placeholder=""></td>
+								      <td><input type="text" class="forminput-style" id=""  name="fruitfre" placeholder=""></td>						      		
+								    </tr>
+								     <tr>
+								    	<td>甜食</td>
+								      <td><input type="text" class="forminput-time" id=""  name="dessertin" placeholder=""></td>
+								      <td><input type="text" class="forminput-food" id=""  name="dessertname" placeholder=""></td>
+								      <td><input type="text" class="forminput-style" id=""  name="dessertfre" placeholder=""></td>						      		
+								    </tr>
+								     <tr>
+								    	<td>油炸食品</td>
+								      <td><input type="text" class="forminput-time" id=""  name="fryin" placeholder=""></td>
+								      <td><input type="text" class="forminput-food" id=""  name="fryname" placeholder=""></td>
+								      <td><input type="text" class="forminput-style" id=""  name="fryfre" placeholder=""></td>						      		
+								    </tr>
+								     <tr>
+								    	<td>零食</td>
+								      <td><input type="text" class="forminput-time" id=""  name="snackin" placeholder=""></td>
+								      <td><input type="text" class="forminput-food" id=""  name="snackname" placeholder=""></td>
+								      <td><input type="text" class="forminput-style" id=""  name="snackfre" placeholder=""></td>						      		
+								    </tr>
+								     <tr>
+								    	<td>饮料</td>
+								      <td><input type="text" class="forminput-time" id=""  name="drinkin" placeholder=""></td>
+								      <td><input type="text" class="forminput-food" id=""  name="drinkname" placeholder=""></td>
+								      <td><input type="text" class="forminput-style" id=""  name="drinkfre" placeholder=""></td>						      		
+								    </tr>
+								     <tr>
+								    	<td>酒类</td>
+								      <td><input type="text" class="forminput-time" id=""  name="winein" placeholder=""></td>
+								      <td><input type="text" class="forminput-food" id=""  name="winename" placeholder=""></td>
+								      <td><input type="text" class="forminput-style" id=""  name="winefre" placeholder=""></td>						      		
+								    </tr>
+								     <tr>
+								    	<td>其他</td>
+								      <td><input type="text" class="forminput-time" id=""  name="otherin" placeholder=""></td>
+								      <td><input type="text" class="forminput-food" id=""  name="othername" placeholder=""></td>
+								      <td><input type="text" class="forminput-style" id=""  name="otherfre" placeholder=""></td>						      		
+								    </tr>
+								    
+								  </tbody>
+								 </table>
+            	</div>
+            	
+            	<div class="record-container">
+            		<span>就餐习惯：</span>
+            		<input type="checkbox" name="record_checkbox9"><span class="yesorno-checkbox">暴饮暴食</span>
+            		<input type="checkbox" name="record_checkbox10"><span class="yesorno-checkbox">进食速度快</span>
+            		<input type="checkbox" name="record_checkbox11"><span class="yesorno-checkbox">压力大时经常进食</span>
+            		<input type="checkbox" name="record_checkbox12"><span class="yesorno-checkbox">临睡前进食</span>
+            		<input type="checkbox" name="record_checkbox13"><span class="yesorno-checkbox">在外就餐多</span>
+            		<input type="checkbox" name="record_checkbox14"><span class="yesorno-checkbox">不吃早餐</span>     	 
+            	</div>
+            	<div class="record-container">
+            		<span class="text-text" style="margin-left: 70px !important;">具体描述:</span> <input type="text" class="form-control"  name="jcxg_miaoshu"  style="width: 617px !important;" placeholder="">
+            	</div>
+            	<div class="record-container">
+            		<span style="margin-right: 10px;">平时餐饮应酬：</span>
+            		<input type="radio" name="yingchou_radio" id="ycradio1" value="1"><span class="yesorno-radio">多</span>
+            		<input type="radio" name="yingchou_radio" id="ycradio2" value="2"><span class="yesorno-radio">一般</span>
+            		<input type="radio" name="yingchou_radio" id="ycradio3" value="3"><span class="yesorno-radio">少</span>
+            		<span class="text-text">每周</span> <input type="text" class="form-control"  name="yc_cishu"  style="width: 110px !important;margin-right: 3px !important;" placeholder="">次
+            	</div>
+            	<div class="record-container">
+            		是否饮酒：<input type="checkbox" name="drink_box"><input type="text" class="form-control" name="drink"  style="width: 287px !important;" id="" placeholder="">
+            		<span style="margin-left: 10px;">是否吸烟：</span><input type="checkbox" name="smoke_box"><input type="text"  name="smoke"  class="form-control" style="width: 287px !important;" id="" placeholder="">
+            	</div>
+            	<p />
+            	<p />
+            	<div class="record-container">
+            		<span class="container-title">最近一天饮食：</span>           	 
+            	</div>
+            	<div class="record-container">
+            		<table class="caseTable table-bordered" style="padding: 4px !important;">
+            		 <thead>
+            		 	<th class="tit">餐饮</th>
+            		 	<th>时间</th>
+            		 	<th>方式</th>
+            		 	<th>食物种类、数量</th>
+            		 	<th>摄入能量（Kcal）</th>
+            		 </thead>	
+            		 <tbody>            		
+								     <tr>
+								    	<td>早餐</td>
+								      <td><input type="text" class="forminput-time" id="" name="bre_time"  placeholder=""></td>
+								      <td><input type="text" class="forminput-style" id=""  name="bre_style" placeholder=""></td>
+								      <td><input type="text" class="forminput-food" id=""  name="bre_kind" placeholder=""></td>
+								      <td><input type="text" class="forminput-kcal" id="" name="bre_kcal"  placeholder=""></td>							      
+								    </tr>
+								    <tr>
+								    	<td>午餐</td>
+								      <td><input type="text" class="forminput-time" id=""  name="lun_time" placeholder=""></td>
+								      <td><input type="text" class="forminput-style" id=""  name="lun_style" placeholder=""></td>
+								      <td><input type="text" class="forminput-food" id=""  name="lun_kind" placeholder=""></td>
+								      <td><input type="text" class="forminput-kcal" id="" name="lun_kcal"  placeholder=""></td>			
+								    </tr>
+								    <tr>
+								    	<td>晚餐</td>
+								      <td><input type="text" class="forminput-time" id=""  name="din_time" placeholder=""></td>
+								      <td><input type="text" class="forminput-style" id=""  name="din_style" placeholder=""></td>
+								      <td><input type="text" class="forminput-food" id=""  name="din_kind" placeholder=""></td>
+								      <td><input type="text" class="forminput-kcal" id="" name="din_kcal"  placeholder=""></td>			
+								    </tr>
+								    <tr>
+								    	<td>夜宵</td>
+								      <td><input type="text" class="forminput-time" id=""  name="snack_time" placeholder=""></td>
+								      <td><input type="text" class="forminput-style" id=""  name="snack_style" placeholder=""></td>
+								      <td><input type="text" class="forminput-food" id=""  name="snack_kind" placeholder=""></td>
+								      <td><input type="text" class="forminput-kcal" id="" name="snack_kcal"  placeholder=""></td>		
+								    </tr>
+								    <tr>
+								    	<td>其他</td>
+								      <td><input type="text" class="forminput-time" id=""  name="other_time" placeholder=""></td>
+								      <td><input type="text" class="forminput-style" id=""  name="other_style" placeholder=""></td>
+								      <td><input type="text" class="forminput-food" id=""  name="other_kind" placeholder=""></td>
+								      <td><input type="text" class="forminput-kcal" id="" name="other_kcal"  placeholder=""></td>		
+								    </tr>
+								    <tr>
+								    	<td colspan="3">一日摄入总能量</td>
+								      <td colspan="2"><input type="text" class="forminput-kcal" id=""  name="allday_kcal" placeholder="">Kcal</td>
+								    </tr>
+								  </tbody>
+								 </table>
+            	</div>
+            	<hr class="fhr" />
+           	<div class="record-container">
+            		<span class="container-title">肥胖原因分析：</span>            	 
+            	</div>
+            	<div class="record-container">
+            		<span>1.热量摄入过多（饮食结构不合理，饮食习惯不好）</span> 
+            		<input type="text" class="form-control" id=""  name="reason_more" style="width: 383px !important;" placeholder="">
+            	</div>
+            	<div class="record-container">
+            		<span>2.热量消耗过少（运动制约，情绪的影响）</span> 
+            		<input type="text" class="form-control" id="" name="reason_less" style="width: 433px !important;" placeholder="">
+            	</div>
+            	<div class="record-container">
+            		<span>3.疾病因素（内分泌紊乱，药源性）</span> 
+            		<input type="text" class="form-control" id="" name="reason_ill" style="width: 473px !important;" placeholder="">
+            	</div>
+            	<div class="record-container">
+            		<span>4.其他因素（年龄，生理的，心理的，社会经济等）</span> 
+            		<input type="text" class="form-control" id="" name="reason_other" style="width: 373px !important;" placeholder="">
+            	</div>
+            	<div class="record-container">
+            		<span>减重目的：</span> 
+            		<input type="text" class="form-control" id="" name="aim" style="width: 618px !important;" placeholder="">
+            	</div>
+            	<hr />
+            	<div class="record-container">
+            		<span>减重目标：</span> 
+            		<span >目标体重</span><input type="text" class="form-control"  name="aim_weight" id="jzmb" placeholder="">公斤，
+            		<span >共需要减去</span><input type="text" class="form-control" id="jzmb" name="aim_lose" placeholder="">公斤，
+            		<span >预计需要时间</span><input type="text" class="form-control" id="jzmb" name="aim_time" placeholder="" style="width: 60px !important;">天
+            	</div>
+            	<div class="record-container">
+            		<table class="caseTable table-bordered" style="padding: 4px !important;">
+            		 <thead>
+            		 	<th>时间</th>
+            		 	<th>阶段名称</th>
+            		 	<th>目标体重</th>
+            		 	<th>完成时间</th>
+            		 </thead>	
+            		 <tbody>            		
+								     <tr>
+								      <td><input type="text" class="forminput" id="" name="a_time" placeholder="" ></td>
+								      <td><input type="text" class="forminput" id="" name="a_stage" placeholder=""></td>
+								      <td><input type="text" class="forminput" id="" name="a_weight" placeholder=""></td>
+								      <td><input type="text" class="forminput" id="" name="a_finishday" placeholder=""></td>
+								    </tr>
+								    <tr>
+								    	<td><input type="text" class="forminput" id="" name="b_time" placeholder=""></td>
+								      <td><input type="text" class="forminput" id="" name="b_stage" placeholder=""></td>
+								      <td><input type="text" class="forminput" id="" name="b_weight" placeholder=""></td>
+								      <td><input type="text" class="forminput" id="" name="b_finishday" placeholder=""></td>
+								    </tr>
+								    <tr>
+								    	<td><input type="text" class="forminput" id="" name="c_time" placeholder=""></td>
+								      <td><input type="text" class="forminput" id="" name="c_stage" placeholder=""></td>
+								      <td><input type="text" class="forminput" id="" name="c_weight" placeholder=""></td>
+								      <td><input type="text" class="forminput" id="" name="c_finishday" placeholder=""></td>
+								    </tr>
+								    <tr>
+								    	<td><input type="text" class="forminput" id="" name="d_time" placeholder=""></td>
+								      <td><input type="text" class="forminput" id="" name="d_stage" placeholder=""></td>
+								      <td><input type="text" class="forminput" id="" name="d_weight" placeholder=""></td>
+								      <td><input type="text" class="forminput" id="" name="d_finishday" placeholder=""></td>
+								    </tr>
+								  </tbody>
+								 </table>
+            	</div>
+            	<hr class="fhr" />
+            <div class="record-container">
+            		<span>个人爱好：</span>
+            		<input type="checkbox" name="record_checkbox15"><span class="yesorno-checkbox">旅游</span>
+            		<input type="checkbox" name="record_checkbox16"><span class="yesorno-checkbox">音乐</span>
+            		<input type="checkbox" name="record_checkbox17"><span class="yesorno-checkbox">大牌</span>
+            		<input type="checkbox" name="record_checkbox18"><span class="yesorno-checkbox">时尚</span>
+            		<input type="checkbox" name="record_checkbox19"><span class="yesorno-checkbox">名牌</span>
+            		<input type="checkbox" name="record_checkbox20"><span class="yesorno-checkbox">聊天</span>
+            		<input type="checkbox" name="record_checkbox21"><span class="yesorno-checkbox">运动</span>
+            		<input type="checkbox" name="record_checkbox22"><span class="yesorno-checkbox">自驾游</span>
+            		<!--<input type="checkbox" name="record_checkbox23"><span class="yesorno-checkbox">聊天</span>-->
+            		其他<input type="text" class="form-control" id="" name="otherhobby" style="width: 60px !important;margin-left: 3px !important;">
+            	</div>
+            	<div class="record-container">
+            		具体描述：<input type="text" class="form-control" id=""  name="hobby_miaoshu"  style="width: 650px !important;margin-left: 3px !important;">
+            	</div>
+            	<hr />
+            	<div class="record-container">
+            		<span style="">便于联络的时间：</span>  <input type="text" class="form-control"  name="contact_time" style="width: 200px !important;"  id="" placeholder="">
+            		 <span class="text-text">具体开始时间：</span> <input type="text" class="form-control"  name="start_year"  style="width: 58px !important;" placeholder="">
+            		 年<input type="text" class="form-control"  name="start_mon"  style="width: 48px !important;" placeholder="">
+            		 月<input type="text" class="form-control"  name="start_day"  style="width: 48px !important;" placeholder="">
+            		 日
+            	</div>
+            	<hr />
+            	<div class="record-container">
+            		<span >身边是否有胖友：</span> <input type="radio" name="record_radio33" id="recordradio33" value="1"><span class="yesorno-radio">无</span> 
+            		<input type="radio" name="record_radio33" id="recordradio34" value="2" ><span class="yesorno-radio">有</span> 
+            		 <span class="text-text">是否愿意分享成功减重经验：</span> <input type="radio" name="record_radio35" id="recordradio35" value="1"><span class="yesorno-radio">是</span>
+            		 <input type="radio" name="record-radio35" id="recordradio36" value="2"><span class="yesorno-radio">否</span> 
+            		<span class="text-text">是否愿意分享影像资料：</span> <input type="radio" name="record_radio37" id="recordradio37" value="1"><span class="yesorno-radio">是</span>
+            		<input type="radio" name="record_radio37" id="recordradio38" value="2" ><span class="yesorno-radio">否</span>
+            	</div>
+            	<hr />
+            	<div class="record-container">
+            		<span class="container-title">备注：</span> 
+            		<input type="text" class="form-control" id="" name="remark"  style="width: 618px !important;" placeholder="">
+            	</div>
+            	<hr />
+            	<div class="record-container">
+            		<span>顾问：</span> 
+            		<input type="text" class="form-control" id=""  name="adviser_name" style="width: 618px !important;" placeholder="">
+            	</div>
+   
+            	</form>
+            	
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" style="margin:5px">关闭</button>
+                <!--<button type="button" class="btn btn-primary" id="buttontest" style="margin:5px;border:#2EB7A7;background-color: #2EB7A7;">提交更改</button>-->
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+					
+				<!--病例模态框结束-->
+				
+				
+				
+				
+				
+				
+				
+				<!--<button class="btn btn-primary btn-lg" id="btn" data-toggle="modal" data-target="#myModal">点击弹窗</button>
+				<button class="btn btn-primary btn-lg" id="btn1" data-toggle="modal" data-target="#myModal1">点击弹窗1</button>
+				<button class="btn btn-primary btn-lg" id="btn2" data-toggle="modal" data-target="#myModal2">点击弹窗2</button>
+				<button class="btn btn-primary btn-lg" id="btn3" data-toggle="modal" data-target="#myModal3">点击弹窗3</button>-->
+             	
+             </div>               
+        </div><!--container-detail-->
+    </div><!--main-container-->
+    <script type="text/javascript" src="../../common/js/url.js"></script>
+    <script src="../../common/js/jquery.min.js"></script>
+    <script src="../../common/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../common/js/template.js" ></script>
+    <script type="text/javascript" src="../js/menuD.js"></script>
+    <script type="text/javascript" src="../js/caseList.js"></script>
+    
+  
+  </body>
+</html>

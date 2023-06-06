@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <title>未分配顾问管理</title>
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+    <link href="../../common/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../common/css/common.css" />
+    <link rel="stylesheet" href="../css/advice.css" />
+    <style>
+		.ui-autocomplete {
+			display: block;
+			z-index: 99999;
+			height: 200px;
+			overflow-y: scroll;
+		}
+	</style>
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+  	<header class="clearfix">
+        <div class="logo"></div>
+        <h1>春风微辅—运营管理系统</h1>
+    </header>
+    <!--<div class="menu">-->
+    <div class="menu-wrapper">
+    	    
+    </div>
+    <!--</div>-->
+    <!--<div class="footer">
+        春风微辅—运营管理系统
+    </div>-->
+    <div class="main-container">
+    	    <div class="container-detail clearfix">
+        		<div class="panel">
+    	    			<div class="panel-heading">未分配顾问</div>
+    	    			<div class="panel-body">
+							<div class="row">
+								<input type="button" value="已分配顾问" class="btn btn-primary" id="yes-btn"/>
+							</div>
+    	    				<div class="table-container">
+		    				<table class="table table-hover">
+		    				</table>
+    	    				</div>   
+    	    			</div>
+    	    		</div>
+    	    		<!-- change advicer model -->
+			<div class="modal fade" id="changeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content" style="width: 600px;">
+						<div class="modal-header" style="background-color:#23AB97;color: white;text-align: center;border-bottom: none;">
+							<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+							<h4 class="modal-title">修改个人信息</h4>
+						</div>
+						<div class="modal-body">
+							<form role="form">
+								<div class="row">
+									<div class="col-xs-4">
+										<img src="../img/moren.jpg" class="img-responsive" id="change-img" />
+										<button type="button" class="btn btn-primary" id="change-btn">上传图片</button>
+										<input type="file" id="change-btn-file" style="display: none;" name="userfile"/>
+									</div>
+									<div class="col-xs-8">
+										<div class="form-group">
+											<label>顾问姓名：(必填)</label>
+											<input type="text" class="form-control" required="required" id="change-name" />
+										</div>
+										<div class="form-group">
+											<label>性别：</label>
+											<input type="radio" name="change-sex" required="required" value="male" id="change-male" />男
+											<input type="radio" name="change-sex" required="required" value="female" id="change-female" />女
+										</div>
+										<div class="form-group">
+											<label>年龄：</label>
+											<input type="number" class="form-control" required="required" id="change-age" />
+										</div>
+										<div class="form-group">
+											<label>手机：(必填)</label>
+											<input type="tel" class="form-control" required="required" id="change-tel" />
+										</div>
+										<div class="form-group">
+											<label>区域：(必填)</label>
+											<div id="changeArea"></div>
+										</div>
+									</div>
+								</div>
+								<div class="modal-footer" style="border-top: none;">
+									<button type="button" class="btn btn-danger" id="submit-change" style="background-color:#23AB97;color: white;text-align: center;border: none;">保存</button>
+									<button type="button" class="btn btn-primary" data-dismiss="modal" id="cancel-change" style="background-color:white;color:#23AB97 ;text-align: center;border-color:#23AB97" >取消</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+        </div><!--container-detail-->
+    </div><!--main-container-->
+				
+	<script src="//code.jquery.com/jquery-1.9.1.js"></script>
+	<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+	<script src="../js/jquery.form.js"></script>
+	<script type="text/javascript" src="../../common/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../common/js/template.js" ></script>
+    <script type="text/javascript" src="../js/menuF.js"></script>
+	<script type="text/javascript" src="../../common/js/url.js" ></script>
+	<script type="text/javascript" src="../../common/js/area.js" ></script>
+  	<script type="text/javascript" src="../js/f-1-3.js"></script>
+  	<script id="advice-1-3-1-tmpl" type="text/html">
+  		<tr class="table-sub-title">
+			<td>顾问姓名</td>
+			<td>电话</td>
+			<td>主管顾问</td>
+			<td>操作</td>
+		</tr>
+  		{{each datum as value}}
+		<tr data-id = {{value.consultantId}}>
+			<td>{{value.consultantName}}</td>
+			<td>{{value.contractInfoMap.tel}}</td>
+			<td><span class="advicerName">未知</span></td>
+			<td>
+				<span class="fixedAdvicer" data-toggle="modal" data-target="#changeModal">修改个人信息</span>
+				<span class="addManager">分配主管顾问</span>
+			</td>
+	    </tr>
+  		{{/each}}
+  	</script>
+	<script id="advice-1-3-2-tmpl" type="text/html">
+		<select style="height: 35px;display: block" class="area-select">
+			{{each datum as value}}
+			<option data-id={{value.areaID}}>{{value.areaName}}</option>
+			{{/each}}
+		</select>
+	</script>
+  </body>
+</html>

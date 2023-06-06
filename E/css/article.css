@@ -1,0 +1,158 @@
+a{
+	color: #000000;
+}
+a:hover{
+	text-decoration: none;
+}
+.nav2{
+	display:none;
+}
+.navbar{
+	border: none;
+	padding-top: 15px;
+}
+.logo img{
+	width: 150px;
+    height: 37px;
+}
+.navbar-header p{
+	    line-height: 50px;
+    float: left;
+    letter-spacing: 2px;
+    font-size: 15px;
+    font-family: fantasy;
+    color: #183162;
+
+}
+.navbar-brand{
+	padding: 0 15px;
+}
+.jum{
+	padding: 0px;
+	border: 8px solid #FFFFFF;
+	border-radius: 8px;
+}
+.jum img{
+	width: 100%;
+}
+.jumbotron{
+	padding: 0px;
+}
+a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, button.list-group-item:hover {
+    background: #2EB7A7;
+	color: #FFFFFF;
+	text-align: center;
+	font-weight: bolder;
+	font-size: 18px;
+}
+
+a.l-active{
+	background: #2EB7A7;
+	color: #FFFFFF;
+	text-align: center;
+	font-weight: bolder;
+	font-size: 18px;
+}
+/*.l-active{
+	
+}*/
+.list{
+	background: #CCCCCC;
+	color: #666666;
+	text-align: center;
+	font-weight: bolder;
+	font-size: 18px;
+}
+.tittle{
+	border-bottom: 1px solid #2DB6A6;
+}
+.tittle a:hover{
+	text-decoration: none;
+}
+.content{
+	padding-top: 10px;
+	border-bottom: 1px dotted #C0C0C0;
+}
+.content h4{
+	font-size: 15px;
+	font-weight: bold;
+}
+#footer {
+    background: #181818;
+    height: 40px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    }
+    #footer a {
+    float: right;
+    margin-top: 10px;
+    margin-right: 5%;
+    font-size: 10px;
+    color: #CCCCC0;
+}
+.pages{
+	margin-bottom: 45px;
+	font-size: 10px;
+	}
+/* 小屏幕（平板，大于等于768px） */
+@media (min-width: 768px) {
+	#footer{
+		height: 80px;
+		}
+		.row{
+		padding-bottom: 50px;
+	}
+}
+
+/* 中等屏幕（桌面显示器，大于等于992px） */
+@media (min-width: 992px){
+	.nav1{
+		display: none;
+	}
+	.nav2{
+		display: block;
+	}
+	.logo{
+	margin: auto;
+}
+.navbar{
+	border: none;
+	
+}
+.navbtn{
+	margin-right: 12%;
+	margin-top: 50px;
+}
+.navbar-btn{
+	background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#DADADA));
+	border-radius: 5px;
+	box-shadow: 2px 2px 2px #C0C0C0;
+}
+
+	.logo{
+		margin-left: 8%;
+        float: left;
+        font-size: 20px;
+        padding-top: 8px;
+	}
+	/*
+	.navbar{
+	   border: none;
+	   margin-bottom: 0px;
+	   padding-top: 2px;
+    }
+    .logo p{
+       float: left;
+       line-height: 100px;
+       letter-spacing: 3px;
+    }
+    .logo img{
+    	float: left;
+    }
+}
+
+/* 大屏幕（大桌面显示器，大于等于1200px） */
+@media (min-width: 1200px){
+	
+}

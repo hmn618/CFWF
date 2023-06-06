@@ -1,0 +1,37 @@
+.origin {
+    margin: 0 10px;
+}
+.content{
+	width: 98%;
+	border: 1px solid #8C8C8C;
+	border-radius: 5px;
+	background: #FFFFFF;
+	margin-top: 15px;
+	margin-left: 1%;
+	padding: 30px 25px;
+	margin-bottom: 90px;
+	}
+.t1{
+	font-size: 18px;
+	text-align: center;
+	color: #000000;
+	}
+.t2{
+	text-align: center;
+	}	
+.t3{
+	margin-top: 20px;
+	}
+	
+/* 小屏幕（平板，大于等于768px） */
+@media (min-width: 768px) {
+	
+}
+
+/* 中等屏幕（桌面显示器，大于等于992px） */
+@media (min-width: 992px){
+	
+/* 大屏幕（大桌面显示器，大于等于1200px） */
+@media (min-width: 1200px){
+	
+}

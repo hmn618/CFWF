@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <title>春风微拂B-2-3新增图文消息</title>
+    <link rel="stylesheet" href="../css/article-2-2.css" />
+    <link href="../../common/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../common/css/common.css" />
+    <link rel="stylesheet" href="../../kindeditor/themes/default/default.css" />
+		<link rel="stylesheet" href="../../kindeditor/plugins/code/prettify.css" />
+    <script charset="utf-8" src="../../kindeditor/kindeditor.js"></script>
+	<script charset="utf-8" src="../../kindeditor/lang/zh_CN.js"></script>
+	<script charset="utf-8" src="../../kindeditor/plugins/code/prettify.js"></script>
+	
+  </head>
+  <body>
+  	<header class="clearfix">
+        <div class="logo"></div>
+        <h1>春风微辅—运营管理系统</h1>
+   </header>
+    <div class="menu-wrapper">
+    	    
+    </div>
+    <div class="main-container">
+    	<div class="container-detail clearfix">
+    	  	<div class="container-content">
+    	  	  <div class="title-container">
+	    	  		<p>新增页面</p>
+	    	  </div>
+	    	  <div class="content-container">
+	    	  	<div class="contnet">
+	    	  		<div class="subcontent">
+		    	  		<div class="content-left">
+		    	  			<p>标&emsp;&emsp;&emsp;题*</p>
+		    	  		</div>
+		    	  		<div class="content-right">
+			    	  		<input type="text" id="title">
+		    	  			<p id="p_title"></p><br/>
+	    	  			</div>
+	    	  			<div class="clear"></div>
+	    	  		</div>
+	    	  		<div class="subcontent">
+		    	  		<div class="content-left">
+		    	  			<p>文章子标题</p>
+		    	  		</div>
+		    	  		<div class="content-right">
+			    	  		<input type="text" id="subtitle">
+	    	  			</div>
+	    	  			<div class="clear"></div>
+	    	  		</div>
+	    	  		<div class="subcontent">
+		    	  		<div class="content-left">
+		    	  			<p>作&emsp;&emsp;&emsp;者*</p>
+		    	  		</div>
+		    	  		<div class="content-right">
+			    	  		<input type="text" id="author">
+	    	  				<p id="p_author"></p>
+	    	  			</div>
+	    	  			<div class="clear"></div>
+	    	  		</div>
+	    	  		<div class="subcontent1">
+		    	  		<div class="content-left">
+		    	  			<p>封&emsp;&emsp;&emsp;面*</p>
+		    	  		</div>
+		    	  		<div class="content-right">
+		    	  			 <div class="pic_btn">
+            					<div id="photoset">
+												<button id="photoCover" type="button" class="btn"  onClick="javascript:clickImgUp();" onmouseover="this.style.backgroundColor='#C0C0C0';this.style.color='black';" 
+												onmouseout="this.style.backgroundColor='';this.style.color='#ffffff';" style="font-weight:bold">本地文件夹</button>
+												<p id="p_pic"></p>
+												
+            					</div>
+											
+											<!--<input type="file" id="photoUpload" name="pictureMultipartFile" onchange="previewImage(this)"/>-->
+											<input type="file" id="photoUpload" name="pictureMultipartFile" />
+                    </div>
+                            
+			    	  		
+		    	  			<div id="preview" class="preview" >
+	                   <img id="imghead"  name="field8" border=0 src="../img/background.png">
+	                   
+	                </div>
+		    	  			<div class="clear"></div>
+		    	  			
+		    	  		</div>
+	    	  			
+	    	  			<div class="clear"></div>
+	    	  		</div>
+	    	  		<div class="subcontent">
+		    	  		<div class="content-left">
+		    	  			<p>摘&emsp;&emsp;&emsp;要*</p>
+		    	  		</div>
+		    	  		<div class="content-right">
+			    	  		<textarea class="remark" id="remark"></textarea>
+			    	  		<p id="p_remark"></p>
+	    	  			</div>
+	    	  			<div class="clear"></div>
+	    	  		</div>
+	    	  		<div class="subcontent2">
+		    	  		<div class="content-left">
+		    	  			<p>标&emsp;&emsp;&emsp;签*</p>
+		    	  		</div>
+		    	  		<div class="content-right">
+			    	  		<div class="content-label">
+			    	  			<div class="label-left" id="label-left">
+								  <label class="checkbox-inline" style="margin-left:20px;">
+								    <input type="checkbox" id="饮食" value="饮食" name="lable" style="margin-left:-40px;">饮食
+								  </label>
+								  
+								  <label class="checkbox-inline" style="margin-left:20px;">
+								    <input type="checkbox" id="运动" value="运动" name="lable" style="margin-left:-40px;">运动
+								  </label>
+
+								</div>
+								<div class="label-right">
+									<div class="pic">
+										<img src="../img/u5501.png" alt="" id="pic" onclick="javascript:showDiv()">
+									</div>
+								</div>
+								<div class="clear"></div>
+								
+			    	  		</div>
+			    	  		<p id="p_tag"></p>
+	    	  			</div>
+	    	  			<div class="clear"></div>
+	    	  			
+	    	  		</div>
+	    	  		<div class="subcontent">
+		    	  		<div class="content-left">
+		    	  			<p>正&emsp;&emsp;&emsp;文*</p>
+		    	  		</div>
+		    	  		<div class="content-right">
+			    	  		<textarea class="remark"  id="content" name="article.content1"></textarea>
+			    	  		<p id="p_content"></p>
+	    	  			</div>
+	    	  			<div class="clear"></div>
+	    	  		</div>
+	    	  		<div class="subcontent3">
+		    	  		<div class="content-left">
+		    	  			<p>原文链接</p>
+		    	  		</div>
+		    	  		<div class="content-right">
+			    	  		<input type="text" id="textlink">
+	    	  			</div>
+	    	  			<div class="clear"></div>
+	    	  		</div>	
+	    	 		<div class="savebutton">
+	    	 			<button id="save" type="button" class="btn">保存</button>
+	    	 			<div class="clear"></div>
+	    	 		</div>
+	    	  		<div class="notice" id="mydiv">
+			          	<img src="../img/u6021.png" onclick="javascript:closeDiv()">
+			          	<div class="clear"></div>
+			          	<div class="notice-content">
+			          		
+			          		<span>标签名</span>	<input type="text" id="tab" clientidmode="Static">
+			          		<p class="item2"></p>
+			          		<div class="addbutton">
+			    	 					<button id="add" type="button" class="btn1">保存</button>
+			    	 				</div>
+			          		
+			          	</div>
+			        </div>
+	    	  	</div>
+	    	  </div>
+    	   </div>
+        </div><!--container-detail-->
+    </div><!--main-container-->
+     <script src="../../common/js/jquery.min.js"></script>
+    <script src="../../common/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../common/js/url.js"></script>
+    <script type="text/javascript" src="../../common/js/template.js" ></script>
+    <script type="text/javascript" src="../js/menuB.js"></script>
+  	<script charset="utf-8" src="../js/article-2-3.js"></script>
+  	<script charset="utf-8" src="../js/jquery.form.js"></script>
+  	<script type="text/javascript" src="../js/uploadImg.js"></script>
+  </body>
+</html>
