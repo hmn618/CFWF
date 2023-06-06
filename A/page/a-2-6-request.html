@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>复诊请求</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no;"/>
+		<link href="../css/bootstrap.min.css" rel="stylesheet">
+		<link href="../css/a-2-4-1.css" rel="stylesheet">
+		<link href="../css/a-2-6.css" rel="stylesheet">
+		<script src="../../common/js/url.js"></script>
+		<script src="../js/jquery-1.11.1.min.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="../js/a-2-6.js"></script>
+	</head>
+	<body>
+		<div class="content container">
+			<div class="row title">
+				<p class="subtitle">温馨提示</h3>
+			</div>
+			<div class="row advice">
+				<p class="advice_content">如有复诊需要，请在此向您的主治医生提出复诊请求。您的主治医生将在其工余时间根据您提交的日常记录，对您的复诊请求予以答复</p>
+			</div>
+			<div class="row title" id="yon">
+				<p class="subtitle">是否申请复诊</p>
+			</div>
+			<div class="row advice" id="request" style="text-align:center;">
+				<button class="btn requestBtn">是</button>
+				<button class="btn denyBtn">否</button>
+			</div>
+			<div class="row title" id="status">
+				<p class="subtitle">查看申请状态</p>
+			</div>
+			<div class="row advice" id="reply_status">
+				<p class="advice_content" id="reply_send"></p>
+				<p class="advice_content" id="date_send"></p>
+				<p class="advice_content" id="reply_msg">未申请</p>
+				<p class="advice_content" id="date_msg"></p>
+			</div>
+		</div>
+	</body>
+</html>

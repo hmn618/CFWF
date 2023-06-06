@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>付费项目</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no;"/>
+		<link href="../css/bootstrap.min.css" rel="stylesheet">
+		<link href="../css/bootstrap-theme.min.css" rel="stylesheet">
+		<link href="../css/all.css" rel="stylesheet">
+		<link href="../css/spring_10.css" rel="stylesheet">
+		<script src="../js/jquery-1.11.1.min.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="../../common/js/url.js"></script>
+		<script src="../js/spring_10.js"></script>
+	</head>
+	<style>
+		.row{
+			width:100%;
+			margin:0;
+		}
+	</style>
+	<body>
+		<div class="top">
+		<!--	<p class="word1"></p>-->
+			<p class="titl" style="font-size:20px">体重管理服务费</p>
+			<p class="price" style="text-align: center;">800.0<span style="font-size: 24px;">/</span><span style="font-size: 18px;">7天</span></p>
+		</div>
+		<div class="upper">
+			<div class="row">
+				<span class="label1">购买周数</span>
+				<div class="num">
+					<div class="ll" id="minus1">-</div>
+					<div class="ll" id="num1">0</div>
+					<div class="ll" id="add1">+</div>
+				</div>
+			</div>
+			<div class="row" id="useTicket">
+				<span class="label1">使用优惠券</span>
+				<div class="num2">0</div><!--绿点显示优惠券个数-->
+				
+			</div>
+		</div>
+		<div class="center" id="ticket">
+			<!--<div class="ticket1">
+				<img src="../img/card.png" class="card" />
+				<span class="label2" id="c1">春风微辅</span>
+				<span class="label2" id="c2">4周现金卷（￥）</span>
+				<span class="label2" id="c3">3200</span><span class="yuan">元</span>
+				<span class="label2" id="c4">有效期：</span><span class="label2" id="limit">2017.04.23 - 2017.04.28</span>
+				<img src="../img/okIcon.png" class="ok" />-->
+			</div>
+			
+		</div>
+		<div class="lower">
+			<div class="row">
+				<span class="label1">应付金额：</span>
+				<div class="num3">元</div><div class="num3" id="total"></div>
+			</div>
+			<div class="row" id="wechatPay">
+				<img src="../img/wechatPay.png" class="pay" />
+				<span class="label1">微信支付</span>
+				<span class="label4">&gt;</span>
+			</div>
+		</div>
+	</body>
+</html>

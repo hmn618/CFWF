@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>
+		<meta content="telephone=no" name="format-detection" /> 
+		<title>春风微辅-注册登录</title>
+		<link href="../css/a-register-1.css" rel="stylesheet" />
+	
+	</head>
+	<body>
+		<div class='wrapper'>
+			<p class='tips1'>第六步</p>
+			<p class='tips'>设置密码</p>
+			<p class='tips2'>密码</p>
+			<img id="pwd_img" class="img2" onclick="hideShowPsw()" src="../img/closeeye.png" height="6%" width="6%"> 
+			<input type="password" class='user'  id='member-pwd'>
+			<hr class="h1" >
+			<input type="password" class='user2' placeholder="确认密码"  id="member-re-pwd" >
+			<hr class="h2" >
+			<div class='submit'>
+				<button type='button' class='btn-submit' id='submit'>提交</button>
+			</div>
+		</div>
+        <script type="text/javascript">  
+			    // 控制密码小眼睛 
+			    var demoImg = document.getElementById("pwd_img");  
+			    var demoInput = document.getElementById("member-pwd"); 
+			    function hideShowPsw(){  
+			        if (demoInput.type == "password") {  
+			            demoInput.type = "text";  
+			            pwd_img.src = "../img/openeye.png";  
+			        }else {  
+			            demoInput.type = "password";  
+			            pwd_img.src = "../img/closeeye.png";  
+			        }  
+			    }  
+			</script> 
+	<script src="../../common/js/jquery.min.js"></script>
+    <script src="../../common/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../common/js/url.js"></script>
+    <script type="text/javascript" src="../../common/js/template.js" ></script>
+    <script type="text/javascript" src="../js/a-register-1.js"></script>	
+
+	</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>复诊状态</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no;"/>
+		<link href="../css/bootstrap.min.css" rel="stylesheet">
+		<link href="../css/bootstrap-theme.min.css" rel="stylesheet">
+		<link href="../css/all.css" rel="stylesheet">
+		<link href="../css/spring_15.css" rel="stylesheet">
+		<script src="../js/jquery-1.11.1.min.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="../../common/js/url.js"></script>
+		<script src="../js/spring_15.js"></script>
+	</head>
+	<style>
+		.row{
+			width:100%;
+			margin:0;
+		}
+	</style>
+	<body>
+		<div class="container1" style="padding-bottom:100px;">
+			<div class="row top" style="margin-bottom:25px;">
+				<div class="col-xs-3">
+					<img src="../img/headAdviser.png" class="headAdvisor" />
+				</div>
+				<div class="col-xs-9">
+					<p class="word" id="name"></p>
+					<p class="word" id="advisor">我的医生</p>
+				</div>
+			</div>
+			<div class="center">
+				<img src="../img/doctorIcon.png" class="doctorIcon" />
+				<div class="axis">
+					<div class="line"></div>
+					<div class="circle" id="circle1"></div>
+					<div class="circle" id="circle2"></div>
+					<div class="circle" id="circle3"></div>
+				</div>
+				<div class="row row1">
+					<div class="col-xs-4" id="op1">提出复诊</div>
+					<div class="col-xs-4" id="op2">等待回复</div>
+					<div class="col-xs-4" id="op3">复诊回复</div>
+				</div>
+			</div>
+			<div class="down">
+				<p class="headWord">温馨提示</p>
+				<p class="word" id="warn"></p>
+				<p class="time1"></p>
+				<p class="time2"></p>
+			</div>
+		</div>
+		
+		<footer>
+			<div class="footer-img">
+				<img src="../img/headNormal.png" id="user" style="height:38.77px;"/>
+			</div>
+			<div class="footer-text">
+				<p class="foot" id="when">您好</p>
+				<p class="foot" id="who">a</p>
+			</div>
+			<div class="footer-tel tel">
+				<div class="tel">
+					<a class="telephone" style="display: none;"></a>
+					<button type="button" class="tel-btn">
+						<img src="../img/tel.png" class="tel-img"/>
+						<span class="dialog">请拨打顾问电话</span>
+					</button>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>

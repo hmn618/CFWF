@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>付费专区</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no"/>
+		<link href="../css/a-6-charge.css" rel="stylesheet">
+		<link href="../css/bootstrap.min.css" rel="stylesheet">
+		<script src="../../common/js/url.js"></script>
+		<script src="../js/jquery-1.11.1.min.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="../js/a-6-charge.js"></script>
+	</head>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		.row{
+			margin:0;
+		}
+	</style>
+	<body>
+		<div class="container content" style="margin:0;padding:0;">
+			<div class="row topBar">
+				<p class="info">收费项目</p>
+			</div>
+			<div class="upBlock">
+				<div class="row">
+					<div class="col-xs-6 control"><div class="manage" id="weight">体重管理服务费</div></div>
+					<div class="col-xs-6 control"><div class="manage" id="other"></div></div>
+				</div>
+				<!--体重管理服务费-->
+				<div class="fee1">
+					<div class="row">
+						<div class="week">
+							<span class="price">￥800</span>
+							<span class="price1">/周/人</span>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-6">
+							<span class="des">周数</span>
+							<span class="operate1" id="minus1">-</span>
+							<input type="text" class="num" value="1" id="num1"/>
+							<span class="operate1" id="add1">+</span>
+						</div>
+						<div class="col-xs-6">
+							<span class="des">购买人数</span>
+							<button class="operate1" id="minus2">-</button>
+							<input type="text" class="num" value="1" id="num2"/>
+							<button class="operate1" id="add2">+</button>
+						</div>
+					</div>
+					<div class="row last">
+						<div class="col-xs-12" style="margin-bottom:20px;">
+							<span class="des">服务截止时间：</span>
+							<span class="des days" id="days">未付费</span>
+						</div>
+					</div>
+				</div>
+				<!--其他收费项目-->
+				<div class="fee2">
+					<!--未开放-->
+				</div>			</div>
+			<div class="downBlock">
+				<div class="row row1">
+					<span class="info">支付金额：</span>
+					<span class="info green info1" id="total"></span>
+					<span class="info info1">元</span>
+				</div>
+				<hr style="margin:5px auto 0px auto;width:90%;"/>
+				<div class="row" id="wechatPay">
+					<div class="col-xs-10">
+						<img src="../img/wechat.jpg" class="wechat" />
+						<span class="info1 grey">微信支付</span>
+					</div>
+					<div class="col-xs-2">
+						<span class="info2">&gt;</span>
+					</div>
+				</div>
+				<hr  style="margin:5px auto 0px auto;width:90%;"/>
+			</div>
+		</div>
+	</body>
+</html>

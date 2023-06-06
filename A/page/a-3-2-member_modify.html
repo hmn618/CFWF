@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>个人信息</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no;"/>
+		<meta content="telephone=no" name="format-detection" /> 
+		<link href="../css/bootstrap.min.css" rel="stylesheet">
+   		<script src="../../common/js/url.js"></script>
+		<script src="../js/jquery-1.11.1.min.js"></script>
+		<script src="../js/jquery.form.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="../js/bootstrap-datetimepicker.min.js"></script>
+		<link href="../css/a-3-2.css" rel="stylesheet">	
+		<link href="../css/uploadImg.css" rel="stylesheet">
+		<link href="../css/jquery-ui.css" rel="stylesheet">
+		<script src="../js/a-3-2.js"></script>
+		<style>
+			.row{
+				margin:0;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container content" style="padding:0;">
+				<div class="row" id="headImg">
+					<div class="col-xs-7">
+						<p class="item" id="touxiang">头像</p>
+					</div>
+					<div class="col-xs-5">
+						<!--图片上传-->
+							<div id="uploadDivBox">
+								<div id="btn" class="clearfix">
+								  <input type="file"  id="imgUpload" name="userfile">
+				                  <div  class="file_btn" style="height:80px;" onClick="javascript:clickImgUp();"><img id="addPicId" style="height:80px;max-height:80px;" src=""/></div>
+				                </div>
+							</div>
+					</div>
+					 
+				</div>
+				<div class="row">
+					<div class="col-xs-7">
+						<p class="item"><span>*</span>姓名</p>
+					</div>
+					<div class="col-xs-5">
+						<input class="modify" type="text" id="name" placeholder="" />
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-7">
+						<p class="item"><span>*</span>性别</p>
+					</div>
+					<div class="col-xs-5">
+						<select class="modify" id="sex">
+							<option>男</option>
+							<option>女</option>
+						</select>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-7">
+						<p class="item">电话</p>
+					</div>
+					<div class="col-xs-5">
+						<input class="modify" type="text" id="telephone" placeholder=""  style="height:25px;"/>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-7">
+						<p class="item">出生年月</p>
+					</div>
+					<div class="col-xs-5">
+						    <input type="date" id="datetime" style="width:80%;margin-top:10px;height:25px;"/>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-7">
+						<p class="item">职业</p>
+					</div>
+					<div class="col-xs-5">
+						<input class="modify" id="job" type="text" placeholder="" style="height:25px;" />
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-7">
+						<p class="item">身高</p>
+					</div>
+					<div class="col-xs-5">
+						<input class="modify" id="height" type="text" placeholder="" style="height:25px;" /><span style="color:black;display:inline-block;margin-left:5px;">cm</span>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-7">
+						<p class="item">体重</p>
+					</div>
+					<div class="col-xs-5">
+						<input class="modify" id="weight" type="text" placeholder="" style="height:25px;"/><span style="color:black;display:inline-block;margin-left:5px;">kg</span>
+					</div>
+				</div>
+				<div class="row row1">
+					<div class="col-xs-3">
+						
+					</div>
+					<div class="col-xs-6">
+						<button type="button" class="btn1" id="submit" style="background-color: #2EB7A7;margin-top:20px;">提交</button>
+					</div>
+					<div class="col-xs-3">
+						
+					</div>
+				</div>
+		</div>
+	</body>
+</html>

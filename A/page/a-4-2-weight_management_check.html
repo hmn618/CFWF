@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>春风微辅精准体重管理</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no"/>
+		<link href="../css/bootstrap.min.css" rel="stylesheet">
+		<link href="../css/a-4-2.css" rel="stylesheet">
+		<link href="../css/a-2-4-1.css" rel="stylesheet">
+		<link href="../css/a-2-6.css" rel="stylesheet">
+		<script src="../../common/js/url.js"></script>
+		<script src="../js/jquery-1.11.1.min.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="../js/a-4-2-1.js"></script>
+		<script src="../js/a-2-6.js"></script>
+	</head>
+	<body>
+		<div class="container content">
+			<!----------------查询--------------------->
+			<div class="row" style="margin:10px 0;border-bottom: 1px solid #DCDCDC;padding: 10px 0;">
+				<div class="col-xs-1"></div>
+				<div class="col-xs-10">
+					<input class="date"type="date" id="queryDate"/>
+					<button type="button" class="check" id="query">查询</button>
+				</div>
+				<div class="col-xs-1"></div>
+			</div>
+			
+			<!----------------我的日志------------------->
+			<div class="row title" id="mydairy">
+				<p class="subtitle">我的日志</p>
+			</div>
+			<div class="record" id="record">
+				<div class="row" style="margin-top:20px;">
+					<div class="col-xs-6" style="display:inline-block;">
+						<p class="labelname"  style="display:inline-block;"><span>*</span>体重：</p>
+						<p id="weight" class="labelname"  style="display:inline-block;"></p>
+						<p class="labelname" style="display:inline-block;">kg</p>
+					</div>
+					<div class="col-xs-6" style="padding-left:0;">
+						<p class="labelname" style="display:inline-block;"><span>*</span>尿酮：</p>
+						<p class="labelname" id="nt"></p>
+						<p style="display:inline-block;">+</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-6">
+						<p class="labelname" style="display:inline-block;"><span>*</span>有无便秘：</p>
+						<p class="labelname" id="bm"></p>
+					</div>
+					<div class="col-xs-6"  style="padding-left:0;">
+						<p class="labelname" style="display:inline-block;">腰围：</p>
+						<p class="labelname" id="waist"></p>
+						<p style="display:inline-block;">cm</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-6" style="padding-right:0;">
+						<p class="labelname" style="padding-left:4px;padding-right:0;box-sizing:border-box;">空腹血糖：</p>
+						<p class="labelname" id="before"></p>
+						<p style="display:inline-block;">mmol/l</p>
+					</div>
+					<div class="col-xs-6" style="padding:0;">
+						<p class="labelname" style="box-sizing:border-box;">餐后2h血糖：</p>
+						<p class="labelname" id="after"></p>
+						<p style="display:inline-block;">mmol/l</p>
+					</div>
+				</div>
+				<div class="row row2">
+					<div class="col-xs-6" style="margin:0;padding:0;">
+						<p class="labelname">收缩压：</p>
+						<p class="labelname" id="shrink"></p>
+						<p class="labelname">mmhg</p>
+					</div>
+					<div class="col-xs-6" style="padding-left:0;">
+						<p class="labelname">舒张压：</p>
+						<p class="labelname" id="relax"></p>
+						<p class="labelname">mmhg</p>
+					</div>
+				</div>
+				<hr>
+				<div class="row row2">
+					<p class="labelname">起床时间：</p>
+					<p class="labelname" id="getUp"></p>
+				</div>
+				<div class="row row2">
+					<p class="labelname">早餐：</p>
+					<p class="labelname" id="breakfast"></p>
+				</div>
+				<div class="row row2">
+					<p class="labelname">运动：</p>
+					<p class="labelname" id="sport1"></p>
+				</div>
+				<div class="row row2">
+					<p class="labelname">午餐：</p>
+					<p class="labelname" id="lunch"></p>
+				</div>
+				<div class="row row2">
+					<p class="labelname">运动：</p>
+					<p class="labelname" id="sport2"></p>
+				</div>
+				<div class="row row2">
+					<p class="labelname">晚餐：</p>
+					<p class="labelname" id="dinner"></p>
+				</div>
+				<div class="row row2">
+					<p class="labelname">运动：</p>
+					<p class="labelname" id="sport3"></p>
+				</div>
+				<div class="row row2">
+					<p class="labelname">其他：</p>
+					<p class="labelname" id="other"></p>
+				</div>
+				<div class="row row2">
+					<p class="labelname">全天饮水量：</p>
+					<p class="labelname" id="water"></p><p class="labelname">ml</p>
+				</div>
+				<div class="row row2">
+					<hr>
+					<p class="labelname">睡眠时间：</p>
+					<p class="labelname" id="sleepTime"></p><p class="labelname">h</p>
+				</div>
+				<div class="row row2">
+					<p class="labelname">用药情况：</p>
+					<p class="labelname" id="medicine"></p>
+				</div>
+				<div class="row row2">
+					<p class="labelname">感受：</p>
+					<p class="labelname" id="feeling"></p>
+				</div>
+			</div>
+			
+			
+			<!-------------------顾问反馈--------------------->
+			<div id="feedback">
+				<div class="row title" id="assistant_feedback">
+					<p class="subtitle">顾问反馈</p>
+				</div>
+				<div class="feedback">
+					<div class="row advice" style="margin:0;">
+						<p class="advice_content"></p>
+						<br>
+						<p class="assistant"></p>	
+					</div>
+				</div>
+				
+				<!--<button type="button" class="replybtn" id="btn3">申请复诊</button>-->
+			</div>
+			<!----------------复诊请求------------------------->
+			<div class="requestFeedback">
+				<div class="row title" id="yon">
+					<p class="subtitle">是否申请复诊</p>
+				</div>
+				<div class="row advice" id="request" style="text-align:center;">
+					<p class="warmOptioin">温馨提示</p>
+					<p class="advice_content">如有复诊需要，请在此向您的主治医生提出复诊请求。您的主治医生将在其工余时间根据您提交的日常记录，对您的复诊请求予以答复</p>
+					<button class="btn requestBtn">是</button>
+					<button class="btn denyBtn">否</button>
+				</div>
+				<div class="row title" id="status">
+					<p class="subtitle">查看申请状态</p>
+				</div>
+				<div class="row advice" id="reply_status">
+					<p class="advice_content" id="reply_send"></p>
+					<p class="advice_content" id="date_send"></p>
+					<p class="advice_content" id="reply_msg">未申请</p>
+					<p class="advice_content" id="date_msg"></p>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

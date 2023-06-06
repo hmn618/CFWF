@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>春风微辅精准体重管理</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no"/>
+		<link href="../css/bootstrap.min.css" rel="stylesheet">
+		<link href="../css/a-4-2.css" rel="stylesheet">
+		<link href="../css/a-2-4-1.css" rel="stylesheet">
+		<link href="../css/a-2-6.css" rel="stylesheet">
+		<script src="../../common/js/url.js"></script>
+		<script src="../js/jquery-1.11.1.min.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="../js/a-4-2.js"></script>
+		<script src="../js/a-2-6.js"></script>
+	</head>
+	<body>
+		<!-------------------输入--------------------->
+		<div class="container content" id="content1">
+			<!----------------查询--------------------->
+			<div class="row" style="margin:10px 0;border-bottom: 1px solid #DCDCDC;padding: 10px 0;">
+				<div class="col-xs-1"></div>
+				<div class="col-xs-10">
+					<input class="date" type="date" id="queryDate"/>
+					<button type="button" class="check" id="query">查询</button>
+				</div>
+				<div class="col-xs-1"></div>
+			</div>
+			
+			<!----------------我的日志------------------->
+			<div class="row title" id="mydairy">
+				<p class="subtitle">我的日志</p>
+				<input id="logId" type="text" style="display:none" />
+			</div>
+			<div class="record" id="record">
+				<div class="row" style="margin-top:20px;">
+					<div class="col-xs-6" style="display:inline-block;">
+						<p class="labelname"  style="display:inline-block;"><span>*</span>体重：</p>
+						<input type="text" id="weight"style="width:40%;display:inline-block;"/>
+						<p class="labelname" style="display:inline-block;">kg</p>
+					</div>
+					<div class="col-xs-6">
+						<p class="labelname" style="display:inline-block;"><span>*</span>尿酮：</p>
+						<select style="width:40%;display:inline-block;" id="nt">
+							<option>0</option>
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+						</select>
+						<p style="display:inline-block;">+</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-6">
+						<p class="labelname" style="display:inline-block;"><span>*</span>有无便秘：</p>
+						<select placeholder="请选择" style="display:inline-block;" id="bm">
+							<option>有</option>
+							<option>无</option>
+						</select>
+					</div>
+					<div class="col-xs-6">
+						<p class="labelname" style="display:inline-block;">腰围：</p>
+						<input type="text" id="waist" style="display:inline-block;width:40%;"/>
+						<p style="display:inline-block;">cm</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-6" style="padding-right:0;">
+						<p class="labelname">空腹血糖：</p>
+						<input type="text" id="before" style="width:20%;"/>
+						<p style="display:inline-block;">mmol/l</p>
+					</div>
+					<div class="col-xs-6" style="padding:0;">
+						<p class="labelname">餐后2h血糖：</p>
+						<input type="text" id="after" style="width:20%;"/>
+						<p style="display:inline-block;">mmol/l</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-6" style="margin:0;padding-right:0;">
+						<p class="labelname">收缩压：</p>
+						<input type="text" id="shrink" style="width:30%;"/>
+						<p class="labelname">mmhg</p>
+					</div>
+					<div class="col-xs-6" style="margin:0;padding:0;">
+						<p class="labelname">舒张压：</p>
+						<input type="text" id="relax" style="width:30%;"/>
+						<p class="labelname">mmhg</p>
+					</div>
+				</div>
+				<hr>
+				<div class="row row2">
+					<p class="labelname">起床时间：</p>
+					<input type="text"id="getUp" style="width:70%;">
+					<p class="labelname">早餐：</p>
+					<input type="text" id="breakfast" class="input_content">
+					<p class="labelname">运动：</p>
+					<input type="text" id="sport1" class="input_content">
+					<p class="labelname">午餐：</p>
+					<input type="text" id="afternoon" class="input_content">
+					<p class="labelname">运动：</p>
+					<input type="text" id="sport2" class="input_content">
+					<p class="labelname">晚餐：</p>
+					<input type="text"id="dinner" class="input_content">
+					<p class="labelname">运动：</p>
+					<input type="text" id="sport3" class="input_content">
+					<p class="labelname">其他：</p>
+					<input type="text" id="other" class="input_content">
+					<p class="labelname">全天饮水量：</p>
+					<input type="text" id="water" class="input_content1" style="width:60%;"><p class="labelname">ml</p>
+					<hr>
+					<p class="labelname">睡眠时间：</p>
+					<input type="text" id="sleepTime" class="input_content1"><p class="labelname">h</p>
+					<p class="labelname" style="vertical-align:top;">用药情况：</p>
+					<textarea class="input_content" id="medicine" style="width:70%;"></textarea>
+					<p class="labelname" style="vertical-align:top;">感受：</p>
+					<textarea class="input_content" id="feeling"></textarea>
+				</div>
+				<div class="row">
+					<div class="col-xs-1"></div>
+					<div class="col-xs-10" id="div1">
+						<button type="button" class="btn" id="btn1" style="width:40%;">暂存</button>
+						<button type="button" class="btn" id="btn2" style="width:52%;">填好啦，提交给顾问</button>
+					</div>
+					<div class="col-xs-1"></div>
+				</div>
+			</div>
+			
+			<!-------------------顾问反馈--------------------->
+			<div class="row title" id="assistant_feedback">
+				<p class="subtitle">顾问反馈</p>
+			</div>
+			<div class="feedback">
+				<div class="row advice" style="margin:0;">
+					<p class="advice_content" id="advice_content"></p>	
+				</div>
+			</div>
+			
+			<!--<button type="button" class="replybtn" id="btn3">申请复诊</button>-->
+			<!----------------复诊请求------------------------->
+			<div class="requestFeedback">
+				<div class="row title" id="yon">
+					<p class="subtitle">是否申请复诊</p>
+				</div>
+				<div class="row advice" id="request" style="text-align:center;">
+					<p class="warmOptioin">温馨提示</p>
+					<p class="advice_content">如有复诊需要，请在此向您的主治医生提出复诊请求。您的主治医生将在其工余时间根据您提交的日常记录，对您的复诊请求予以答复</p>
+					<button class="btn requestBtn">是</button>
+					<button class="btn denyBtn">否</button>
+				</div>
+				<div class="row title" id="status">
+					<p class="subtitle">查看申请状态</p>
+				</div>
+				<div class="row advice" id="reply_status">
+					<p class="advice_content" id="reply_send"></p>
+					<p class="advice_content" id="date_send"></p>
+					<p class="advice_content" id="reply_msg">未申请</p>
+					<p class="advice_content" id="date_msg"></p>
+				</div>
+			</div>
+			
+		</div>
+	</body>
+</html>

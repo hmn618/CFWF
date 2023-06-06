@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>
+		<meta content="telephone=no" name="format-detection" /> 
+		<link href="../css/a-6-charge.css" rel="stylesheet">
+		<link href="../css/bootstrap.min.css" rel="stylesheet">
+		<script src="../../common/js/url.js"></script>
+		<script src="../js/jquery-1.11.1.min.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../js/paying.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/paying.css"/>
+		<title>微信支付</title>
+	</head>
+	<body>
+		<div class="wrap">
+			<div class="top">
+				<div class="value1" align="center"><span id="goodsName">体重管理服务费</span></div>
+				<div class="value2" align="center"><span id="goodsPrice"></span>&nbsp;元</div>
+				
+			</div>
+			<div class="pay" align="center">
+				<button id="weixinPay">微信支付</button>
+				<!--<input type="button"  id="weixinPay" value="微信支付">-->
+			</div>
+			<div class="order" align="center">订单号：<span id="orderNum"></span></div>
+			<div align="center"><img id="weixinImg" src="../img/1.png"></img></div>
+		</div>
+	</body>
+</html>

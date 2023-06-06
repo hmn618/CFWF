@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>
+		<meta content="telephone=no" name="format-detection" /> 
+		<title>个人资料</title>
+		<link href="../css/bootstrap.min.css" rel="stylesheet">
+    	<link href="../css/bootstrap-theme.min.css" rel="stylesheet">
+    	<link href="../css/bootstrap-slider.min.css" rel="stylesheet">
+		<link href="../css/Spring_8.css" rel="stylesheet" />
+		<script src="../../common/js/url.js"></script>
+	</head>
+	<body>
+		<div class='wrapper'>
+			<div class='footer clearfix'>
+				<div class='footer-img'>
+					<input type="file"  id="imgUpload" name="userfile">
+				    <div  onClick="javascript:clickImgUp();"><img src='../img/pzh/user.png' alt='user' id='addPicId' class='img-circle'></div>
+					
+				</div>
+				<div class='footer-text'>
+					<p class='welcome'>您好<p>
+					<p id='nick'></p>
+				</div>
+				<div class='footer-right'>
+					<span>点击头像图标即可更换头像</span>
+				</div>
+			</div>
+			<div class='wrapper-middle'>
+				
+				<div class="subContainer">
+					<div class="bm"><span>姓名</span></div>
+					<input name="name" id="name" placeholder="" type="text" />
+					<img src="../img/pzh/reset.jpg" id='reset'>
+				</div>
+				
+				<div class="subContainer" style='display: none;'>
+					<div class="bm"><span>性别</span></div>
+					<select name="gender" id="gender">
+						<option value='0' disabled selected></option>
+						<option value='1'>男</option>
+						<option value='2'>女</option>
+					</select>
+				</div>
+				
+				<div class="subContainer" style='display: none;'>
+					<div class="bm"><span>电话</span></div>
+					<input name="tel" id="tel" placeholder="" type="text" readonly/>
+					<img src="../img/pzh/tips.jpg" id='nextTel'>
+				</div>
+				
+				<div class="subContainer" style='display: none;'>
+					<div class="bm"><span>出生年月</span></div>
+					<input name="birthday" id="birthday" placeholder="" type="text" readonly/>
+					<img src="../img/pzh/tips.jpg" id='nextBirth'>
+				</div>
+			
+				<div class="subContainer" style='display: none;'>
+					<div class="bm"><span>职业</span></div>
+					<input name="job" id="job" placeholder="" type="text" readonly/>
+					<img src="../img/pzh/tips.jpg" id='nextWork'>
+				</div>
+				
+				<div class="subContainer" style='display: none;'>
+					<div class="bm"><span>身高</span></div>
+					<input name="height" id="height" placeholder="" type="text" readonly/>
+					<img src="../img/pzh/tips.jpg" id='nextHeight'>
+				</div>
+				
+				<div class="subContainer" style='display: none;'>
+					<div class="bm"><span>体重</span></div>
+					<input name="weight" id="weight" placeholder="" type="text" readonly/>
+					<img src="../img/pzh/tips.jpg" id='nextWeight'>
+				</div>
+				
+				
+			</div>
+			<button type='button' class='submit' id='btn'>确定</button>
+		</div>
+		<script src="../../common/js/url.js"></script>
+		<script src="../js/jquery-1.11.1.min.js"></script>
+		<script src="../js/jquery.form.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="../js/Spring_9_name.js"></script>	
+	</body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>阶段总结</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no;"/>
+		<link href="../css/bootstrap.min.css" rel="stylesheet">
+		<link href="../css/a-2-4-1.css" rel="stylesheet">
+		<script src="../../common/js/url.js"></script>
+		<script src="../js/jquery-1.11.1.min.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="../DVL/scripts/echarts.min.js"></script>
+		<script src="../DVL/scripts/d3.min.js"></script>
+		<script src="../DVL/scripts/d3.layout.cloud.js"></script>
+		<script src="../DVL/scripts/DVL.js"></script>
+		<script src="../DVL/scripts/jquery.min.js"></script>
+		<script src="../js/a-4-3.js"></script>
+		<link type="text/css" href="../DVL/css/dvldraw.css">
+		<style>
+		   .aa{  float:left;margin:5px;width:70px; height:30px; background-color:#DCDCDC; border-radius:25px;} 
+		   .bb{height:20px;  line-height:30px;display:block; color:#000000; text-align:center;}
+	    </style>
+		
+		
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	</head>
+	<body>
+		
+		<div class="container content" style="padding:0;width:100%;">
+			<!--<div class="row top">
+				<p class="title"><span class="back"><</span>阶段总结</p>
+			</div>-->
+			<!--<div class="row">
+				<p class="content_title">指标总览：</p>
+				<p class="summary" style="margin:10px;" id="assistant">体重：</p>
+				<p class="summary" id="weight_value"></p><br/>
+				<p class="summary" style="margin:10px;" id="assistant">腰围：</p>
+				<p class="summary" id="waist_value"></p><br/>
+				<p class="summary" style="margin:10px;" id="assistant">空腹血糖：</p>
+				<p class="summary" id="blood_sugar_value"></p><br/>
+				<p class="summary" style="margin:10px;" id="assistant">餐后两小时血糖：</p>
+				<p class="summary" id="two_hour_value"></p><br/>
+				<p class="summary" style="margin:10px;" id="assistant">收缩压：</p>
+				<p class="summary" id="shrink_value"></p><br/>
+				<p class="summary" style="margin:10px;" id="assistant">舒张压：</p>
+				<p class="summary" id="relax_value"></p>
+			</div>-->
+			<!-------------weight---------------->
+			<div class="container-fluid fixed row1" style="width:100%;">						
+				<div id="content">	
+					<div class="widget widget-4 widget-body-white">
+						<div class="widget-head">
+							<h4 class="heading">体重：</h4>
+						</div>
+						<div id="weight" style="width: 350px; height: 200px;">
+			
+						</div>
+					</div>
+				</div>		
+			</div>
+			
+			<!--<div class="row row1" style="margin-left:0;margin-right:0;width:100%;padding-bottom: 20px;padding-left: 10px;padding-right: 10px;">
+				<p class="content_title summary" style="margin-bottom:0px;margin-left: 0px;">身体标签</p>
+				<p class="summary1" style="margin:10px;" id="tagsss">
+					<div class="aa" >
+                        <span class="bb">糖尿病</span>
+                    </div>
+                    <div class="aa" >
+                        <span class="bb">糖尿病</span>                   
+                    </div>
+                    <div class="aa" >
+                        <span class="bb">糖尿病</span>
+                    </div>
+                    <div class="aa" >
+                        <span class="bb">糖尿病</span>
+                    </div>
+                    <div class="aa" >
+                        <span class="bb">糖尿病</span>
+                    </div>
+                    <div class="aa" >
+                        <span class="bb">糖尿病</span>
+                    </div>
+				</p>
+			</div>-->
+			
+			<div class="row row1" style="margin-left:0;margin-right:0;width:100%;height: 93px;">
+				<table class="table">
+					<tr>
+						<td style="padding:8px 0;">初始体重：</td>
+						<td style="padding:8px 0;"><p id="first_weight_value" class="new"></p><p class="new">kg</p></td>
+						<td style="padding:8px 0;">减重时间：</td>
+						<td style="padding:8px 0;"><p id="change_weight_time" class="new"></p><p class="new">天</p></td>
+					</tr>
+					<tr>
+						<td style="padding:8px 0;">最新体重：</td>
+						<td style="padding:8px 0;"><p id="last_weight_value" class="new"></p><p class="new">kg</p></td>
+						<td style="padding:8px 0;">体重变化：</td>
+						<td style="padding:8px 0;"><p id="change_weight_value" class="new"></p><p class="new">kg</p></td>
+					</tr>
+
+				</table>
+			</div>
+			
+			<div class="row row1" style="margin-left:0;margin-right:0;width:100%;">
+				<p class="content_title summary">顾问阶段总结</p>
+				<p class="summary1" style="margin:10px;" id="assistant"></p>
+			</div>
+
+			<div class="panel" style="display:none;">
+			<div class="row row1" style="margin-left:0;margin-right:0;width:100%;height:260px;">
+				<table class="table">
+					<caption class="summary1">代谢风险相关指标</caption>
+					<tr>
+						<!--<td style="padding:8px;">体重：</td>
+						<td style="padding:8px;"><p id="weight_value" class="new"></p><p class="new">kg</p></td>-->
+						<td style="padding:8px;">腰围：</td>
+						<td style="padding:8px;"><p id="waist_value" class="new"></p><p class="new">cm</p></td>
+					</tr>
+					<tr>
+						<td style="padding:8px;">空腹血糖：</td>
+						<td style="padding:8px;"><p id="blood_sugar_value" class="new"></p><p class="new">mmol/l</p></td>
+					</tr>
+					<tr>
+						<td style="padding:8px;">餐后2小时血糖：</td>
+						<td style="padding:8px;"><p id="two_hour_value" class="new"></p><p class="new">mmol/l</p></td>
+					</tr>
+					<tr>
+						<td style="padding:8px;">收缩压：</td>
+						<td style="padding:8px;"><p id="shrink_value" class="new"></p><p class="new">mmhg</p></td>
+					</tr>
+					<tr>
+						<td style="padding:8px;">舒张压:</td>
+						<td style="padding:8px;"><p id="relax_value" class="new"></p><p class="new">mmhg</p></td>
+					</tr>
+				</table>
+			</div>
+			</div>
+
+			
+			<!--<div class="row">
+				<p class="content_title">数据曲线：</p>
+			</div>
+			<hr>-->
+			
+		
+			
+			<div class="panel" style="display:none;">
+			<!----------------waist--------------->
+			<div class="container-fluid fixed row1" style="width:100%;">						
+				<div id="content">	
+					<div class="widget widget-4 widget-body-white">
+						<div class="widget-head">
+							<h4 class="heading">腰围：</h4>
+						</div>
+						<div id="waist" style="width: 350px; height: 200px;">
+			
+						</div>
+					</div>
+				</div>		
+			</div>
+			</div>
+			
+			
+			<div class="panel" style="display:none;">
+			<!----------------blood sugar-------------->
+			<div class="container-fluid fixed row1" style="width:100%;">						
+				<div id="content">	
+					<div class="widget widget-4 widget-body-white">
+						<div class="widget-head">
+							<h4 class="heading">空腹血糖：（血糖检测未达到三次，无法形成曲线）</h4>
+						</div>
+						<div id="blood_sugar" style="width: 350px; height: 200px;">
+			
+						</div>
+					</div>
+				</div>		
+			</div>
+			</div>
+		
+			
+			<div class="panel" style="display:none;">
+			<!--------------------2 hours------------------>
+			<!-- Start Content -->
+			<div class="container-fluid fixed row1" style="width:100%;">						
+				<div id="content">	
+					<div class="widget widget-4 widget-body-white">
+						<div class="widget-head">
+							<h4 class="heading">餐后两小时血糖：（血压检测未达到三次，无法形成曲线）</h4>
+						</div>
+						<div id="two_hour" style="width: 350px; height: 200px;">
+			
+						</div>
+					</div>
+				</div>		
+			</div>
+			</div>
+			<div class="panel" style="display:none;">
+			<!-------------------shrink--------------------->
+			<!-- Start Content -->
+			<div class="container-fluid fixed row1" style="width:100%;">						
+				<div id="content">	
+					<div class="widget widget-4 widget-body-white">
+						<div class="widget-head">
+							<h4 class="heading">收缩压：（血压检测未达到三次，无法形成曲线）</h4>
+						</div>
+						<div id="shrink" style="width: 350px; height: 200px;">
+			
+						</div>
+					</div>
+				</div>		
+			</div>
+			</div>
+			
+			
+			<div class="panel" style="display:none;">
+			<!------------------relax--------------------------->
+			<div class="container-fluid fixed row1" style="width:100%;">						
+				<div id="content">	
+					<div class="widget widget-4 widget-body-white">
+						<div class="widget-head">
+							<h4 class="heading">舒张压：（血压检测未达到三次，无法形成曲线）</h4>
+						</div>
+						<div id="relax" style="width: 350px; height: 200px;">
+			
+						</div>
+					</div>
+				</div>		
+			</div>
+			</div>
+			
+			<div style="vertical-align:middle;text-align:center;" class="flip">
+			
+			<img src="../img/viewmore1.png" style="height: 25px;width: 25px;"/>
+			查看更多
+			</div>
+			
+		</div>
+		<script>
+            $(document).ready(function(){
+            	$(".flip").click(function(){$(".panel").slideToggle("slow");
+            	$(".flip").hide();});
+            	
+            });
+            
+        </script>
+		
+	
+		
+	</body>
+	</html>
+		

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>
+		<meta content="telephone=no" name="format-detection" /> 
+		<title>春风微辅-注册登录</title>
+		<link href="../css/a-register-1.css" rel="stylesheet" />
+	    
+	    <style type="text/css">
+	    	#button1
+	    	{
+	    		background-image: url("../img/male_unselected.png");
+	    		border: 0;    	    
+	    		width: 100px; 
+	    		height: 100px;
+	    		margin-right: 15px;
+	    		outline: 0;
+	    	}
+	    	#button2
+	    	{
+	    		background-image: url("../img/female_normal-1.png");
+	    		border: 0;    	    
+	    		width: 100px; 
+	    		height: 100px;
+	    		margin-left: 15px;
+	    		outline:0;
+	    	}
+	    	.sex
+	    	{
+	    		visibility: hidden;
+	    	}
+	    	
+	    </style>
+	    
+	</head>
+	<body>
+		<div class='wrapper'>
+			<p class='tips1'>第五步</p>
+			<p class='tips'>选择您的性别</p>
+			<div name="myform" id="bcontainer" style="text-align:center;">
+				<button id="button1" >
+					<input  type="radio" value="男" name="sex" class="sex"/>
+				</button>
+			   	<button id="button2">
+			   		<input  type="radio" value="女" name="sex" class="sex"/>
+			   	</button>
+			</div>
+			
+			<div class='submit'>
+				<button type='button' class='btn-submit' id="submit32">下一步</button>
+			</div>
+		</div>
+
+	<script src="../../common/js/jquery.min.js"></script>
+    <script src="../../common/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../common/js/url.js"></script>
+    <script type="text/javascript" src="../../common/js/template.js" ></script>
+    <script type="text/javascript" src="../js/a-register-1.js"></script>	
+    <script>
+    $(function () {
+        var container = $("#bcontainer");
+        container.click(function (ev) {
+            var ev = ev || window.event;
+            var target = ev.target || ev.srcElement;
+            var item1 = $("#button1");
+            var item2 = $("#button2");
+            
+            
+            if(target.nodeName.toLowerCase() == "input"){
+                $(target).prop("checked",false);
+            }
+            if(target.nodeName.toLowerCase() == "button"){
+                $(target).children(".sex").prop("checked",true);
+                if(target.id == "button1"){
+                    item2.css("background-image","url(../img/female_normal-1.png)");
+            	    item1.css("background-image","url(../img/male_selected-1.png)");
+                }else {
+                    item1.css("background-image","url(../img/male_unselected.png)");
+            	    item2.css("background-image","url(../img/female_selected-1.png)");
+                }
+            }
+        });
+    });
+</script>
+	</body>
+	    
+
+</html>

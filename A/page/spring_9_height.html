@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>
+		<meta content="telephone=no" name="format-detection" /> 
+		<title>个人资料</title>
+		<link href="../css/bootstrap.min.css" rel="stylesheet">
+    	<link href="../css/bootstrap-theme.min.css" rel="stylesheet">
+    	<link href="../css/bootstrap-slider.min.css" rel="stylesheet">
+		<link href="../css/Spring_8.css" rel="stylesheet" />
+		<script src="../../common/js/url.js"></script>
+	</head>
+	<body>
+		<div class='wrapper'>
+			<div class='footer clearfix'>
+				<div class='footer-img'>
+					<input type="file"  id="imgUpload" name="userfile">
+				    <div  onClick="javascript:clickImgUp();"><img src='../img/pzh/user.png' alt='user' id='addPicId' class='img-circle'></div>
+					
+				</div>
+				<div class='footer-text'>
+					<p class='welcome'>您好<p>
+					<p id='nick'></p>
+				</div>
+			</div>
+			<div class='wrapper-middle'>
+				
+				<div class="subContainer" style='display: none;'>
+					<div class="bm"><span>姓名</span></div>
+					<input name="name" id="name" placeholder="" type="text" />
+					<img src="../img/pzh/reset.jpg" >
+				</div>
+				
+				<div class="subContainer" style='display: none;'>
+					<div class="bm"><span>性别</span></div>
+					<select name="gender" id="gender">
+						<option value='0' disabled selected></option>
+						<option value='1'>男</option>
+						<option value='2'>女</option>
+					</select>
+				</div>
+				
+				<div class="subContainer"  style='display: none;'>
+					<div class="bm"><span>电话</span></div>
+					<input name="tel" id="tel" placeholder="" type="text" />
+					<img src="../img/pzh/reset.jpg">
+				</div>
+				
+				<div class="subContainer" style='display: none;'>
+					<div class="bm"><span>出生年月</span></div>
+					<input name="birthday" id="birthday" placeholder="" type="text" />
+					<img src="../img/pzh/reset.jpg" id='nextBirth'>
+				</div>
+			
+				<div class="subContainer" style='display: none;'>
+					<div class="bm"><span>职业</span></div>
+					<input name="job" id="job" placeholder="" type="text" />
+					<img src="../img/pzh/reset.jpg" id='nextWork'>
+				</div>
+				
+				<div class="subContainer">
+					<div class="bm"><span>身高(cm)</span></div>
+					<input name="height" id="height" placeholder="" type="text" />
+					<img src="../img/pzh/reset.jpg"  id='reset'>
+				</div>
+				
+				<div class="subContainer" style='display: none;'>
+					<div class="bm"><span>体重(kg)</span></div>
+					<input name="weight" id="weight" placeholder="" type="text" />
+					<img src="../img/pzh/reset.jpg" id='nextWeight'>
+				</div>
+				
+				
+			</div>
+			<button type='button' class='submit' id='btn'>确定</button>
+		</div>
+		<script src="../../common/js/url.js"></script>
+		<script src="../js/jquery-1.11.1.min.js"></script>
+		<script src="../js/jquery.form.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="../js/Spring_9_height.js"></script>	
+		
+		<script src="../js/jquery.selector-px.js"></script>
+        <script>
+        $(function () {
+
+            // 整数
+            var quWeightInt = [80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200];
+            // 小数
+            var quWeightFl = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+  
+            $.scrEvent2({
+            data: quWeightInt,
+            data2: quWeightFl,
+            evEle: '#height',
+            title: '身高/cm',
+            defValue: 160,
+            defValue2: 0,
+            linkType: '.',
+            afterAction: function (data1, data2) {
+            	$('#height').val(data1 + '.' + data2);
+               }
+            })
+		
+		});
+        </script>
+	</body>
+</html>

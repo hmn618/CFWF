@@ -1,0 +1,41 @@
+/*力导向图样式*/
+.forceLine {
+    stroke: #444 ;
+    stroke-width: 2 ;
+}
+
+.forceCircle {
+    stroke: black ;
+    stroke-width: 2 ;
+}
+
+.forceText {
+    fill: black ;
+    text-anchor: middle ;
+    font-size: 12px;
+    font-family: arial;
+}
+/*树状图的样式*/
+.node circle {
+    cursor: pointer;
+    fill: #fff;
+    stroke: steelblue;
+    stroke-width: 2px;
+}
+.node text {
+    font-size: 12px;
+}
+.link {
+    fill: none;
+    stroke: #ccc;
+    stroke-width: 1.5px;
+}
+.footer{
+    width: 100%;
+    height: 100px;
+    line-height: 100px;
+    vertical-align: middle;
+    background-color: #202f38;
+    text-align: center;
+    color: #ffffff;
+}

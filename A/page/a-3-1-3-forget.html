@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>
+		<meta content="telephone=no" name="format-detection" /> 
+		<title>忘记密码</title>
+		<link href="../css/a-3-1-3.css" rel="stylesheet" /> <!--找回密码-->
+		
+		<link href="../css/bootstrap.min.css" rel="stylesheet">
+	    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+	    <link rel="stylesheet" href="../css/A-2-scan.css">
+	    <link href="../css/A-2-reconsult.css" rel="stylesheet">
+	    <link rel="stylesheet" href="../css/A-2-memberlist.css">
+	   
+	    <script src="../../common/js/url.js"></script>
+	    <script src="../js/jquery-1.11.1.min.js"></script>
+	    <script src="../js/bootstrap.min.js"></script> 
+	    <script type="text/javascript" src="../js/a-3-1-3.js" ></script>
+	    <!--<script src="../js/A-2-memberList.js"></script>-->
+	   <!--<script src="../../common/js/jquery.min.js"></script>
+       <script src="../../common/js/bootstrap.min.js"></script>-->
+       <!--<script type="text/javascript" src="../../common/js/url.js"></script>-->
+       <script type="text/javascript" src="../../common/js/template.js" ></script>
+       <script>
+       	$(document).ready(function () {
+	  
+        $("#submitupdate").click(function(){ 
+         var unameElement=$("#userName").val();
+    	 var oldpwdElement= $("#oldPassword").val();
+         var newpwdElement= $("#newPassword").val();
+         var repwdElement=$("#confirmPassword").val();
+         
+         var datatosend0={
+         	"userName":unameElement,
+         	"oldPassword":oldpwdElement,
+         	"newPassword":newpwdElement,
+         	"confirmPassword":repwdElement,
+         };
+         if(unameElement=="null"||unameElement==""){
+         	alert("请输入用户名");
+         	$("#userName").val("");
+         	$("#userName").focus();
+         	return false;
+         }else if(oldpwdElement=="null"||oldpwdElement==""){
+         	alert("请输入原密码");
+         	$("#oldPassword").val();
+         	$("#oldPassword").focus();
+         	return false;
+         }else if(newpwdElement=="null"||newpwdElement==""){
+         	alert("请输入新密码");
+         	$("#newPassword").val();
+         	$("#newPassword").focus();
+         	return false;
+         }else if(repwdElement=="null"||repwdElement==""){
+         	alert("请再次输入新密码");
+         	$("#confirmPassword").val();
+         	$("#confirmPassword").focus();
+         	return false;
+         }else if(newpwdElement!=repwdElement){
+         	alert("两次输入密码不一致");
+         }else{
+         	$.ajax({
+         	type:"post",
+         	url: urlOrigin+'/HealthControlProject/user/forgetPassword',
+         	async: false,
+         	data:datatosend0,
+         	dataType:"json",
+			crossDomain:true,
+			success: function (data) {
+            	var a=JSON.stringify(data);
+				//alert(a);
+                if(data.result==true){
+                	alert("修改成功");
+                    window.location.href ='a-3-1-new.html';
+				}else{
+						alert("失败："+data.reason);
+				}
+            },
+            error:function (data) {
+                alert("error");
+                var a=JSON.stringify(data);
+                alert(a);
+            }
+        });
+         } 
+});
+$("#submit").click(function () {
+        // 账号信息
+        var username= $("#member-id").val();
+		var email=$("#email-id").val();       
+		var datatosend = {
+            "userName": username
+         //   "?": email           
+         };
+         if(username=="null"||username=="") 
+		{
+			alert("请输入用户名!")
+			$("#member-id").val("");
+			$("#member-id").focus();
+			return false;	
+		}
+		
+		  $.ajax({
+            type: "post",
+            url: urlOrigin+'/HealthControlProject/user/forgetPassword',
+            //url: rooturl+'/HealthControlProject/user/forgetPassword',
+            async:false,
+			data:datatosend,
+			dataType:"json",
+			crossDomain:true,
+            success: function (data) {
+            	var a=JSON.stringify(data);
+				//alert(a);
+                if(data.result==true){
+                	alert("提交成功，请去您的邮箱查看~");
+                window.location.href =a-3-1-login.html;
+					}else{
+						alert("提交失败，请重试");
+					}
+               
+            },
+            error:function (data) {
+                alert("error");
+                var a=JSON.stringify(data);
+                alert(a);
+            }   
+        });
+    });
+});
+       </script>
+	</head>
+	<body>
+		
+		<!--<div class="allContainer">
+			<div class="title">
+				<span>春风微辅</span><br/>
+			</div>
+
+			<div class="subContainer">
+					<div class="infoName"><p>账号</p></div> 
+					<input  type="text" placeholder="请输入账号" id="member-id" required autofocus="on" />
+			</div>
+			<hr />
+			<button class="add" id="submit">提交</button>
+		</div>-->
+		
+		<div class="content clearfix">
+        <ul id="myTab" class="nav nav-tabs">
+            <li class="active">
+                <a href="#findpassword" data-toggle="tab"><span id="left-tab">找回密码</span></a>
+            </li>
+            <li><a href="#updatepassword" data-toggle="tab" id="right-tab">修改密码</a></li>
+        </ul>
+        
+        <div id="myContent" class="tab-content" >
+            <div id="findpassword" class="tab-pane fade in active">
+                    <div class="allContainer">
+					<div class="title">
+						<span><font color="#35D58B">春风微辅</font></span><br/>
+					</div>
+		
+					<div class="subContainer">
+							<div class="infoName"><p>账号</p></div> 
+							<input class="textbox" type="text" placeholder="请输入账号" id="member-id" required autofocus="on" />
+					</div>
+					<hr />
+					<div>
+					<button class="add" id="submit" style="background: #35D58B;">提交</button>
+					</div>
+				    </div>
+            </div>
+            <div id="updatepassword" class="tab-pane fade">
+                 <div class="allContainer">
+					<div class="title">
+						<span><font color="#35D58B">春风微辅</font></span><br/>
+					</div>
+				<form action="" method="post" >
+					<div class="subContainer">
+				       <div class="infoName"><p>用户名</p></div> 
+					   <input  class="textbox" type="text" placeholder="请输入用户名" id="userName" required autofocus="on" />
+					   
+					   <div class="infoName"><p>原密码</p></div> 
+					   <input class="textbox" type="password" placeholder="请输入原密码" id="oldPassword" required autofocus="on" />
+					   
+					   <div class="infoName"><p>新密码</p></div> 
+					   <input class="textbox" type="password" placeholder="请输入新密码" id="newPassword" required autofocus="on" />
+					   
+					   <div class="infoName"><p>确认新密码</p></div> 
+					   <input class="textbox" type="password" placeholder="请再输入密码" id="confirmPassword" required autofocus="on" />
+					</div>
+					<hr />
+					<div>
+					<button type="button"  class="add" id="submitupdate" style="background: #35D58B;">提交</button>
+					</div>
+				 </form>
+			     </div>
+            </div>
+        </div>
+        </div>
+		
+
+	</body>
+</html>

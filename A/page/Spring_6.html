@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>
+		<meta content="telephone=no" name="format-detection" /> 
+		<title>我的日志</title>
+		<link href="../css/bootstrap.min.css" rel="stylesheet">
+    	<link href="../css/bootstrap-theme.min.css" rel="stylesheet">
+    	<link href="../css/bootstrap-slider.min.css" rel="stylesheet">
+		<link href="../css/Spring_6.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/mobiscroll.custom-2.17.0.min.css">
+		<script src="../../common/js/url.js"></script>
+		
+	</head>
+
+	<body>
+		<div class='wrapper'>
+			<div class='wrapper-top'>
+				<input id="logId" type="text" style="display:none" />
+				<div class="subContainer">
+					<div class="bm1"><span>体重(kg)</span><div class='require1'></div></div>
+					<input class="qu-weight" name="weight" id="weight" type="text" placeholder="请输入体重(kg)" onkeyup="value=value.replace(/[^\d.]/g,'')"/>
+				</div>
+				<hr />
+				
+				<div class='subContainer'>
+					<div class='w-title'>
+						<span>尿酮(+)</span>
+						<div class='require'></div>
+					</div>
+					<select name="nt" id="nt">
+						<option value='0' disabled selected>0</option>
+						<option value='1'>1</option>
+						<option value='2'>2</option>
+						<option value='3'>3</option>
+						<option value='4'>4</option>
+					</select>
+				</div>
+			
+				
+				
+			</div>
+			<div class='wrapper-middle' style="margin-bottom: 0;">
+				<div class="subContainer">
+					<div class="w-title">
+						<span>有无便秘</span>
+						<div class='require1'></div>
+					</div>
+					<select name="bm" id="bm">
+						<option value='0' disabled selected></option>
+						<option value='1'>有</option>
+						<option value='2'>无</option>
+					</select>
+				</div>	
+				<hr />							
+				<div class="subContainer">
+					<div class="bm"><span>起床时间</span></div>
+					<input name="getUp" id="getUp" placeholder="请输入起床时间" type="text" />
+				</div>
+				<hr />
+				<div class="subContainer">
+					<div class="bm"><span>基础体温(°C)</span></div>
+					<input name="temperature" id="temperature" placeholder="请输入基础体温" type="text" />
+				</div>
+				<hr />
+				<div class="subContainer">
+					<div class="bm"><span>早餐</span></div>
+					<input name="breakfast" id="breakfast" placeholder="食物种类、数量、烹调方法" type="text" />
+				</div>
+				<hr />
+				<div class="subContainer">
+					<div class="bm"><span>运动</span></div>
+					<input name="sport1" id="sport1" placeholder="具体运动项目、时长" type="text"  />
+				</div>
+				<hr />
+				<div class="subContainer">
+					<div class="bm"><span>加餐</span></div>
+					<input name="food1" id="food1" placeholder="食物种类、数量、烹调方法" type="text"  />
+				</div>
+				<hr />
+				<div class="subContainer">
+					<div class="bm"><span>午餐</span></div>
+					<input name="afternoon" id="afternoon" placeholder="食物种类、数量、烹调方法" type="text"  />
+				</div>
+				<hr />
+				<div class="subContainer">
+					<div class="bm"><span>运动</span></div>
+					<input name="sport2" id="sport2" placeholder="具体运动项目、时长" type="text" />
+				</div>
+				<hr />
+				<div class="subContainer">
+					<div class="bm"><span>加餐</span></div>
+					<input name="food2" id="food2" placeholder="食物种类、数量、烹调方法" type="text"  />
+				</div>
+				<hr />
+				<div class="subContainer">
+					<div class="bm"><span>晚餐</span></div>
+					<input name="dinner" id="dinner" placeholder="食物种类、数量、烹调方法" type="text" />
+				</div>
+				<hr />
+				<div class="subContainer">
+					<div class="bm"><span>运动</span></div>
+					<input name="sport3" id="sport3" placeholder="具体运动项目、时长" type="text" />
+				</div>
+				<hr />
+				<div class="subContainer">
+					<div class="bm"><span>加餐</span></div>
+					<input name="food3" id="food3" placeholder="睡前三小时不要进食" type="text"  />
+				</div>
+				<hr />
+				<div class="subContainer">
+					<div class="bm"><span>全天饮水量(ml)</span></div>
+					<input id="water" placeholder="具体饮水量(ml)" type="text" onkeyup="value=value.replace(/[^\d.]/g,'')"/>
+				</div>
+				<hr />
+				<div class="subContainer">
+					<div class="bm"><span>入睡时间</span></div>
+					<input name="sleepTime" id="sleepTime" placeholder="请输入入睡时间" type="text" />
+				</div>
+				<hr />
+				<div class="subContainer">
+					<div class="bm"><span>腰围(cm)</span></div>
+					<input name="waist" id="waist" placeholder="请输入腰围尺寸(cm)" type="text" onkeyup="value=value.replace(/[^\d.]/g,'')"/>
+				</div>
+				<hr />
+				<div class="subContainer">
+					<div class="bm"><span>血压(mmHg)</span></div>
+					<input name="shrink" id="shrink" type="text" class='input1' placeholder="低压" onkeyup="value=value.replace(/[^\d.]/g,'')"/><span class='line'>—</span><input name="relex" id="relax" type="text" class='input1' placeholder="高压" onkeyup='value=value.replace(/[^\d.]/g,'')'/>
+				</div>
+				<hr />
+				<div class="subContainer">
+					<div class="bm"><span>空腹血糖</span></div>
+					<input name="before" id="before" placeholder="请按照mmol/L填写" type="text" onkeyup="value=value.replace(/[^\d.]/g,'')"/>
+				</div>
+				<hr />
+				<div class="subContainer">
+					<div class="bm"><span>餐后2h血糖</span></div>
+					<input name="after" id="after" placeholder="请输入餐后2小时血糖（mmol）" type="text" onkeyup="value=value.replace(/[^\d.]/g,'')"/>
+				</div>
+				<hr />
+				<div class='medicine'>
+					<span>用药情况</span><br />
+					<textarea id="medicine" placeholder="输入少于50字"></textarea>
+				</div>
+				<div class='feeling' style="margin-bottom: 0;">
+					<span>感受</span><br />
+					<textarea id="feeling" placeholder="输入少于50字"></textarea>
+				</div>
+				<div class="subContainer">
+					<div><p style="text-align:center;margin-top:15px;width:100%;">舒适度选择</p></div>
+					<div style="text-align:center;  ">
+						<img src="../img/good.png" class="square gray good" onclick="good();"/>
+						<img src="../img/soso.png" class="square gray soso" onclick="soso();"/>
+						<img src="../img/bad.png" class="square gray bad" onclick="bad();"/>
+					</div>
+				</div>
+				
+
+			</div>
+			<div class="wrapper-bottom">
+				<button type='button' class='submit' id='btn2'>提交</button>
+			</div>
+		</div>
+		
+		
+		<script src="../js/jquery-1.11.1.min.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+		<script src='../js/bootstrap-slider.min.js'></script>
+		<script src="../js/Spring_6.js"></script>
+		<script src="../js/mobiscroll.custom-2.17.0.min.js"></script>
+		<!--<script>
+		$('#sleepTime').mobiscroll().time({  
+			theme: 'mobiscroll',
+			lang: 'zh',
+			display: 'bottom',
+			headerText: false,
+			maxWidth: 90
+		});
+		$('#getUp').mobiscroll().time({  
+			theme: 'mobiscroll',
+			lang: 'zh',
+			display: 'bottom',
+			headerText: false,
+			maxWidth: 90
+		});
+		</script>-->
+		<!--<script src="../js/jq.js"></script>-->
+        <script src="../js/jquery.selector-px.js"></script>
+        <script>
+        $(function () {
+		    // 体重范围，40-200(整数)，0-9(小数)
+            // 整数
+            var quWeightInt = [40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200];
+            // 小数
+            var quWeightFl = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+            
+            //体重
+            $.scrEvent2({
+            data: quWeightInt,
+            data2: quWeightFl,
+            evEle: '#weight',
+            title: '体重/kg',
+            defValue: 60,
+            defValue2: 0,
+            linkType: '.',
+            afterAction: function (data1, data2) {
+            	$('#weight').val(data1 + '.' + data2);
+               }
+            })
+            
+            // 体温范围，35-38(整数)，00-99(小数)
+            // 整数
+            var temperatureInt = [35,36,37,38];
+            // 小数
+            var temperatureFl = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+            $.scrEvent2({
+            data: temperatureInt,
+            data2: temperatureFl,
+            evEle: '#temperature',
+            title: '基础体温/°C',
+            defValue: 36,
+            defValue2: 0,
+            linkType: '.',
+            afterAction: function (data1, data2) {
+            		$('#temperature').val(data1 + '.' + data2);
+
+            	
+               }
+            })
+            
+            var minute = ['00', '01', '02', '03', '04', '05', '06', '07', '08', '09',10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59];
+            
+            var hour = ['00', '01', '02', '03', '04', '05', '06', '07', '08', '09',10,11,12,13,14,15,16,17,18,19,20,21,22,23];
+            
+     
+            $.scrEvent2({
+            data: hour,
+            data2: minute,
+            evEle: '#getUp',
+            title: '起床时间',
+            defValue: 10,
+            defValue2: 30,
+            linkType: '.',
+            afterAction: function (data1, data2) {
+            	$('#getUp').val(data1 + ':' + data2);
+               }
+            })
+            
+            $.scrEvent2({
+            data: hour,
+            data2: minute,
+            evEle: '#sleepTime',
+            title: '入睡时间',
+            defValue: 22,
+            defValue2: 30,
+            linkType: '.',
+            afterAction: function (data1, data2) {
+            	$('#sleepTime').val(data1 + ':' + data2);
+               }
+            })
+
+		});
+		
+		
+        </script>
+	</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>我的日志</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no;"/>
+		<link href="../css/bootstrap.min.css" rel="stylesheet">
+		<link href="../css/bootstrap-theme.min.css" rel="stylesheet">
+		<link href="../css/all.css" rel="stylesheet">
+		<link href="../css/Spring_5_2.css" rel="stylesheet" />
+		<link href="../css/spring_13.css" rel="stylesheet">
+		<link href="../css/spring_new.css" rel="stylesheet">
+		<link rel="stylesheet" href="../../common/css/pages.css">
+		
+		
+	</head>
+	<style>
+		.row{
+			width:100%;
+			margin:0;
+		}
+	</style>
+	<script>
+		function jump(){
+			var myDate = new Date();
+			var date1 = myDate.getDate().toString();
+			var month = myDate.getMonth()+1;
+			var year = myDate.getFullYear().toString();
+			if(month<10){
+				month = "0"+month.toString();
+			}
+			else{
+				month.toString();
+			}
+			if(date1<10){
+				date1 = "0"+date1.toString();
+			}
+			else{
+				date1.toString();
+			}
+			fullDate = year+'-'+month+'-'+date1;
+			//alert(fullDate);
+			window.location.href='Spring_6.html?memberId='+memberId+"&logDate="+fullDate;
+		}
+		function look(memberId,logId){
+//			alert(logId);
+			window.location.href='Spring_6_check.html?memberId='+memberId+"&logId="+logId;
+		}
+
+	</script>
+	<body>
+		<div class="container1">
+			<div class="middle">
+				<div class='content2'></div>
+				<div class="pages3"></div>
+				<div class="wrapper-bottom">
+					<button type='button' class='submit' id='btn' onclick="jump();" style="margin-top: 0px;height:39px;padding-top:4px;font-size: 22px;">添加新的日志</button>
+				</div>
+			</div>
+		</div>
+		
+		
+		
+		<div class='footer clearfix' id='footer'>
+				<div class='footer-img'>
+					<img src='../img/pzh/user.png' alt='user' id='user'>
+				</div>
+				<div class='footer-text'>
+					<div class='content'>
+						<p class='welcome'>您好<p>
+						<p id='nick'></p>
+					</div>
+					
+				</div>
+				<div class='footer-tel tel'>
+					<a class="telephone" style="display: none;"></a>
+					<button type='button' class='tel-btn'><img src="../img/pzh/tel.png"><span class="dialog">请拨打顾问电话</span> </button>
+				</div>
+		</div>
+		<script src="../js/jquery-1.11.1.min.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="../../common/js/url.js"></script>
+		<script src="../../common/js/pages.js"></script>
+		<script src="../js/Spring_5_3.js"></script>
+		<script src="../js/spring_new.js"></script>
+	</body>
+</html>

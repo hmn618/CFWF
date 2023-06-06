@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>
+		<meta content="telephone=no" name="format-detection" /> 
+		<title>我的日志</title>
+		<link href="../css/bootstrap.min.css" rel="stylesheet">
+    	<link href="../css/bootstrap-theme.min.css" rel="stylesheet">
+    	<link href="../css/bootstrap-slider.min.css" rel="stylesheet">
+		<link href="../css/Spring_6.css" rel="stylesheet" />
+		<script src="../../common/js/url.js"></script>
+		
+	</head>
+
+	<body>
+		<div class='wrapper'>
+			<div class='wrapper-top'>
+				<div class="subContainer">
+					<div class="bm1"><span>体重</span><div class='require1'></div></div>
+					<span id="weight"></span><span>kg</span>
+				</div>
+				<hr />
+				<!--<div class='nt'>
+					<div class='w-title'>
+						尿酮(+)
+						<div class='require'></div>
+					</div>
+					<input id="ex5" type="text" data-slider-enabled="false" data-slider-id='ex5Slider'/>
+					<p id="ex6CurrentSliderValLabel"> <span id="ex5SliderVal">0</span></p>
+				</div>-->
+				<div class="subContainer">
+					<div class="w-title">
+						<span>尿酮(+)</span>
+						<div class='require1'></div>
+					</div>
+					<span class="labelname" id="nt"></span>
+				</div>
+			</div>
+			<div class='wrapper-middle'>
+				<div class="subContainer">
+					<div class="w-title">
+						<span>有无便秘</span>
+						<div class='require1'></div>
+					</div>
+					<span class="labelname" id="bm"></span>
+				</div>
+				<hr />
+				<div class="subContainer">
+					<div class="bm"><span>起床时间</span></div>
+					<span id="getUp"></span> 
+				</div>
+				<hr />
+				<div class="subContainer">
+					<div class="bm"><span>基础体温</span></div>
+					<span id="temperature"></span> <span>°C</span>
+				</div>
+				<hr />
+				<div class="subContainer">
+					<div class="bm"><span>早餐</span></div>
+					<span id="breakfast"></span> 
+				</div>
+				<hr />
+				<div class="subContainer">
+					<div class="bm"><span>运动</span></div>
+					<span id="sport1"></span>
+				</div>
+				<hr />
+				<div class="subContainer">
+					<div class="bm"><span>加餐</span></div>
+					<span id="food1"></span>
+				</div>
+				<hr />
+				<div class="subContainer">
+					<div class="bm"><span>午餐</span></div>
+					<span id="afternoon"></span>
+				</div>
+				<hr />
+				<div class="subContainer">
+					<div class="bm"><span>运动</span></div>
+					<span id="sport2"></span>
+				</div>
+				<hr />
+				<div class="subContainer">
+					<div class="bm"><span>加餐</span></div>
+					<span id="food2"></span>
+				</div>
+				<hr />
+				<div class="subContainer">
+					<div class="bm"><span>晚餐</span></div>
+					<span id="dinner"></span> 
+				</div>
+				<hr />
+				<div class="subContainer">
+					<div class="bm"><span>运动</span></div>
+					<span id="sport3"></span>
+				</div>
+				<hr />
+				<div class="subContainer">
+					<div class="bm"><span>加餐</span></div>
+					<span id="food3"></span>
+				</div>
+				<hr />
+				<div class="subContainer">
+					<div class="bm"><span>全天饮水量</span></div>
+					<span id='water'></span><span>ml</span>
+				</div>
+				<hr />
+				<div class="subContainer">
+					<div class="bm"><span>入睡时间</span></div>
+					<span id="sleepTime"></span> 
+				</div>
+				<hr />
+				<div class="subContainer">
+					<div class="bm"><span>腰围</span></div>
+					<span id="waist"></span><span>cm</span>
+				</div>
+				<hr />
+				<div class="subContainer">
+					<div class="bm"><span>血压</span></div>
+					<span id="shrink"></span>—<span id="relax"></span><span>mmHg</span>
+				</div>
+				<hr />
+				<div class="subContainer">
+					<div class="bm"><span>空腹血糖</span></div>
+					<span id="before"></span><span>mmol/L</span>
+				</div>
+				<hr />
+				<div class="subContainer">
+					<div class="bm"><span>餐后2h血糖</span></div>
+					<span id="after"></span><span>mmol/L</span>
+				</div>
+				<hr />
+				<div class='medicine'>
+					<span>用药情况</span><br />
+					<div class='text' id="medicine" ></div>
+				</div>
+				<div class='feeling'>
+					<span>感受</span><br />
+					<div class='text' id="feeling"></div>
+				</div>
+				<div class="subContainer">
+					<div><p style="text-align:center;margin-top:15px;width:100%;">舒适度选择</p></div>
+					<div style="text-align:center;  ">
+						<img src="../img/good.png" class="square gray good" />
+						<img src="../img/soso.png" class="square gray soso" />
+						<img src="../img/bad.png" class="square gray bad" />
+					</div>
+				</div>
+
+			</div>
+			<!--<div class="wrapper-bottom">
+				<button type='button' class='submit'>提交</button>
+			</div>-->
+		</div>
+		
+		
+		<script src="../js/jquery-1.11.1.min.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+		<script src='../js/bootstrap-slider.min.js'></script>
+		<script src="../js/Spring_6_check.js"></script>
+	</body>
+</html>
