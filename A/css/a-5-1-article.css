@@ -1,0 +1,23 @@
+.container{
+	margin:30px 20px;
+}
+.title{
+	font-size:20px;
+	margin-bottom: 20px;
+	font-weight: bold;
+}
+.date{
+	color:#C0C0C0;
+	margin-bottom: 20px;
+	display: inline-block;
+}
+.author{
+	color:#6699FF;
+	margin-bottom: 10px;
+	display: inline-block;
+}
+.detail_pic{
+	width:360px;
+	height:180px;
+}
+

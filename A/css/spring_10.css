@@ -1,0 +1,137 @@
+/*----------top------------*/
+.top{
+	height:150px;
+	background-color: #35D58B;
+	color:#fff;
+	padding-top:30px;
+	padding-left:30px;
+}
+.price{
+	font-size:55px;
+}
+.titl{
+	font-size:64px;
+}
+
+/*--------upper-----------*/
+.row{
+	padding:15px 20px;
+	background-color: #fff;
+	height:50px;
+	border-bottom:1px solid #EAF2F5;
+}
+.num{
+	float:right;
+	display:inline-block;
+	border:1px solid #ccc;
+	margin:
+}
+.ll{
+	display:inline-block;
+	border-left:1px solid #ccc;
+	width:20px;
+	height:20px;
+	text-align:center;
+	line-height: 20px;
+}
+#num1{
+	width:40px;
+}
+.num2{
+	width:20px;
+	height:20px;
+	line-height:20px;
+	text-align:center;
+	float:right;
+	background-color: #35D58B;
+	color:#fff;
+	border-radius:20px;
+}
+
+/*----------center--------*/
+.center{
+	color:#fff;
+	position:relative;
+}
+.card{
+	width:96%;
+	margin:20px 2%;
+}
+#c1{
+	position:absolute;
+	top:30px;
+	left:30px;
+}
+#c2{
+	position:absolute;
+	top:30px;
+	right:30px;
+}
+#c3{
+	font-size:48px;
+	position:absolute;
+	top:50px;
+	left:110px;
+	display:inline-block;
+}
+.yuan{
+	display:inline-block;
+	position:absolute;
+	top:85px;
+	left:230px;
+}
+#c4{
+	position:absolute;
+	top:110px;
+	left:80px;	
+}
+#limit{
+	position:absolute;
+	top:110px;
+	left:135px;
+}
+.ticket1{
+	position:relative;
+}
+#ticket{
+	display:none;
+}
+.label2{
+	display:inline-block;
+}
+.over{
+	display:inline-block;
+	position:absolute;
+	top:110px;
+	left:215px;
+}
+.blank{
+	display:inline-block;
+	position:absolute;
+	top:110px;
+	left:200px;
+}
+.ok{
+	width:30px;
+	height:30px;
+	position:absolute;
+	bottom:40px;
+	right:30px;
+	display: none;
+}
+
+/*-------lower---------*/
+.num3{
+	display:inline-block;
+	float:right;
+	color:#67A38A;
+	font-weight:bold;
+}
+.pay{
+	width:30px;
+	height:30px;
+}
+.label4{
+	float:right;
+	color:#67A38A;
+}

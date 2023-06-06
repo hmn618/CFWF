@@ -1,0 +1,36 @@
+.wrapper{
+	padding: 30% 10% 5% 10%;
+}
+.tips{
+	font-size: 32px;
+	font-family: "微软雅黑";
+	color:#3ED68F ;
+	margin-bottom: 150px;
+}
+.tips2{
+	font-size: 14px;
+	font-family: "微软雅黑";
+	color:#BEBCBD;
+}
+input {
+    border: none;
+    line-height:30px;
+    width: 100%;
+}
+hr{
+	border-color:#3ED68F ;
+	margin: 0;
+}
+.submit{
+	width: 70%;
+	margin: 20px auto;
+}
+.btn-submit{
+	width: 100%;
+	color: white;
+	background-color:#3ED68F ;
+	border: none;
+	border-radius: 25px;
+	font-size: 18px;
+	height: 50px;
+}

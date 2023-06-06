@@ -1,0 +1,38 @@
+.center{
+	padding: 10px 20px 30px 20px;
+	margin-top:10px;
+	padding-bottom: 10px;
+	height: 80px;
+}
+.center img{
+	width: 60px;
+	height: 60px;
+	float:left;
+}
+.left2{
+	float: left;
+	margin-left: 15px;
+}
+.right{
+	float:right;
+}
+.p1,.p2{
+	font-size: 13px;
+}
+.p2{
+	color:#C0C0C0;
+}
+.submit{
+	width: 92%;
+	height: 90%;
+	background-color: #35D58B;
+	color: white;
+	border: none;
+	border-radius: 10px;
+	font-size: 24px;
+	margin:30px 4%;
+	padding:10px 0;
+}
+.pages3 span{
+	color: #35D58B !important;
+}

@@ -1,0 +1,31 @@
+h1{
+	font-size:20px;
+	font-weight:bold;
+	margin-left:10px;
+}
+date{
+	color: #C0C0C0;
+	font-size:12px;
+	display:inline-block;
+	margin-left: 10px;
+}
+.author{
+	font-size: 12px;
+	color:#6699FF;
+	display:inline-block;
+}
+.article_head{
+	font-size: 20px;
+	font-weight: bold;
+	color:#2EB7A7 ;
+	margin:10px 0px 10px 10px;
+}
+.article{
+	margin:0 10px 20px 10px;
+}
+#youkuplayer{
+	width:90%;
+}
+.example_video_1-dimensions{
+	width:100%;
+}

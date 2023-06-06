@@ -1,0 +1,26 @@
+*a:visited{
+    text-decoration: none;
+}
+.content{
+    margin: 2%;
+}
+.box{
+    padding: 2%;
+}
+.item{
+    background-color: white;
+    text-align: center;
+    border-radius: 10px;
+    padding: 10%;
+    -webkit-box-shadow:  0 0 15px #D7E0E7;
+    -moz-box-shadow:  0 0 15px #D7E0E7;
+    box-shadow: 0 0 15px #D7E0E7;
+}
+.item img{
+    width: 50%;
+    margin: auto;
+    margin-top: 5px;
+}
+.item p{
+    margin-top: 15px;
+}

@@ -1,0 +1,65 @@
+*{
+	border:0;
+}
+html{
+	height: 100%;
+}
+body{
+	background-color:#EAF2F5;
+	position:relative;
+	min-height:100%;
+}
+.container1{
+	padding-bottom: -100px;
+}
+footer{
+	background-color: #fff;
+	width:100%;
+	position:absolute;
+	bottom:0;
+	margin-bottom:0;
+	clear:both;
+	padding:10px 3%;
+}
+.footer-img{
+	width:11%;
+	margin-right:4%;
+	float:left;
+}
+#when, #who{
+	margin-bottom:0px;
+	font-family: "微软雅黑";
+}
+#user{
+	height:43px;
+	width:100%;
+}
+.footer-text{
+	height:40px;
+	float:left;
+}
+.footer-tel{
+	width:50%;
+	float:right;
+	margin-right:3%;
+}
+a{
+	text-decoration: none;
+	color:#000;
+	outline:none;
+}
+.tel-btn{
+	background-color: #35D58B;
+	border-radius:60px;
+	color:#fff;
+	padding:5% 6%;
+	margin-left:8%;
+	width:100%;
+	border:none;
+}
+.tel-btn img{
+	width:10%;
+	height:10%;
+	vertical-align:middle;
+	margin-right:8%;
+}

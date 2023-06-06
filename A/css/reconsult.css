@@ -1,0 +1,88 @@
+.row{
+	
+}
+.container{
+	border-bottom:1px solid #797979;
+}
+.active{
+	background-color:#2EB7A7;
+	color:white;
+}
+.member_type{
+	text-align:center;
+	height:50px;
+	line-height:55px;
+	font-size:18px;
+	font-weight: bold;
+}
+.total{
+	margin-left:15px;
+	height:30px;
+	line-height: 35px;
+}
+.patient,.patient1{
+	height:100px;
+	line-height:33px;
+	padding:10px 0;
+	box-sizing:border-box;
+	border-top:1px solid #797979;
+	border-right:1px solid #797979;
+	border-left:1px solid #797979;
+}
+.label1{
+	padding-left:15px;
+	border-right:1px solid #797979;
+	border-left:1px solid #797979;
+}
+.marker{
+	padding:0 4px;
+	margin:0 2px;
+}
+.photo{
+	width:100px;
+	height:80px;
+}
+mark{
+	background-color: #2EB7A7;
+	height:15px;
+	border-radius: 5px;
+	color:#fff;
+}
+.btn{
+	margin-bottom: 10px;
+	border-radius: 5px;
+	color:#fff;
+	width:62px;
+	text-align: center;
+}
+.btn1{
+	background-color: #2EB7A7;
+	margin-top:20px;
+	text-align:center;
+	padding:5px 0;
+}
+.agree{
+	background-color: #2EB7A7;
+}
+.disagree{
+	background-color: #DDDDDD;
+}
+#disagree{
+	background-color: #2EB7A7;
+}
+.arrow{
+	margin-top:25px;
+	margin-left:20px;
+}
+#Deal{
+	display:none;
+}
+.revisit{
+	display:none;
+}
+.name{
+	height:30px;
+	text-overflow:ellipsis; 
+	white-space:nowrap; 
+	overflow:hidden; 
+}

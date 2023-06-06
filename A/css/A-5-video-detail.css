@@ -1,0 +1,26 @@
+#example_video_1{
+    width: 100%;
+    height: auto;
+}
+.content{
+    margin: 30px 0;
+    overflow: hidden;
+}
+.video video{
+    width: 100%;
+}
+.video img{
+    width: 100%;
+}
+date,#author{
+    color: #C0C0C0;
+    font-size:12px;
+    display:inline-block;
+    margin-left: 5px;
+}
+#title{
+    font-size: 18px;
+}
+#text{
+    margin-top: 15px;
+}

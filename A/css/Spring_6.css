@@ -1,0 +1,201 @@
+*{
+	font-family: "微软雅黑";
+}
+.wrapper{
+	background:#EAF2F5 ;
+	
+}
+.wrapper-top{
+	background: white;
+	padding: 20px 5%;
+	margin-bottom: 20px;
+}
+
+.w-title{
+	width:24%;
+	float: left;
+	padding-right: 5%;
+}
+.nt{
+	margin-top: 20px;
+}
+.slider.slider-horizontal {
+    width: 65%;
+    height: 20px;
+}
+#ex6Slider .slider-selection {
+	background: #37D48B;
+}
+#ex5Slider .slider-selection {
+	background: #37D48B;
+}
+#ex6CurrentSliderValLabel{
+	width:5%;
+	text-align: right;
+	float:right;
+	margin-right: 10px;
+}
+
+.require,.require1{
+	float:right;
+	width: 5px;
+	height:5px;
+	border-radius: 5px;
+	background: red;
+	margin-top: 11%;
+}
+.require1{
+	margin-top:17px;
+}
+.slider-handle{
+	background-color: white;
+	background-image: linear-gradient(to bottom,#FFF 0,#FFF 100%);
+	-webkit-box-shadow:0 0 20px #C0C0C0;  
+    -moz-box-shadow:0 0 20px #C0C0C0;  
+    box-shadow:0 0 20px #C0C0C0;
+}
+.wrapper-middle{
+	padding-left: 5%;
+	background: white;
+	margin-bottom: 20px;
+}
+.subContainer{
+	width: 95%;
+	/*height:45px;*/
+	
+}
+.bm {
+    display: inline-block;
+    padding: 3px 0px;
+    width: 30%;
+}
+.bm1 {
+    display: inline-block;
+    padding: 3px 0px;
+    width: 20%;
+    margin-right: 5%;
+}
+.subContainer input {
+    border: none;
+    line-height: 35px;
+    height:35px;
+    width: 60%;
+}
+.subContainer .input1 {
+    border: none;
+    line-height: 40px;
+    width: 12%;
+    
+}
+.line{
+	color:#DAE1E2;
+	margin-right: 5%;
+}
+.subContainer span {
+    line-height: 40px;
+    width: 60%;
+}
+.subContainer select{
+	border:none;
+	height:40px;
+	width:62%;
+	margin-left: 6%;
+	-webkit-appearance:none;
+	appearance:none;
+	background-color: #FFFFFF;
+	background:url(../img/pzh/tips.jpg) no-repeat;
+	background-position: 97% 50%;
+}
+hr{
+	margin: 0px;
+}
+::-webkit-input-placeholder{
+    color: #DAE1E2;
+    
+ }
+.medicine,.feeling{
+	width:95%;
+	border: 1px solid #C0C0C0;
+	border-radius: 5px;
+	height:120px;
+	padding: 10px;
+	margin-bottom: 20px;
+}
+textarea{
+	width: 100%;
+	height: 80%;
+	border: none;
+}
+.text{
+	width: 100%;
+	height: 80%;
+}
+.wrapper-bottom{
+	height:80px;
+	background: white;
+	padding: 3% 5%;
+}
+.submit{
+	width: 100%;
+	height: 90%;
+	background-color: #35D58B;
+	color: white;
+	border: none;
+	border-radius: 25px;
+	font-size: 24px;
+}
+
+@media only screen and (max-width:320px ) {
+	.w-title{
+	width:30%;
+	float: left;
+	padding-right: 7%;
+	}
+	.slider.slider-horizontal {
+	    width: 58%;
+	    height: 20px;
+	}
+	.subContainer select{
+		
+		margin-left: 0;
+	}
+	.bm1 {
+    display: inline-block;
+    padding: 3px 0px;
+    width: 24%;
+    margin-right: 5%;
+}
+	
+}
+@media only screen and (min-width:768px  ) {
+	.wrapper-bottom{
+		height:120px;
+	}
+	.require{
+		margin-top: 4%;
+	}
+	
+}
+
+.labelname{
+	height:40px;
+	width:62%;
+	margin-left: 6%;
+}
+
+.square{
+	height: 100px;
+	width: 100px;
+}
+.gray { 
+    /*-webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    
+    filter: grayscale(100%);
+	
+    filter: gray;*/
+   opacity:0.4;
+filter:alpha(opacity=40);
+}

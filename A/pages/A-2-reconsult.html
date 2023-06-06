@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>会员复诊</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no"/>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/A-2-scan.css">
+    <link href="../css/A-2-reconsult.css" rel="stylesheet">
+    <script src="../../common/js/url.js"></script>
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/A-2-reconsult.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="title clearfix">
+        <div id="left">
+            <img src="../img/headAdviser.png" alt="Doctor">
+            <div id="text">
+                <p>您好!</p>
+                <p id="morning"></p>
+            </div>
+        </div>
+        <div id="right">
+            <a id="scan" href="#">
+                <img src="../img/iconQr.png" alt="">
+                <span>二维码</span>
+                <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+        </div>
+    </div>
+    <div class="content clearfix">
+        <ul id="myTab" class="nav nav-tabs">
+            <li class="active">
+                <a href="#unfinished" data-toggle="tab"><span id="left-tab">未处理<span id="totalNum" class="badge"></span></span></a>
+            </li>
+            <li><a href="#finished" data-toggle="tab" id="right-tab">已处理</a></li>
+        </ul>
+        <div id="myContent" class="tab-content" >
+            <div id="unfinished" class="tab-pane fade in active">
+                <!--<div class="item row">-->
+                    <!--<div class="left col-sm-2 col-xs-2"><img src="../img/headNormal.png" alt="会员头像" class="photo"></div>-->
+                    <!--<div class="col-sm-6 col-xs-6">-->
+                        <!--<p>李三</p>-->
+                        <!--<p>13562543343</p>-->
+                    <!--</div>-->
+                    <!--<div class="right col-sm-3 col-xs-3">-->
+                        <!--<div class="agree">同意 </div>-->
+                        <!--<div class="disagree">不同意 </div>-->
+
+                    <!--</div>-->
+                    <!--<div class="arrow col-sm-1 col-xs-1">-->
+                        <!--<a href="#">-->
+                            <!--<span class="glyphicon glyphicon-chevron-right"></span>-->
+                        <!--</a>-->
+                    <!--</div>-->
+                <!--</div>-->
+
+                <!--<div class="item row">-->
+                    <!--<div class="left col-sm-2 col-xs-2"><img src="../img/headNormal.png" alt="会员头像" class="photo"></div>-->
+                    <!--<div class="col-sm-6 col-xs-6">-->
+                        <!--<p>李三</p>-->
+                        <!--<p>13562543343</p>-->
+                    <!--</div>-->
+                    <!--<div class="right col-sm-3 col-xs-3">-->
+                        <!--<div class="agree">同意 </div>-->
+
+                    <!--</div>-->
+                    <!--<div class="arrow col-sm-1 col-xs-1">-->
+                        <!--<a href="#">-->
+                            <!--<span class="glyphicon glyphicon-chevron-right"></span>-->
+                        <!--</a>-->
+                    <!--</div>-->
+                <!--</div>-->
+            </div>
+            <div id="finished" class="tab-pane fade">
+                <!--<div class="item row">-->
+                    <!--<div class="left col-sm-2 col-xs-2"><img src="../img/headNormal.png" alt="会员头像" class="photo"></div>-->
+                    <!--<div class="col-sm-6 col-xs-6">-->
+                        <!--<p>李三</p>-->
+                        <!--<p>13562543343</p>-->
+                    <!--</div>-->
+                    <!--<div class="right col-sm-3 col-xs-3">-->
+                        <!--<div class="agree reply">已同意 </div>-->
+
+                    <!--</div>-->
+                    <!--<div class="arrow col-sm-1 col-xs-1">-->
+                        <!--<a href="#">-->
+                            <!--<span class="glyphicon glyphicon-chevron-right"></span>-->
+                        <!--</a>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="item row">-->
+                    <!--<div class="left col-sm-2 col-xs-2"><img src="../img/headNormal.png" alt="会员头像" class="photo"></div>-->
+                    <!--<div class="col-sm-6 col-xs-6">-->
+                        <!--<p>李三</p>-->
+                        <!--<p>13562543343</p>-->
+                    <!--</div>-->
+                    <!--<div class="right col-sm-3 col-xs-3">-->
+                        <!--<div class="agree agreed">已同意 </div>-->
+
+                    <!--</div>-->
+                    <!--<div class="arrow col-sm-1 col-xs-1">-->
+                        <!--<a href="#">-->
+                            <!--<span class="glyphicon glyphicon-chevron-right"></span>-->
+                        <!--</a>-->
+                    <!--</div>-->
+                <!--</div>-->
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

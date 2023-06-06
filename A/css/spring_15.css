@@ -1,0 +1,105 @@
+.top, .center, .down, footer{
+	background-color: #fff;
+	box-shadow: 0 10px 20px #D5DEE5;
+}
+/*----------top----------*/
+.headAdvisor{
+	width:60px;
+	height:60px;
+	margin:10px 20px;
+}
+#name{
+	margin-top:10px;
+}
+.top{
+	margin-bottom: 20px;
+}
+/*----------center-------*/
+.center{
+	margin:0 10px 25px 10px;
+	text-align:center;
+	border-radius:10px;
+	box-shadow: 0 10px 20px #D5DEE5;
+}
+.doctorIcon{
+	width:60%;
+	margin:0 auto;
+}
+.line{
+	width:80%;
+	margin:30px auto 0 auto;
+	border:3px solid #71CBFF;
+	border-radius:5px;
+	
+}
+.axis{
+	position:relative;
+}
+.circle{
+	width:20px;
+	height:20px;
+	border-radius: 20px;
+	border:2px solid #71CBFF;
+	background-color: #71CBFF;
+}
+#circle1{
+	position:absolute;
+	top:-6px;
+	left:12%;
+}
+#circle2{
+	position:absolute;
+	top:-6px;
+	left:47%;
+}
+#circle3{
+	position:absolute;
+	top:-6px;
+	left:82%;
+}
+.row1{
+	padding:20px 0;
+}
+
+/*----------down---------*/
+.word{
+	margin:5px 0;
+}
+.down{
+	padding:10px 20px;
+	margin: 10px 10px 25px 10px;
+	border-radius:10px;
+	box-shadow: 0 10px 20px #D5DEE5;
+}
+.headWord{
+	font-size:18px;
+}
+/*----------footer-------*/
+/*.f1{
+	text-align:center;
+}
+.f2{
+	padding:20px 0 0 0;
+}
+.foot-img{
+	width:60px;
+	height:60px;
+	margin-top:10px;
+}
+.f3{
+	padding:10px 0 0 0;
+}
+.tel{
+	height:60px;
+	line-height:60px;
+	background-color:#35D58B;
+	color:#fff;
+	border-radius: 35px;
+	width:90%;
+}
+.tel-img{
+	width:30px;
+	height:30px;
+	margin:0 10px;
+}
+*/

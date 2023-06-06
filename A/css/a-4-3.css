@@ -1,0 +1,19 @@
+body{
+	background-color:#EAF2F5;
+}
+.heading{
+	padding:10px 20px;
+	margin:0;
+}
+.container-fluid{
+	padding:0;
+}
+.main{
+	background-color: #fff;
+	margin:0 auto;
+	padding:0 15px;
+	border-radius:15px;
+}
+hr{
+	margin-top:0;
+}

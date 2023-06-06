@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>会员列表</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no"/>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/A-2-scan.css">
+    <link href="../css/A-2-reconsult.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/A-2-memberlist.css">
+    <script src="../../common/js/url.js"></script>
+    <script src="../js/jquery-1.11.1.min.js"></script>
+   <script src="../js/bootstrap.min.js"></script>
+   <script src="../js/A-2-memberList(1).js"></script>
+    <style>
+    	.aa{float:left;margin:5px;width:70px; height:30px; background-color:#DCDCDC; border-radius:25px;} 
+		.bb{height:20px;  line-height:30px;display:block; color:#000000; text-align:center;}
+		.remark{
+			width: 10px;
+			height:10px;
+			border-radius: 5px;
+			background-color:red;
+			position:absolute;
+			top:0%;
+			right:28%;
+}
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="title clearfix">
+        <div id="left">
+            <img src="../img/headAdviser.png" alt="Doctor">
+            <div id="text">
+                <p>您好!</p>
+                <p id="morning"></p>
+            </div>
+        </div>
+        <div id="right">
+            <a id="scan" href="#">
+                <img src="../img/iconQr.png" alt="">
+                <span>二维码</span>
+                <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+        </div>
+    </div>
+
+    <form>
+        <div class='form-group'>
+            <label class='sr-only' for='search'>search</label>
+            <div id="se">
+                <input type='text' class='form-control search-text input' placeholder='搜索会员' name="USER_AGE" id="search"  >
+                <div id="search-btn" class="form-control"></div>
+            </div>
+            <div class="clear h10"></div>
+        </div>
+    </form>
+
+    <div class="content clearfix">
+        <ul id="myTab" class="nav nav-tabs">
+            <li class="active">
+                <a href="#unfinished" data-toggle="tab"><span id="left-tab">减重会员</span></a>
+            </li>
+            <li><a href="#finished" data-toggle="tab" id="right-tab">普通会员</a></li>
+        </ul>
+        <div id="myContent" class="tab-content" >
+            <!--<div id="toptitle">-->
+                <!--<span>患者总数: <span id="totalNumber"></span></span>-->
+            <!--</div>-->
+
+            <div id="unfinished" class="tab-pane fade in active"><!--未阅读有红点-->
+                <div class="toptitle">
+                    <span>患者总数: <span id="leftNumber"></span></span>
+                </div>
+                
+				<div class="item row">
+                	
+                </div>
+                
+                
+                
+                <!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel" style="background-color: aliceblue;">基本病情</h4>
+            </div>
+            <div class="modal-body">tagss</div>
+            <div class="modal-footer" style="background-color: aliceblue;">
+                	知道了
+            </div>
+        </div>
+    </div>
+</div>
+			
+            
+            
+            </div>
+			
+			
+			
+			
+            <div id="finished" class="tab-pane fade">
+                <!--<div class="toptitle">
+                    <span>患者总数: <span id="rightNumber"></span></span>
+                </div>-->
+                <!--<div class="item row">-->
+                    <!--<div class="left col-sm-2 col-xs-2"><img src="../img/headNormal.png" alt="会员头像" class="photo"></div>-->
+                    <!--<div class="col-sm-6 col-xs-6">-->
+                        <!--<p>王四</p>-->
+                        <!--<p>13562543343</p>-->
+                    <!--</div>-->
+                    <!--<div class="right col-sm-3 col-xs-3">-->
+                        <!--<div class="time">-->
+                            <!--<p>注册时间</p>-->
+                            <!--<p>2017.5.2</p>-->
+                        <!--</div>-->
+
+                    <!--</div>-->
+                    <!--<div class="arrow col-sm-1 col-xs-1">-->
+                        <!--<a href="#">-->
+                            <!--<span class="glyphicon glyphicon-chevron-right"></span>-->
+                        <!--</a>-->
+                    <!--</div>-->
+                <!--</div>-->
+
+            </div>
+        </div>
+    </div>
+</div>
+	
+</body>
+</html>

@@ -1,0 +1,128 @@
+body{
+	background:#EAF2F5 ;
+}
+.wrapper{
+	background:#EAF2F5 ;
+}
+.footer{
+	height:80px;
+	width: 100%;
+	background: white;
+	padding: 3% 5%;
+	margin-bottom: 20px;
+}
+.footer-img,.footer-text{
+	float:left;
+}
+.footer-text{
+	padding: 5px 0;
+}
+.footer-img {
+	
+	height:100%;
+	margin-right: 5%;
+}
+.footer-img img{
+	width:100%;
+	height:100%;
+	vertical-align: middle;
+}
+.footer-text p{
+	margin-bottom:0px;
+}
+.wrapper-middle{
+	padding-left: 5%;
+	background: white;
+	margin-bottom: 20px;
+}
+.subContainer{
+	width: 95%;
+	height:45px;
+	display: flex;
+	align-items: center;
+	
+}
+.bm {
+    display: inline-block;
+    padding: 3px 0px;
+    width: 34%;
+}
+.subContainer input,.subContainer span {
+    border: none;
+    line-height: 35px;
+    height:35px;
+    width: 58%;
+    margin-right:2%;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    display: inline-block;
+    
+}
+hr{
+	margin: 0;
+}
+
+.welcome{
+	padding-bottom: 8px;
+}
+
+@media only screen and (min-width:760px ) {
+	.footer{
+		padding: 1% 5%;
+	}
+	
+	.welcome{
+		padding-bottom: 8px !important;
+	}
+}
+@media only screen and (min-width:560px ) {
+	.welcome{
+		padding-bottom: 0px;
+	}
+	.footer-right{
+	
+		right:10% !important;
+	}
+}
+
+.footer-right{
+	
+	position: absolute;
+	top:30px;
+	right:7%;
+}	
+
+.footer-right img{
+	vertical-align: middle;
+}
+.footer-right span{
+	font-weight: 13px;
+	color: #DAE1E2;
+}
+#imgUpload{
+	display:none;
+}
+
+.subContainer select{
+	border:none;
+	height:40px;
+	width:62%;
+	margin-left: 6%;
+	-webkit-appearance:none;
+	appearance:none;
+	background-color: #FFFFFF;
+	background:url(../img/pzh/tips.jpg) no-repeat;
+	background-position: 97% 50%;
+	
+}
+.submit{
+	width: 90%;
+	height: 50px;
+	background-color: #35D58B;
+	color: white;
+	border: none;
+	border-radius: 10px;
+	font-size: 24px;
+	margin:20px 4%;
+	padding:10px 0;
+}
